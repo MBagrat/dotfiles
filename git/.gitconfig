@@ -76,6 +76,11 @@
 	# Show most recently changed branches first.
 	sort = -committerdate
 
+[user]
+
+	email = bagrat.mukaelyan@gmail.com
+	name = Bagrat Mukaelyan
+
 [core]
 
 	# Use custom `.gitignore` and `.gitattributes`.
@@ -98,6 +103,17 @@
 	# Speed up commands involving untracked files such as `git status`.
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
+
+    # This means that Git will process all text files and make sure that CRLF is replaced
+    # with LF when writing that file to the object database and turn all LF back into CRLF
+    # when writing out into the working directory.
+	autocrlf = input
+
+    # By default, Git uses whatever you’ve set as your default text editor via one of the
+    # shell environment variables VISUAL or EDITOR, or else falls back to the vi editor
+    # to create and edit your commit and tag messages. To change that default to something
+    # else, you can use the core.editor setting:
+	editor = subl
 
 [color]
 
