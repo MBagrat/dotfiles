@@ -32,18 +32,10 @@ mkdir $HOME/workspace/personal
 mkdir $HOME/workspace/work
 
 # Clone Github repositories
-./clone.sh
+sources ./clone.sh
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
-# Removes .mackup.cfg from $HOME (if it exists) and symlinks the .mackup.cfg file from the .dotfiles
-rm -rf $HOME/.mackup.cfg
-ln -s $HOME/.dotfiles/.mackup $HOME/.mackup.cfg
-
-# Symlink the Mackup config file to the home directory
-ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
+sources ./links.sh
 
 # Set macOS preferences - we will run this last because this will reload the shell
-# source .macos
+# source ..macos
