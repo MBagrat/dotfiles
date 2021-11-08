@@ -117,18 +117,18 @@ ZSH_COLORIZE_TOOL=chroma
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Inport separate alias file
-if [ -f $DOTFILES/aliases.zsh ]; then
-    source $DOTFILES/aliases.zsh
+# Import separate alias file
+if [ -f $DOTFILES/zsh/aliases.zsh ]; then
+    source $DOTFILES/zsh/aliases.zsh
 else
-    print "404: ~/.dotfiles/aliases.zsh not found."
+    print "404: ~/.dotfiles/zsh/aliases.zsh not found."
 fi
 
-# Inport separate path file
-if [ -f $DOTFILES/path.zsh ]; then
-    source $DOTFILES/path.zsh
+# Inmport separate path file
+if [ -f $DOTFILES/zsh/path.zsh ]; then
+    source $DOTFILES/zsh/path.zsh
 else
-    print "404: ~/.dotfiles/path.zsh not found."
+    print "404: ~/.dotfiles/zsh/path.zsh not found."
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
