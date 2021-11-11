@@ -129,6 +129,7 @@ brew "zsh-syntax-highlighting"
 #### Casks ####
 
 cask "1password"
+cask "adguard"
 cask "alfred"
 cask "appcleaner"
 cask "brewservicesmenubar"
@@ -139,6 +140,7 @@ cask "corretto8"
 cask "docker"
 cask "drawio"
 cask "dropbox"
+cask "eul"
 cask "firefox"
 # Flip clock screensaver
 # https://fliqlo.com/
@@ -200,6 +202,7 @@ cask 'font-source-code-pro-for-powerline'
 
 #### Mac App Store ####
 
+mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "AudioBookBinder", id: 413969927
 mas "Battery Health 2", id: 1120214373
