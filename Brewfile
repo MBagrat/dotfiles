@@ -1,4 +1,3 @@
-tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -76,6 +75,8 @@ brew "pre-commit"
 # Persistent key-value database, with built-in net interface
 # https://redis.io/
 brew 'redis'
+#
+brew 'svn'
 # Very fast implementation of tldr in Rust
 # https://github.com/dbrgn/tealdeer
 brew "tealdeer"
