@@ -9,7 +9,9 @@ tap "petere/postgresql"
 
 
 #### DEVELOPMENT ####
-
+# Apache Cassandra is an open source NoSQL distributed database
+# https://cassandra.apache.org/_/index.html
+brew "cassandra"
 # Top-like interface for container metrics
 # https://bcicen.github.io/ctop/
 brew "ctop"

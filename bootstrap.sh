@@ -19,6 +19,21 @@ brew update
 brew tap homebrew/bundle
 brew bundle
 
+# JENV CONFIGURATION
+jenv add /Library/Java/JavaVirtualMachines/openjdk-8.jdk/Contents/Home/
+jenv add /Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home/
+jenv add /Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/
+
+jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
+jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
+
+jenv enable-plugin export
+
+jenv versions
+
+jenv global 11
+
 ## DATABASE CONFIGURATION
 # Set default MySQL root password and auth type
 # Currently I am not sure that this command is needed. Maybe I will activate this command after first test
