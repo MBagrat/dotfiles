@@ -4,11 +4,17 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "buo/cask-upgrade"
 tap "mongodb/brew"
 tap "petere/postgresql"
 
 
 #### DEVELOPMENT ####
+# AWS Corretto JDK
+# https://corretto.aws/
+cask "corretto8"
+cask "corretto11"
+cask "corretto"
 # Apache Cassandra is an open source NoSQL distributed database
 # https://cassandra.apache.org/_/index.html
 brew "cassandra"
@@ -18,23 +24,28 @@ brew "ctop"
 # Tool for exploring each layer in a docker image
 # https://github.com/wagoodman/dive
 brew "dive"
+# Pack, ship and run any application as a lightweight container
+# https://www.docker.com/
+cask "docker"
+# Eclipse IDE for Java EE developers
+# https://eclipse.org/
+cask "eclipse-jee"
 # GitHub command-line tool
 # https://github.com/cli/cli
 brew "gh"
 # Distributed revision control system
 # https://git-scm.com
 brew "git"
-# Extensions to follow Vincent Driessen's branching model
-# https://github.com/nvie/gitflow
-brew "git-flow"
-# GNU Pretty Good Privacy (PGP) package. 
-# Formerly known as: gnupg2. 
+# GNU Pretty Good Privacy (PGP) package. Formerly known as: gnupg2.
 # Also known as: gnupg2, gnupg@2.3, gpg, gpg2
 # https://gnupg.org
 brew "gnupg"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
 # https://www.gradle.org/
 brew "gradle"
+# Java-based scripting language
+# https://www.groovy-lang.org/
+brew "groovy"
 # User-friendly cURL replacement (command-line HTTP client)
 # https://httpie.io/
 brew "httpie"
@@ -52,7 +63,13 @@ brew "maven"
 brew "mongodb/brew/mongodb-community"
 # Open source relational database management system
 # https://dev.mysql.com/doc/refman/8.0/en/
-brew 'mysql', restart_service: true
+brew "mysql", restart_service: true
+# Visual tool to design, develop and administer MySQL servers
+# https://www.mysql.com/products/workbench/
+cask "mysqlworkbench"
+# Development environment, tooling platform and application framework
+# https://netbeans.apache.org/
+cask "netbeans"
 # Platform built on V8 to build network applications
 # https://nodejs.org/
 brew "node"
@@ -70,15 +87,15 @@ brew "openssl@1.1"
 brew "pinentry-mac"
 # Object-relational database system
 # https://www.postgresql.org/
-brew 'postgresql', restart_service: true
+brew "postgresql", restart_service: true
 # Framework for managing multi-language pre-commit hooks
 # https://pre-commit.com/
 brew "pre-commit"
 # Persistent key-value database, with built-in net interface
 # https://redis.io/
-brew 'redis'
+brew "redis"
 #
-brew 'svn'
+brew "svn"
 # Very fast implementation of tldr in Rust
 # https://github.com/dbrgn/tealdeer
 brew "tealdeer"
@@ -105,7 +122,7 @@ brew "fzf"
 brew "htop"
 # Tools and libraries to manipulate images in many formats
 # https://imagemagick.org/index.php
-brew 'imagemagick'
+brew "imagemagick"
 # Keep your application settings in sync (OS X/Linux)
 # https://github.com/lra/mackup
 brew "mackup"
@@ -121,6 +138,9 @@ brew "speedtest-cli"
 # CLI tool that moves files or folder to the trash
 # https://hasseg.org/trash/
 brew "trash"
+# Ambitious Vim-fork focused on extensibility and agility
+# https://neovim.io/
+brew "neovim"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 # https://github.com/zsh-users/zsh-autosuggestions
 brew "zsh-autosuggestions"
@@ -131,19 +151,14 @@ brew "zsh-syntax-highlighting"
 
 #### Casks ####
 
-cask "1password"
 cask "adguard"
 cask "alfred"
 cask "appcleaner"
 cask "brewservicesmenubar"
 cask "browserosaurus"
-cask "corretto"
-cask "corretto11"
-cask "corretto8"
-cask "docker"
+cask "cheatsheet"
 cask "drawio"
 cask "dropbox"
-cask "eul"
 cask "firefox"
 # Flip clock screensaver
 # https://fliqlo.com/
@@ -164,6 +179,7 @@ cask "maccy"
 cask "microsoft-outlook"
 cask "microsoft-remote-desktop"
 cask "microsoft-teams"
+cask "notion"
 cask "postman"
 # Move and resize windows using keyboard shortcuts or snap areas
 # https://rectangleapp.com/
@@ -174,7 +190,7 @@ cask "spotify"
 cask "sublime-text"
 cask "telegram"
 cask "thingsmacsandboxhelper"
-cask 'the-unarchiver'
+cask "the-unarchiver"
 cask "vanilla"
 cask "visual-studio-code"
 cask "visualvm"
@@ -182,30 +198,30 @@ cask "visualvm"
 
 #### Quicklook ####
 
-cask 'qlcolorcode'
-cask 'qlvideo'
-cask 'qlstephen'
-cask 'qlmarkdown'
-cask 'quicklook-json'
-cask 'WebPQuickLook'
+cask "qlcolorcode"
+cask "qlvideo"
+cask "qlstephen"
+cask "qlmarkdown"
+cask "quicklook-json"
+cask "WebPQuickLook"
 
 
 #### Fonts ####
 
-cask 'font-lato'
-cask 'font-roboto'
-cask 'font-open-sans'
-cask 'font-hack-nerd-font'
-cask 'font-jetbrains-mono'
-cask 'font-source-code-pro'
-cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
-cask 'font-source-code-pro-for-powerline'
+cask "font-lato"
+cask "font-roboto"
+cask "font-open-sans"
+cask "font-hack-nerd-font"
+cask "font-jetbrains-mono"
+cask "font-source-code-pro"
+cask "font-source-sans-pro"
+cask "font-source-serif-pro"
+cask "font-source-code-pro-for-powerline"
 
 
 #### Mac App Store ####
 
-mas "1Password for Safari", id: 1569813296
+mas "1Password", id: 1333542190
 mas "Amphetamine", id: 937984704
 mas "AudioBookBinder", id: 413969927
 mas "Battery Health 2", id: 1120214373
@@ -222,3 +238,11 @@ mas "Things", id: 904280696
 mas "Trello", id: 1278508951
 mas "Tweetbot", id: 1384080005
 mas "Xcode", id: 497799835
+
+
+#### Testing ####
+# Brew
+cask "workspaces"
+cask "unite"
+# Mas
+mas "ScreenBrush", id: 1233965871

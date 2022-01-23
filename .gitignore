@@ -64,3 +64,9 @@ bh_unicode_properties.cache
 # Sublime-github package stores a github token in this file
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
+
+# vim-plug package folder
+nvim/plugged
+
+# *.lock.json
+Brewfile.lock.json

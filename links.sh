@@ -1,11 +1,11 @@
 #!/bin/sh
 
 create_link() {
-	if [ -f $2 ]; then
+	if [ -f $1 ] || [ -d $1 ]; then
 		rm -rf $2
 	fi
 
-	if [ -f $1 ]; then
+	if [ -f $1 ] || [ -d $1 ]; then
     ln -s $1 $2
 	else
 		print "404: ${1} not found."
@@ -40,6 +40,10 @@ create_link $DOTFILES/git/.gitignore $HOME/.gitignore
 create_link $DOTFILES/tmux/.tmux.conf $HOME/.tmux.conf
 
 # Removes global .vimrc from $HOME (if it exists) and symlinks the global .vimrc file from the .dotfiles/vim
+create_link $DOTFILES/vim $HOME/.vim
 create_link $DOTFILES/vim/.vimrc $HOME/.vimrc
+
+# Removes nvim folder from $HOME/.config (if it exists) and symlinks the global nvim folder from the .dotfiles/nvim
+create_link $DOTFILES/nvim/ $HOME/.config/nvim
 
 ls -hula ~ | grep "\->"
