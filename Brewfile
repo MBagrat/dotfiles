@@ -74,6 +74,9 @@ cask "netbeans"
 # https://nodejs.org/
 brew "node"
 brew "node@12"
+# Manage multiple Node.js versions
+# https://github.com/nvm-sh/nvm
+brew "nvm"
 # Development kit for the Java programming language
 # https://openjdk.java.net/
 brew "openjdk"
@@ -94,6 +97,10 @@ brew "pre-commit"
 # Persistent key-value database, with built-in net interface
 # https://redis.io/
 brew "redis"
+brew "rbenv"
+brew "rbenv-vars"
+brew "ruby-build"
+brew "rbenv-gemset"
 #
 brew "svn"
 # Very fast implementation of tldr in Rust
@@ -138,6 +145,9 @@ brew "speedtest-cli"
 # CLI tool that moves files or folder to the trash
 # https://hasseg.org/trash/
 brew "trash"
+# Display directories as trees (with optional color/HTML output)
+# http://mama.indstate.edu/users/ice/tree/
+brew "tree"
 # Ambitious Vim-fork focused on extensibility and agility
 # https://neovim.io/
 brew "neovim"
@@ -157,6 +167,7 @@ cask "appcleaner"
 cask "brewservicesmenubar"
 cask "browserosaurus"
 cask "cheatsheet"
+cask "cleanshot"
 cask "drawio"
 cask "dropbox"
 cask "firefox"
@@ -173,6 +184,7 @@ cask "jetbrains-toolbox"
 # https://www.mowglii.com/itsycal/
 cask "itsycal"
 cask "keka"
+cask "krisp"
 # Clipboard manager
 # https://maccy.app/
 cask "maccy"
@@ -191,7 +203,9 @@ cask "sublime-text"
 cask "telegram"
 cask "thingsmacsandboxhelper"
 cask "the-unarchiver"
+cask "tower"
 cask "vanilla"
+cask "virtualbox"
 cask "visual-studio-code"
 cask "visualvm"
 
@@ -232,6 +246,7 @@ mas "Magnet", id: 441258766
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "pomodorome", id: 1484801884
+mas "ScreenBrush", id: 1233965871
 mas "Spark", id: 1176895641
 mas "Startup Disk Full Fixer", id: 1346655838
 mas "Things", id: 904280696
@@ -242,7 +257,4 @@ mas "Xcode", id: 497799835
 
 #### Testing ####
 # Brew
-cask "workspaces"
-cask "unite"
 # Mas
-mas "ScreenBrush", id: 1233965871

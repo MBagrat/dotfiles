@@ -16,9 +16,21 @@ export PATH="node_modules/.bin:vendor/bin:$PATH"
 # Load chroma binary only for oh-my-zsh plugin colorize
 export PATH="/usr/local/Cellar/chroma:$PATH"
 
-# jEnv
+# jEnv (Master your Java Environment with jenv)
+# https://github.com/jenv/jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# nvm (Node Version Manager)
+# https://github.com/nvm-sh/nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# rbenv (Seamlessly manage your app’s Ruby environment with rbenv.)
+# https://github.com/rbenv/rbenv
+export RUBY_CONFIGURE_OPTS=${"--with-openssl-dir=$(brew --prefix openssl@1.1)"}
+eval "$(rbenv init - zsh)"
 
 # openssl
 export PATH=$PATH:/usr/local/Cellar/openssl@1.1/1.1.1k/lib
