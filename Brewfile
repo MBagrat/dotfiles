@@ -10,14 +10,14 @@ tap "petere/postgresql"
 
 
 #### DEVELOPMENT ####
+# Apache Cassandra is an open source NoSQL distributed database
+# https://cassandra.apache.org/_/index.html
+brew "cassandra"
 # AWS Corretto JDK
 # https://corretto.aws/
 cask "corretto8"
 cask "corretto11"
 cask "corretto"
-# Apache Cassandra is an open source NoSQL distributed database
-# https://cassandra.apache.org/_/index.html
-brew "cassandra"
 # Top-like interface for container metrics
 # https://bcicen.github.io/ctop/
 brew "ctop"
@@ -70,10 +70,6 @@ cask "mysqlworkbench"
 # Development environment, tooling platform and application framework
 # https://netbeans.apache.org/
 cask "netbeans"
-# Platform built on V8 to build network applications
-# https://nodejs.org/
-brew "node"
-brew "node@12"
 # Manage multiple Node.js versions
 # https://github.com/nvm-sh/nvm
 brew "nvm"
@@ -101,8 +97,9 @@ brew "rbenv"
 brew "rbenv-vars"
 brew "ruby-build"
 brew "rbenv-gemset"
-#
-brew "svn"
+# Version control system designed to be a better CVS
+# https://subversion.apache.org/
+brew "subversion"
 # Very fast implementation of tldr in Rust
 # https://github.com/dbrgn/tealdeer
 brew "tealdeer"
@@ -248,6 +245,7 @@ mas "Pages", id: 409201541
 mas "pomodorome", id: 1484801884
 mas "ScreenBrush", id: 1233965871
 mas "Spark", id: 1176895641
+mas "ScreenBrush", id: 1233965871
 mas "Startup Disk Full Fixer", id: 1346655838
 mas "Things", id: 904280696
 mas "Trello", id: 1278508951

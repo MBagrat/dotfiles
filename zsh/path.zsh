@@ -29,8 +29,12 @@ export NVM_DIR="$HOME/.nvm"
 
 # rbenv (Seamlessly manage your app’s Ruby environment with rbenv.)
 # https://github.com/rbenv/rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
 export RUBY_CONFIGURE_OPTS=${"--with-openssl-dir=$(brew --prefix openssl@1.1)"}
 eval "$(rbenv init - zsh)"
+# Ruby GEM
+export GEM_HOME=${"$(ruby -e 'puts Gem.user_dir')"}
+export PATH="$GEM_HOME/bin:$PATH"
 
 # openssl
 export PATH=$PATH:/usr/local/Cellar/openssl@1.1/1.1.1k/lib
