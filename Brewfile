@@ -7,6 +7,7 @@ tap "homebrew/services"
 tap "buo/cask-upgrade"
 tap "mongodb/brew"
 tap "petere/postgresql"
+tap "dart-lang/dart"
 
 
 #### DEVELOPMENT ####
@@ -24,6 +25,9 @@ brew "ctop"
 # Tool for exploring each layer in a docker image
 # https://github.com/wagoodman/dive
 brew "dive"
+# Dart is a client-optimized language for fast apps on any platform
+# https://dart.dev/
+brew "dart"
 # Pack, ship and run any application as a lightweight container
 # https://www.docker.com/
 cask "docker"
