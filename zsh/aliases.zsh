@@ -36,3 +36,6 @@ alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-dire
 # Mac OS
 alias reset-doc="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+
+# Project folders
+alias mbb="cd $HOME/Workspace/personal/projects/development/mbagrat-blog"

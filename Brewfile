@@ -180,6 +180,7 @@ cask "fliqlo"
 cask "folx"
 cask "fork"
 cask "google-chrome"
+cask "iterm2"
 cask "jetbrains-toolbox"
 # Menu bar calendar
 # https://www.mowglii.com/itsycal/
@@ -205,11 +206,12 @@ cask "telegram"
 cask "thingsmacsandboxhelper"
 cask "the-unarchiver"
 cask "tower"
+cask "upwork"
 cask "vanilla"
 cask "virtualbox"
 cask "visual-studio-code"
 cask "visualvm"
-
+cask "zoom"
 
 #### Quicklook ####
 
