@@ -85,6 +85,9 @@ brew "openjdk@11"
 # Cryptography and SSL/TLS Toolkit
 # https://openssl.org/
 brew "openssl@1.1"
+# General-purpose scripting language
+# https://www.php.net/
+brew "php"
 # Pinentry for GPG on Mac
 # https://github.com/GPGTools/pinentry
 brew "pinentry-mac"
