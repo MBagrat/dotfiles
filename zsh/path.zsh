@@ -24,8 +24,10 @@ eval "$(jenv init -)"
 # nvm (Node Version Manager)
 # https://github.com/nvm-sh/nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# This loads nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+# This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
 # rbenv (Seamlessly manage your app’s Ruby environment with rbenv.)
 # https://github.com/rbenv/rbenv
@@ -39,8 +41,8 @@ export PATH="$GEM_HOME/bin:$PATH"
 # openssl
 export PATH=$PATH:/usr/local/Cellar/openssl@1.1/1.1.1k/lib
 
-# ZSH plugin for wakatime are associated with the Terminal project, 
-# if you would like the plugin to attribute the project based on 
+# ZSH plugin for wakatime are associated with the Terminal project,
+# if you would like the plugin to attribute the project based on
 # either git repository or the last accessed project then set
 export ZSH_WAKATIME_PROJECT_DETECTION=true
 

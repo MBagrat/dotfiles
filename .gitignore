@@ -70,3 +70,6 @@ nvim/plugged
 
 # *.lock.json
 Brewfile.lock.json
+
+# Jetbrains Fleet
+.fleet/

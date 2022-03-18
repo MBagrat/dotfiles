@@ -8,6 +8,7 @@ tap "buo/cask-upgrade"
 tap "mongodb/brew"
 tap "petere/postgresql"
 tap "dart-lang/dart"
+tap "spring-io/tap"
 
 
 #### DEVELOPMENT ####
@@ -56,6 +57,9 @@ brew "httpie"
 # Manage your Java environment
 # https://www.jenv.be/
 brew "jenv"
+# Generate, develop and deploy Spring Boot + Angular/React applications
+# https://www.jhipster.tech/
+brew "jhipster"
 # Statically typed programming language for the JVM
 # https://kotlinlang.org/
 brew "kotlin"
@@ -100,10 +104,15 @@ brew "pre-commit"
 # Persistent key-value database, with built-in net interface
 # https://redis.io/
 brew "redis"
+# Ruby environment
 brew "rbenv"
 brew "rbenv-vars"
 brew "ruby-build"
 brew "rbenv-gemset"
+# The Spring Boot CLI is a command line tool that you can 
+# use if you want to quickly develop a Spring application
+# https://docs.spring.io/spring-boot/docs/2.7.x/reference/html/cli.html#cli
+brew "spring-boot"
 # Version control system designed to be a better CVS
 # https://subversion.apache.org/
 brew "subversion"
@@ -204,6 +213,9 @@ cask "rectangle"
 cask "signal"
 cask "slack"
 cask "spotify"
+# Next generation tooling for Spring Boot
+# https://spring.io/tools
+cask "springtoolsuite"
 cask "sublime-text"
 cask "telegram"
 cask "thingsmacsandboxhelper"
