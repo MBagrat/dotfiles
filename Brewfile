@@ -35,6 +35,9 @@ cask "docker"
 # Eclipse IDE for Java EE developers
 # https://eclipse.org/
 cask "eclipse-jee"
+# Eclipse IDE for Java Developers
+# https://eclipse.org/
+cask "eclipse-java"
 # GitHub command-line tool
 # https://github.com/cli/cli
 brew "gh"
@@ -113,6 +116,10 @@ brew "rbenv-gemset"
 # use if you want to quickly develop a Spring application
 # https://docs.spring.io/spring-boot/docs/2.7.x/reference/html/cli.html#cli
 brew "spring-boot"
+# Next generation tooling for Spring Boot
+# https://spring.io/tools
+cask "springtoolsuite"
+cask "sublime-text"
 # Version control system designed to be a better CVS
 # https://subversion.apache.org/
 brew "subversion"
@@ -213,10 +220,6 @@ cask "rectangle"
 cask "signal"
 cask "slack"
 cask "spotify"
-# Next generation tooling for Spring Boot
-# https://spring.io/tools
-cask "springtoolsuite"
-cask "sublime-text"
 cask "telegram"
 cask "thingsmacsandboxhelper"
 cask "the-unarchiver"
