@@ -28,6 +28,7 @@ Temporary Items
 
 ### JetBrains template
 .idea/
+.fleet/
 
 ### VisualStudioCode template
 .vscode/
@@ -70,6 +71,3 @@ nvim/plugged
 
 # *.lock.json
 Brewfile.lock.json
-
-# Jetbrains Fleet
-.fleet/
