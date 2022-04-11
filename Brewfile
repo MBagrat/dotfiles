@@ -185,6 +185,7 @@ brew "zsh-syntax-highlighting"
 
 cask "adguard"
 cask "alfred"
+cask "anydesk"
 cask "appcleaner"
 cask "brewservicesmenubar"
 cask "browserosaurus"
