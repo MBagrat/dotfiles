@@ -94,6 +94,7 @@ plugins=(
   git-flow
   git-flow-avh
   git-flow-completion
+  kubectl
   man
   macos
   sublime
@@ -123,6 +124,9 @@ if [ -f $DOTFILES/zsh/aliases.zsh ]; then
 else
     print "404: ~/.dotfiles/zsh/aliases.zsh not found."
 fi
+
+# The kubectl completion script for Zsh
+source <(kubectl completion zsh)
 
 # Inmport separate path file
 if [ -f $DOTFILES/zsh/path.zsh ]; then

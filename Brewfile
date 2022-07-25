@@ -38,7 +38,7 @@ cask "docker"
 cask "eclipse-jee"
 # Eclipse IDE for Java Developers
 # https://eclipse.org/
-cask "eclipse-java"
+#cask "eclipse-java"
 # GitHub command-line tool
 # https://github.com/cli/cli
 brew "gh"
@@ -67,9 +67,15 @@ brew "jhipster"
 # Statically typed programming language for the JVM
 # https://kotlinlang.org/
 brew "kotlin"
+# Also known as: kubectl, kubectl@1.24, kubernetes-cli@1.24
+# https://kubernetes.io/
+brew "kubectl"
 # Java-based project management
 # https://maven.apache.org/
 brew "maven"
+# Run a Kubernetes cluster locally
+# https://minikube.sigs.k8s.io/
+brew "minikube"
 # MongoDB is a source-available cross-platform document-oriented database program. 
 # https://docs.mongodb.com/manual/
 brew "mongodb/brew/mongodb-community"
@@ -145,6 +151,14 @@ brew "bluetoothconnector"
 # Command-line fuzzy finder written in Go
 # https://github.com/junegunn/fzf
 brew "fzf"
+# Terminal JSON viewer
+# https://fx.wtf
+brew "fx"
+# Lightweight and flexible command-line JSON processor
+# https://stedolan.github.io/jq/
+brew "jq"
+# The slightly more awesome standard unix password manager for teams
+brew 'gopass'
 # This is htop, a cross-platform interactive process viewer. It is a text-mode 
 # application (for console or X terminals) and requires ncurses.
 # https://htop.dev
@@ -173,6 +187,9 @@ brew "tree"
 # Ambitious Vim-fork focused on extensibility and agility
 # https://neovim.io/
 brew "neovim"
+# YAML syntax highlighter to bring colours where only jq could
+# https://github.com/andreazorzetto/yh
+brew "yh"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 # https://github.com/zsh-users/zsh-autosuggestions
 brew "zsh-autosuggestions"
@@ -191,6 +208,7 @@ cask "brewservicesmenubar"
 cask "browserosaurus"
 cask "cheatsheet"
 cask "cleanshot"
+cask "discord"
 cask "drawio"
 cask "dropbox"
 cask "firefox"
@@ -208,14 +226,13 @@ cask "jetbrains-toolbox"
 # https://www.mowglii.com/itsycal/
 cask "itsycal"
 cask "keka"
-cask "krisp"
+cask "kitematic"
 # Clipboard manager
 # https://maccy.app/
 cask "maccy"
-cask "microsoft-outlook"
-cask "microsoft-remote-desktop"
-cask "microsoft-teams"
+cask "messenger"
 cask "notion"
+cask "obsidian"
 cask "postman"
 # Move and resize windows using keyboard shortcuts or snap areas
 # https://rectangleapp.com/
@@ -224,6 +241,7 @@ cask "signal"
 cask "slack"
 cask "spotify"
 cask "telegram"
+cask "textmate"
 cask "thingsmacsandboxhelper"
 cask "the-unarchiver"
 cask "tower"
