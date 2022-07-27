@@ -226,7 +226,6 @@ cask "jetbrains-toolbox"
 # https://www.mowglii.com/itsycal/
 cask "itsycal"
 cask "keka"
-cask "kitematic"
 # Clipboard manager
 # https://maccy.app/
 cask "maccy"
