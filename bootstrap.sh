@@ -25,11 +25,13 @@ brew bundle
 # JENV CONFIGURATION
 jenv add /Library/Java/JavaVirtualMachines/openjdk-8.jdk/Contents/Home/
 jenv add /Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home/
+jenv add /Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home/
 jenv add /Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/
 
 jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
 jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
+jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-19.jdk/Contents/Home
 
 jenv enable-plugin export
 

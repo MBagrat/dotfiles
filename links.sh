@@ -6,7 +6,7 @@ create_link() {
 	fi
 
 	if [ -f $1 ] || [ -d $1 ]; then
-    ln -s $1 $2
+        ln -s $1 $2
 	else
 		print "404: ${1} not found."
 	fi
