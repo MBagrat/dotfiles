@@ -36,9 +36,6 @@ cask "docker"
 # Eclipse IDE for Java EE developers
 # https://eclipse.org/
 cask "eclipse-jee"
-# Eclipse IDE for Java Developers
-# https://eclipse.org/
-#cask "eclipse-java"
 # GitHub command-line tool
 # https://github.com/cli/cli
 brew "gh"
@@ -200,16 +197,16 @@ brew "zsh-syntax-highlighting"
 
 #### Casks ####
 
+cask "1password"
+cask "1password-cli"
 cask "adguard"
 cask "alfred"
 cask "anydesk"
 cask "appcleaner"
 cask "brewservicesmenubar"
 cask "browserosaurus"
-cask "cheatsheet"
 cask "cleanshot"
 cask "discord"
-cask "drawio"
 cask "dropbox"
 cask "firefox"
 # Flip clock screensaver
@@ -240,9 +237,7 @@ cask "signal"
 cask "slack"
 cask "spotify"
 cask "telegram"
-cask "textmate"
 cask "thingsmacsandboxhelper"
-cask "the-unarchiver"
 cask "tower"
 cask "upwork"
 cask "vanilla"
@@ -325,7 +320,6 @@ cask "font-victor-mono-nerd-font"
 
 #### Mac App Store ####
 
-mas "1Password", id: 1333542190
 mas "Amphetamine", id: 937984704
 mas "AudioBookBinder", id: 413969927
 mas "Battery Health 2", id: 1120214373

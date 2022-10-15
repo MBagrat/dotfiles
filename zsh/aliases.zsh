@@ -34,6 +34,7 @@ alias cssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
 
 # Mac OS
+alias xcode="open -a Xcode"
 alias reset-doc="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 
