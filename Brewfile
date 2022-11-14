@@ -7,7 +7,6 @@ tap "homebrew/services"
 tap "buo/cask-upgrade"
 tap "mongodb/brew"
 tap "petere/postgresql"
-tap "dart-lang/dart"
 tap "spring-io/tap"
 
 
@@ -27,9 +26,6 @@ brew "ctop"
 # Tool for exploring each layer in a docker image
 # https://github.com/wagoodman/dive
 brew "dive"
-# Dart is a client-optimized language for fast apps on any platform
-# https://dart.dev/
-brew "dart"
 # Pack, ship and run any application as a lightweight container
 # https://www.docker.com/
 cask "docker"
@@ -115,8 +111,8 @@ brew "redis"
 # Ruby environment
 brew "rbenv"
 brew "rbenv-vars"
-brew "ruby-build"
 brew "rbenv-gemset"
+brew "ruby-build"
 # The Spring Boot CLI is a command line tool that you can 
 # use if you want to quickly develop a Spring application
 # https://docs.spring.io/spring-boot/docs/2.7.x/reference/html/cli.html#cli
@@ -154,8 +150,7 @@ brew "fx"
 # Lightweight and flexible command-line JSON processor
 # https://stedolan.github.io/jq/
 brew "jq"
-# The slightly more awesome standard unix password manager for teams
-brew 'gopass'
+brew 'gtop'
 # This is htop, a cross-platform interactive process viewer. It is a text-mode 
 # application (for console or X terminals) and requires ncurses.
 # https://htop.dev
@@ -172,6 +167,9 @@ brew "mas"
 # Fast, highly customisable system info script
 # https://github.com/dylanaraps/neofetch
 brew "neofetch"
+# Emulator for x86 and PowerPC
+# https://www.qemu.org
+brew "qemu"
 # Command-line interface for https://speedtest.net bandwidth tests
 # https://github.com/sivel/speedtest-cli
 brew "speedtest-cli"
@@ -218,11 +216,16 @@ cask "folx"
 cask "fork"
 cask "google-chrome"
 cask "iterm2"
+# Names: Jami, Savoir-faire Linux Ring
+# Decentralised instant messenger and softphone
+# https://jami.net/
+cask "jami"
 cask "jetbrains-toolbox"
 # Menu bar calendar
 # https://www.mowglii.com/itsycal/
 cask "itsycal"
 cask "keka"
+cask "keystore-explorer"
 # Clipboard manager
 # https://maccy.app/
 cask "maccy"
@@ -230,6 +233,9 @@ cask "messenger"
 cask "notion"
 cask "obsidian"
 cask "postman"
+# GUI for streamlined Redis application development
+# https://redis.com/redis-enterprise/redis-insight/
+cask "redisinsight"
 # Move and resize windows using keyboard shortcuts or snap areas
 # https://rectangleapp.com/
 cask "rectangle"
@@ -240,6 +246,9 @@ cask "telegram"
 cask "thingsmacsandboxhelper"
 cask "tower"
 cask "upwork"
+# Virtual machines UI using QEMU
+# https://getutm.app/
+cask "utm"
 cask "vanilla"
 cask "virtualbox"
 cask "visual-studio-code"

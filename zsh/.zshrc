@@ -94,7 +94,7 @@ plugins=(
   git-flow
   git-flow-avh
   git-flow-completion
-  kubectl
+#  kubectl
   man
   macos
   sublime
