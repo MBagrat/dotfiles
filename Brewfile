@@ -251,7 +251,6 @@ cask "upwork"
 # https://getutm.app/
 cask "utm"
 cask "vanilla"
-cask "virtualbox"
 cask "visual-studio-code"
 cask "visualvm"
 cask "zoom"

@@ -81,30 +81,30 @@ HIST_STAMPS="dd/mm/yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 # https://git.io/JJ1Zi
 plugins=(
-  brew
-  colored-man-pages
-  colorize
-  docker
-  docker-compose
-  docker-machine
-  extract
-  history
-  git
-  github
-  git-flow
-  git-flow-avh
-  git-flow-completion
-#  kubectl
-  man
-  macos
-  sublime
-  sudo
-  tmux
-  yarn
-  zsh-autosuggestions
-  zsh-interactive-cd
-  zsh-syntax-highlighting
-  zsh-wakatime
+    brew
+    colored-man-pages
+    colorize
+    docker
+    docker-compose
+    docker-machine
+    extract
+    history
+    git
+    github
+    git-flow
+    git-flow-avh
+    git-flow-completion
+    kubectl
+    man
+    macos
+    sublime
+    sudo
+    tmux
+    yarn
+    zsh-autosuggestions
+    zsh-interactive-cd
+    zsh-syntax-highlighting
+    zsh-wakatime
 )
 
 source $ZSH/oh-my-zsh.sh
