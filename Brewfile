@@ -134,9 +134,7 @@ brew "tmux"
 # https://yarnpkg.com/
 brew "yarn"
 
-
 #### TERMINAL APPS ####
-
 # Simple macOS CLI to connect/disconnect a Bluetooth device. 
 # https://github.com/lapfelix/BluetoothConnector
 brew "bluetoothconnector"
@@ -192,9 +190,7 @@ brew "zsh-autosuggestions"
 # https://github.com/zsh-users/zsh-syntax-highlighting
 brew "zsh-syntax-highlighting"
 
-
 #### Casks ####
-
 cask "1password"
 cask "1password-cli"
 cask "adguard"
@@ -256,7 +252,6 @@ cask "visualvm"
 cask "zoom"
 
 #### Quicklook ####
-
 cask "qlcolorcode"
 cask "qlvideo"
 cask "qlstephen"
@@ -264,9 +259,7 @@ cask "qlmarkdown"
 cask "quicklook-json"
 cask "WebPQuickLook"
 
-
 #### Fonts ####
-
 cask "font-lato"
 cask "font-roboto"
 cask "font-open-sans"
@@ -328,12 +321,10 @@ cask "font-ubuntu-nerd-font"
 cask "font-victor-mono-nerd-font"
 
 #### Mac App Store ####
-
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "AudioBookBinder", id: 413969927
 mas "Battery Health 2", id: 1120214373
-mas "Calendars", id: 608834326
 mas "CleanMyDrive 2", id: 523620159
 mas "Grammarly for Safari", id: 1462114288
 mas "Keynote", id: 409183694
@@ -348,7 +339,6 @@ mas "Things", id: 904280696
 mas "Trello", id: 1278508951
 mas "Tweetbot", id: 1384080005
 mas "Xcode", id: 497799835
-
 
 #### Testing ####
 # Brew
