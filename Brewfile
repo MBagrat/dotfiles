@@ -100,11 +100,8 @@ brew "php"
 # https://github.com/GPGTools/pinentry
 brew "pinentry-mac"
 # Object-relational database system
-# https://www.postgresql.org/
+# https://www.postgresql.org/rb
 brew "postgresql", restart_service: true
-# Framework for managing multi-language pre-commit hooks
-# https://pre-commit.com/
-brew "pre-commit"
 # Persistent key-value database, with built-in net interface
 # https://redis.io/
 brew "redis"
@@ -148,6 +145,9 @@ brew "fx"
 # Lightweight and flexible command-line JSON processor
 # https://stedolan.github.io/jq/
 brew "jq"
+# GNU multiple precision arithmetic library
+# https://gmplib.org/
+brew "gmp"
 brew 'gtop'
 # This is htop, a cross-platform interactive process viewer. It is a text-mode 
 # application (for console or X terminals) and requires ncurses.
@@ -156,6 +156,9 @@ brew "htop"
 # Tools and libraries to manipulate images in many formats
 # https://imagemagick.org/index.php
 brew "imagemagick"
+# YAML Parser
+# https://github.com/yaml/libyaml
+brew "libyaml"
 # Keep your application settings in sync (OS X/Linux)
 # https://github.com/lra/mackup
 brew "mackup"
@@ -165,6 +168,10 @@ brew "mas"
 # Fast, highly customisable system info script
 # https://github.com/dylanaraps/neofetch
 brew "neofetch"
+# Also known as: openssl
+# Cryptography and SSL/TLS Toolkit
+# https://openssl.org/
+brew "openssl@3"
 # Emulator for x86 and PowerPC
 # https://www.qemu.org
 brew "qemu"
@@ -180,6 +187,9 @@ brew "tree"
 # Ambitious Vim-fork focused on extensibility and agility
 # https://neovim.io/
 brew "neovim"
+# Library for command-line editing
+# https://tiswww.case.edu/php/chet/readline/rltop.html
+brew "readline"
 # YAML syntax highlighter to bring colours where only jq could
 # https://github.com/andreazorzetto/yh
 brew "yh"
