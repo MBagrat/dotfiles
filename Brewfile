@@ -233,6 +233,7 @@ cask "jetbrains-toolbox"
 cask "itsycal"
 cask "keka"
 cask "keystore-explorer"
+cask "logseq"
 # Clipboard manager
 # https://maccy.app/
 cask "maccy"
