@@ -282,7 +282,6 @@ cask "font-meslo-lg-dz"
 cask "font-jetbrains-mono"
 # nerd fonts
 cask "font-fira-code-nerd-font"
-cask "font-fira-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 
