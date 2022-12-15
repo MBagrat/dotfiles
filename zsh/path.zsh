@@ -39,6 +39,10 @@ eval "$(rbenv init - zsh)"
 export GEM_HOME=${"$(ruby -e 'puts Gem.user_dir')"}
 export PATH="$GEM_HOME/bin:$PATH"
 
+# buildpack
+# shellcheck source=/Users/mbagrat/.pack/completion.zsh
+source "$(pack completion --shell zsh)"
+
 # openssl
 export PATH=$PATH:/usr/local/Cellar/openssl@1.1/1.1.1k/lib
 

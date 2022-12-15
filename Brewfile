@@ -1,37 +1,21 @@
-tap "homebrew/bundle"
+tap "homebrew/core"
 tap "homebrew/cask"
+tap "homebrew/bundle"
+tap "homebrew/services"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "homebrew/services"
-tap "buo/cask-upgrade"
-tap "mongodb/brew"
-tap "petere/postgresql"
+tap "graalvm/tap"
 tap "spring-io/tap"
+tap "buildpacks/tap"
 
 
 #### DEVELOPMENT ####
-# Apache Cassandra is an open source NoSQL distributed database
-# https://cassandra.apache.org/_/index.html
-brew "cassandra"
-# AWS Corretto JDK
-# https://corretto.aws/
-cask "corretto"
-cask "corretto8"
-cask "corretto11"
-cask "corretto17"
 # Top-like interface for container metrics
 # https://bcicen.github.io/ctop/
 brew "ctop"
 # Tool for exploring each layer in a docker image
 # https://github.com/wagoodman/dive
 brew "dive"
-# Pack, ship and run any application as a lightweight container
-# https://www.docker.com/
-cask "docker"
-# Eclipse IDE for Java EE developers
-# https://eclipse.org/
-cask "eclipse-jee"
 # GitHub command-line tool
 # https://github.com/cli/cli
 brew "gh"
@@ -69,18 +53,6 @@ brew "maven"
 # Run a Kubernetes cluster locally
 # https://minikube.sigs.k8s.io/
 brew "minikube"
-# MongoDB is a source-available cross-platform document-oriented database program. 
-# https://docs.mongodb.com/manual/
-brew "mongodb/brew/mongodb-community"
-# Open source relational database management system
-# https://dev.mysql.com/doc/refman/8.0/en/
-brew "mysql", restart_service: true
-# Visual tool to design, develop and administer MySQL servers
-# https://www.mysql.com/products/workbench/
-cask "mysqlworkbench"
-# Development environment, tooling platform and application framework
-# https://netbeans.apache.org/
-cask "netbeans"
 # Manage multiple Node.js versions
 # https://github.com/nvm-sh/nvm
 brew "nvm"
@@ -93,18 +65,15 @@ brew "openjdk@17"
 # Cryptography and SSL/TLS Toolkit
 # https://openssl.org/
 brew "openssl@1.1"
+# Pack is a tool maintained by the Cloud Native Buildpacks project to support the use of buildpacks.
+# https://buildpacks.io/docs/tools/pack/
+brew "pack"
 # General-purpose scripting language
 # https://www.php.net/
 brew "php"
 # Pinentry for GPG on Mac
 # https://github.com/GPGTools/pinentry
 brew "pinentry-mac"
-# Object-relational database system
-# https://www.postgresql.org/rb
-brew "postgresql", restart_service: true
-# Persistent key-value database, with built-in net interface
-# https://redis.io/
-brew "redis"
 # Ruby environment
 brew "rbenv"
 brew "rbenv-vars"
@@ -114,10 +83,6 @@ brew "ruby-build"
 # use if you want to quickly develop a Spring application
 # https://docs.spring.io/spring-boot/docs/2.7.x/reference/html/cli.html#cli
 brew "spring-boot"
-# Next generation tooling for Spring Boot
-# https://spring.io/tools
-cask "springtoolsuite"
-cask "sublime-text"
 # Version control system designed to be a better CVS
 # https://subversion.apache.org/
 brew "subversion"
@@ -156,6 +121,9 @@ brew "htop"
 # Tools and libraries to manipulate images in many formats
 # https://imagemagick.org/index.php
 brew "imagemagick"
+# Kubernetes CLI To Manage Your Clusters In Style!
+# https://k9scli.io/
+brew "k9s"
 # YAML Parser
 # https://github.com/yaml/libyaml
 brew "libyaml"
@@ -210,8 +178,20 @@ cask "appcleaner"
 cask "brewservicesmenubar"
 cask "browserosaurus"
 cask "cleanshot"
+# AWS Corretto JDK
+# https://corretto.aws/
+cask "corretto"
+cask "corretto8"
+cask "corretto11"
+cask "corretto17"
 cask "discord"
+# Pack, ship and run any application as a lightweight container
+# https://www.docker.com/
+cask "docker"
 cask "dropbox"
+# Eclipse IDE for Java EE developers
+# https://eclipse.org/
+cask "eclipse-jee"
 cask "firefox"
 # Flip clock screensaver
 # https://fliqlo.com/
@@ -222,6 +202,13 @@ cask "folx"
 cask "fork"
 cask "gimp"
 cask "google-chrome"
+# GraalVM High Performance. Cloud Native. Polyglot.
+# https://www.graalvm.org
+cask "graalvm-ce-java8"
+#cask "graalvm-ce-lts-java8"
+cask "graalvm-ce-java11"
+#cask "graalvm-ce-lts-java11"
+cask "graalvm-ce-java17"
 cask "iterm2"
 # Names: Jami, Savoir-faire Linux Ring
 # Decentralised instant messenger and softphone
@@ -238,6 +225,10 @@ cask "logseq"
 # https://maccy.app/
 cask "maccy"
 cask "messenger"
+cask "miro"
+# Development environment, tooling platform and application framework
+# https://netbeans.apache.org/
+cask "netbeans"
 cask "notion"
 cask "obsidian"
 cask "postman"
@@ -250,6 +241,10 @@ cask "rectangle"
 cask "signal"
 cask "slack"
 cask "spotify"
+# Next generation tooling for Spring Boot
+# https://spring.io/tools
+cask "springtoolsuite"
+cask "sublime-text"
 cask "telegram"
 cask "thingsmacsandboxhelper"
 cask "tower"
@@ -260,6 +255,7 @@ cask "utm"
 cask "vanilla"
 cask "visual-studio-code"
 cask "visualvm"
+cask "vlc"
 cask "zoom"
 
 #### Quicklook ####
@@ -286,6 +282,33 @@ cask "font-fira-code-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 
+#### Use corresponding docker images ####
+# Apache Cassandra is an open source NoSQL distributed database
+# https://cassandra.apache.org/_/index.html
+#brew "cassandra"
+# Brew tap for postgreSQL
+#tap "petere/postgresql"
+# Object-relational database system
+# https://www.postgresql.org/rb
+#brew "postgresql", restart_service: true
+# Persistent key-value database, with built-in net interface
+# https://redis.io/
+#brew "redis"
+# Brew tap for mongoDB
+#tap "mongodb/brew"
+# MongoDB is a source-available cross-platform document-oriented database program.
+# https://docs.mongodb.com/manual/
+#brew "mongodb/brew/mongodb-community"
+# mongodb-compass Explore and manipulate your MongoDB data
+# https://www.mongodb.com/products/compass
+#cask "mongodb-compass"
+# Open source relational database management system
+# https://dev.mysql.com/doc/refman/8.0/en/
+#brew "mysql", restart_service: true
+# Visual tool to design, develop and administer MySQL servers
+# https://www.mysql.com/products/workbench/
+#cask "mysqlworkbench"
+
 #### Mac App Store ####
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
@@ -299,7 +322,6 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "pomodorome", id: 1484801884
 mas "ScreenBrush", id: 1233965871
-mas "Spark", id: 1176895641
 mas "Startup Disk Full Fixer", id: 1346655838
 mas "Things", id: 904280696
 mas "Trello", id: 1278508951
