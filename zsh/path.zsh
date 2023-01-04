@@ -43,6 +43,10 @@ export PATH="$GEM_HOME/bin:$PATH"
 # shellcheck source=/Users/mbagrat/.pack/completion.zsh
 source "$(pack completion --shell zsh)"
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 # openssl
 export PATH=$PATH:/usr/local/Cellar/openssl@1.1/1.1.1k/lib
 
