@@ -7,6 +7,7 @@ tap "homebrew/cask-versions"
 tap "graalvm/tap"
 tap "spring-io/tap"
 tap "buildpacks/tap"
+tap "maciejwalkowiak/brew"
 
 
 #### DEVELOPMENT ####
@@ -41,6 +42,7 @@ brew "jenv"
 # Generate, develop and deploy Spring Boot + Angular/React applications
 # https://www.jhipster.tech/
 brew "jhipster"
+brew "just"
 # Statically typed programming language for the JVM
 # https://kotlinlang.org/
 brew "kotlin"
