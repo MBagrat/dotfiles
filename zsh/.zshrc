@@ -125,8 +125,7 @@ else
     print "404: ~/.dotfiles/zsh/aliases.zsh not found."
 fi
 
-# The kubectl completion script for Zsh
-source <(kubectl completion zsh)
+autoload -Uz compinit && compinit
 
 # Inmport separate path file
 if [ -f $DOTFILES/zsh/path.zsh ]; then

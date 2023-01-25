@@ -126,6 +126,7 @@ brew "imagemagick"
 # Kubernetes CLI To Manage Your Clusters In Style!
 # https://k9scli.io/
 brew "k9s"
+brew "kubectl"
 # YAML Parser
 # https://github.com/yaml/libyaml
 brew "libyaml"
@@ -135,6 +136,8 @@ brew "mackup"
 # Mac App Store command-line interface
 # https://github.com/mas-cli/mas
 brew "mas"
+brew "midnight-commander"
+brew "minikube"
 # Fast, highly customisable system info script
 # https://github.com/dylanaraps/neofetch
 brew "neofetch"
@@ -190,6 +193,7 @@ cask "discord"
 # Pack, ship and run any application as a lightweight container
 # https://www.docker.com/
 cask "docker"
+cask "drawio"
 cask "dropbox"
 # Eclipse IDE for Java EE developers
 # https://eclipse.org/
@@ -227,13 +231,13 @@ cask "logseq"
 # https://maccy.app/
 cask "maccy"
 cask "messenger"
-cask "miro"
 # Development environment, tooling platform and application framework
 # https://netbeans.apache.org/
 cask "netbeans"
 cask "notion"
 cask "obsidian"
 cask "postman"
+cask "powershell"
 # GUI for streamlined Redis application development
 # https://redis.com/redis-enterprise/redis-insight/
 cask "redisinsight"
@@ -249,12 +253,14 @@ cask "springtoolsuite"
 cask "sublime-text"
 cask "telegram"
 cask "thingsmacsandboxhelper"
+cask "todoist"
 cask "tower"
 cask "upwork"
 # Virtual machines UI using QEMU
 # https://getutm.app/
 cask "utm"
 cask "vanilla"
+cask "viber"
 cask "visual-studio-code"
 cask "visualvm"
 cask "vlc"
@@ -313,22 +319,28 @@ cask "font-jetbrains-mono-nerd-font"
 
 #### Mac App Store ####
 mas "1Password for Safari", id: 1569813296
+mas "Apple Configurator", id: 1037126344
 mas "Amphetamine", id: 937984704
 mas "AudioBookBinder", id: 413969927
 mas "Battery Health 2", id: 1120214373
 mas "CleanMyDrive 2", id: 523620159
+mas "Color Picker", id: 1545870783
 mas "Grammarly for Safari", id: 1462114288
+mas "Keepa - Price Tracker", id: 1533805339
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
+mas "Mast", id: 1437429129
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "pomodorome", id: 1484801884
 mas "ScreenBrush", id: 1233965871
+mas "Spark", id: 1176895641
 mas "Startup Disk Full Fixer", id: 1346655838
 mas "Things", id: 904280696
 mas "Trello", id: 1278508951
 mas "Tweetbot", id: 1384080005
 mas "Xcode", id: 497799835
+mas "WhatsApp", id: 1147396723
 
 #### Testing ####
 # Brew
