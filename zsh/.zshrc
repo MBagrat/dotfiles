@@ -114,6 +114,12 @@ source $ZSH/oh-my-zsh.sh
 # This line added for omz plugin :: colorize ::
 ZSH_COLORIZE_TOOL=chroma
 
+# Environment variable to temporarily toggle the 1Password CLI and 1Password app integration on or off.
+OP_BIOMETRIC_UNLOCK_ENABLED=true
+source /Users/mbagrat/.config/op/plugins.sh
+
+autoload -Uz compinit && compinit
+
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -124,8 +130,6 @@ if [ -f $DOTFILES/zsh/aliases.zsh ]; then
 else
     print "404: ~/.dotfiles/zsh/aliases.zsh not found."
 fi
-
-autoload -Uz compinit && compinit
 
 # Inmport separate path file
 if [ -f $DOTFILES/zsh/path.zsh ]; then

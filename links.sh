@@ -42,6 +42,9 @@ create_link $DOTFILES/tmux/.tmux.conf $HOME/.tmux.conf
 # Removes global .Brewfile from $HOME (if it exists) and symlinks the global .Brewfile file from the .dotfiles/Brewfile
 create_link $DOTFILES/Brewfile $HOME/.Brewfile
 
+# Removes global .Brewfile from $HOME (if it exists) and symlinks the global .Brewfile file from the .dotfiles/Brewfile
+create_link $DOTFILES/cmus/rc $HOME/.config/cmus/rc
+
 # Removes global .vimrc from $HOME (if it exists) and symlinks the global .vimrc file from the .dotfiles/vim
 create_link $DOTFILES/vim $HOME/.vim
 create_link $DOTFILES/vim/.vimrc $HOME/.vimrc

@@ -102,6 +102,9 @@ brew "yarn"
 # Simple macOS CLI to connect/disconnect a Bluetooth device. 
 # https://github.com/lapfelix/BluetoothConnector
 brew "bluetoothconnector"
+# Music player with an ncurses based interface
+# https://cmus.github.io/
+brew "cmus"
 # Installed for omz plugin :: zsh-interactive-cd ::
 # Command-line fuzzy finder written in Go
 # https://github.com/junegunn/fzf
