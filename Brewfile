@@ -8,9 +8,13 @@ tap "graalvm/tap"
 tap "spring-io/tap"
 tap "buildpacks/tap"
 tap "maciejwalkowiak/brew"
+tap "1password/tap"
 
 
 #### DEVELOPMENT ####
+# All in one for **env                                                                                           │                                    │
+# https://anyenv.github.io/
+brew "anyenv"
 # Top-like interface for container metrics
 # https://bcicen.github.io/ctop/
 brew "ctop"
@@ -36,9 +40,6 @@ brew "groovy"
 # User-friendly cURL replacement (command-line HTTP client)
 # https://httpie.io/
 brew "httpie"
-# Manage your Java environment
-# https://www.jenv.be/
-brew "jenv"
 # Generate, develop and deploy Spring Boot + Angular/React applications
 # https://www.jhipster.tech/
 brew "jhipster"
@@ -55,9 +56,6 @@ brew "maven"
 # Run a Kubernetes cluster locally
 # https://minikube.sigs.k8s.io/
 brew "minikube"
-# Manage multiple Node.js versions
-# https://github.com/nvm-sh/nvm
-brew "nvm"
 # Development kit for the Java programming language
 # https://openjdk.java.net/
 brew "openjdk"
@@ -76,11 +74,6 @@ brew "php"
 # Pinentry for GPG on Mac
 # https://github.com/GPGTools/pinentry
 brew "pinentry-mac"
-# Ruby environment
-brew "rbenv"
-brew "rbenv-vars"
-brew "rbenv-gemset"
-brew "ruby-build"
 # The Spring Boot CLI is a command line tool that you can 
 # use if you want to quickly develop a Spring application
 # https://docs.spring.io/spring-boot/docs/2.7.x/reference/html/cli.html#cli
@@ -178,7 +171,7 @@ brew "zsh-syntax-highlighting"
 
 #### Casks ####
 cask "1password"
-cask "1password-cli"
+#cask "1password-cli"
 cask "adguard"
 cask "alfred"
 cask "anydesk"
@@ -214,10 +207,9 @@ cask "google-chrome"
 # GraalVM High Performance. Cloud Native. Polyglot.
 # https://www.graalvm.org
 cask "graalvm-ce-java8"
-#cask "graalvm-ce-lts-java8"
 cask "graalvm-ce-java11"
-#cask "graalvm-ce-lts-java11"
 cask "graalvm-ce-java17"
+cask "graalvm-ce-java19"
 cask "iterm2"
 # Names: Jami, Savoir-faire Linux Ring
 # Decentralised instant messenger and softphone

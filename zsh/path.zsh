@@ -7,63 +7,29 @@ export PATH="/usr/local/sbin/:$PATH"
 # Load dotfiles binaries
 export PATH="$DOTFILES/bin:$PATH"
 
-# Load Node global installed binaries
-export PATH="$HOME/.node/bin:$PATH"
-
-# Use project specific binaries before global ones
-export PATH="node_modules/.bin:vendor/bin:$PATH"
-
-# Load chroma binary only for oh-my-zsh plugin colorize
-export PATH="/usr/local/Cellar/chroma:$PATH"
-
-# openssl
-export PATH="/usr/local/Cellar/openssl@1.1/1.1.1k/lib:$PATH"
-
-# AWS cli completion script for Zsh
-# https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-export PATH="/usr/local/bin/aws_completer/:$PATH"
+# AWS CLI completion script for Zsh
+# https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html
 complete -C '/usr/local/bin/aws_completer' aws
 
-# The kubectl completion script for Zsh
+# Generate the kubectl completion script for Zsh on this path ($HOME/.oh-my-zsh/cache/completions/_kubectl)
 # https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos
 # shellcheck source=/usr/local/bin/kubectl
 source <(kubectl completion zsh)
 
-# buildpack
+# Generate the buildpack completion script for Zsh on this path ($HOME/.pack/completion.zsh)
 # shellcheck source=/Users/mbagrat/.pack/completion.zsh
-source "$(pack completion --shell zsh)"
+source "$(pack completion -s zsh)"
 
-# JENV (Master your Java Environment with jenv)
-# https://github.com/jenv/jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+# All in one for **env
+# https://anyenv.github.io/
+eval "$(anyenv init - zsh)"
 
-# NVM (Node Version Manager)
-# https://github.com/nvm-sh/nvm
-export NVM_DIR="$HOME/.nvm"
-# This loads nvm
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
-# This loads nvm bash_completion
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-
-# RBENV (Seamlessly manage your app’s Ruby environment with rbenv.)
-# https://github.com/rbenv/rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
 # https://github.com/rbenv/ruby-build/wiki#macos
-export RUBY_CONFIGURE_OPTS=${"--with-openssl-dir=$(brew --prefix openssl@3)"}
-eval "$(rbenv init - zsh)"
+# shellcheck disable=SC2155
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
 # Ruby GEM
 export GEM_HOME=${"$(ruby -e 'puts Gem.user_dir')"}
 export PATH="$GEM_HOME/bin:$PATH"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# ZSH plugin for wakatime are associated with the Terminal project,
-# if you would like the plugin to attribute the project based on
-# either git repository or the last accessed project then set
-export ZSH_WAKATIME_PROJECT_DETECTION=true
 
 # Make sure coreutils are loaded before system commands
 # I've disabled this for now because I only use "ls" which is

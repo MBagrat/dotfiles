@@ -5,7 +5,7 @@ export DOTFILES=$HOME/.dotfiles
 export ZSH=$HOME/.oh-my-zsh
 
 # Enable completions
-autoload -Uz compinit && compinit
+# autoload -Uz compinit && compinit
 
 # Powerlevel10k --- Theme settings #
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -82,25 +82,10 @@ HIST_STAMPS="dd/mm/yyyy"
 # https://git.io/JJ1Zi
 plugins=(
     brew
-    colored-man-pages
-    colorize
-    docker
-    docker-compose
-    docker-machine
-    extract
     history
     git
-    github
-    git-flow
-    git-flow-avh
-    git-flow-completion
-    kubectl
     man
-    macos
-    sublime
-    sudo
     tmux
-    yarn
     zsh-autosuggestions
     zsh-interactive-cd
     zsh-syntax-highlighting
@@ -109,20 +94,14 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-## User configuration
-
-# This line added for omz plugin :: colorize ::
-ZSH_COLORIZE_TOOL=chroma
-
-# Environment variable to temporarily toggle the 1Password CLI and 1Password app integration on or off.
-OP_BIOMETRIC_UNLOCK_ENABLED=true
-source /Users/mbagrat/.config/op/plugins.sh
-
-autoload -Uz compinit && compinit
-
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+## User configuration
 
 # Import separate alias file
 if [ -f $DOTFILES/zsh/aliases.zsh ]; then
@@ -137,6 +116,3 @@ if [ -f $DOTFILES/zsh/path.zsh ]; then
 else
     print "404: ~/.dotfiles/zsh/path.zsh not found."
 fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
