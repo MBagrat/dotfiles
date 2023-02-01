@@ -10,9 +10,8 @@ tap "buildpacks/tap"
 tap "maciejwalkowiak/brew"
 tap "1password/tap"
 
-
 #### DEVELOPMENT ####
-# All in one for **env                                                                                           │                                    │
+# All in one for **env
 # https://anyenv.github.io/
 brew "anyenv"
 # Top-like interface for container metrics
@@ -171,7 +170,7 @@ brew "zsh-syntax-highlighting"
 
 #### Casks ####
 cask "1password"
-#cask "1password-cli"
+cask "1password-cli"
 cask "adguard"
 cask "alfred"
 cask "anydesk"
