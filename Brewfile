@@ -14,6 +14,7 @@ tap "1password/tap"
 # All in one for **env
 # https://anyenv.github.io/
 brew "anyenv"
+brew "btop"
 # Top-like interface for container metrics
 # https://bcicen.github.io/ctop/
 brew "ctop"
@@ -110,11 +111,6 @@ brew "jq"
 # GNU multiple precision arithmetic library
 # https://gmplib.org/
 brew "gmp"
-brew 'gtop'
-# This is htop, a cross-platform interactive process viewer. It is a text-mode 
-# application (for console or X terminals) and requires ncurses.
-# https://htop.dev
-brew "htop"
 # Tools and libraries to manipulate images in many formats
 # https://imagemagick.org/index.php
 brew "imagemagick"

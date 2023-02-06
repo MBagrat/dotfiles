@@ -38,6 +38,8 @@ create_link $DOTFILES/git/.gitignore $HOME/.gitignore
 
 # Removes global .tmux.conf from $HOME (if it exists) and symlinks the global .tmux.conf file from the .dotfiles/tmux
 create_link $DOTFILES/tmux/.tmux.conf $HOME/.tmux.conf
+# Removes local .tmux.conf.local from $HOME (if it exists) and symlinks the local .tmux.conf.local file from the .dotfiles/tmux
+create_link $DOTFILES/tmux/.tmux.conf.local $HOME/.tmux.conf.local
 
 # Removes global .Brewfile from $HOME (if it exists) and symlinks the global .Brewfile file from the .dotfiles/Brewfile
 create_link $DOTFILES/Brewfile $HOME/.Brewfile

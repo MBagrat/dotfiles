@@ -31,6 +31,10 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
 export GEM_HOME=${"$(ruby -e 'puts Gem.user_dir')"}
 export PATH="$GEM_HOME/bin:$PATH"
 
+# 1password zsh completion
+# https://developer.1password.com/docs/cli/get-started#shell-completion
+eval "$(op completion zsh)"; compdef _op op
+
 # Make sure coreutils are loaded before system commands
 # I've disabled this for now because I only use "ls" which is
 # referenced in my aliases.zsh file directly.
