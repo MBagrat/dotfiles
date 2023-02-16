@@ -74,6 +74,9 @@ brew "php"
 # Pinentry for GPG on Mac
 # https://github.com/GPGTools/pinentry
 brew "pinentry-mac"
+# Postgres C API library
+# https://www.postgresql.org/docs/15/libpq.html
+brew "libpq"
 # The Spring Boot CLI is a command line tool that you can 
 # use if you want to quickly develop a Spring application
 # https://docs.spring.io/spring-boot/docs/2.7.x/reference/html/cli.html#cli

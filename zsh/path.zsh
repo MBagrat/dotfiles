@@ -31,6 +31,9 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
 export GEM_HOME=${"$(ruby -e 'puts Gem.user_dir')"}
 export PATH="$GEM_HOME/bin:$PATH"
 
+# Postgres C API library
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+
 # 1password zsh completion
 # https://developer.1password.com/docs/cli/get-started#shell-completion
 eval "$(op completion zsh)"; compdef _op op
