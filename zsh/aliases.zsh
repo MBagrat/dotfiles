@@ -32,6 +32,8 @@ alias ws="cd $HOME/workspace"
 alias aenv="anyenv"
 alias icloud="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias cssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
+alias bc="brew bundle cleanup --global --force"
+alias bi="brew bundle install --global"
 alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
 
 # Mac OS
