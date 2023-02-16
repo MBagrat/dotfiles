@@ -43,6 +43,9 @@ brew "httpie"
 # Generate, develop and deploy Spring Boot + Angular/React applications
 # https://www.jhipster.tech/
 brew "jhipster"
+brew "jmeter"
+# just is a handy way to save and run project-specific commands.
+# https://github.com/casey/just
 brew "just"
 # Statically typed programming language for the JVM
 # https://kotlinlang.org/
@@ -101,6 +104,7 @@ brew "bluetoothconnector"
 # Music player with an ncurses based interface
 # https://cmus.github.io/
 brew "cmus"
+brew "coreutils"
 # Installed for omz plugin :: zsh-interactive-cd ::
 # Command-line fuzzy finder written in Go
 # https://github.com/junegunn/fzf
@@ -230,7 +234,7 @@ cask "netbeans"
 cask "notion"
 cask "obsidian"
 cask "postman"
-cask "powershell"
+cask "proxyman"
 # GUI for streamlined Redis application development
 # https://redis.com/redis-enterprise/redis-insight/
 cask "redisinsight"
