@@ -82,6 +82,8 @@ HIST_STAMPS="dd/mm/yyyy"
 # https://git.io/JJ1Zi
 plugins=(
     brew
+    docker
+    docker-compose
     history
     git
     man
