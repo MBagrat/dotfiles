@@ -86,6 +86,7 @@ plugins=(
     docker-compose
     history
     git
+    jhipster
     man
     tmux
     zsh-autosuggestions
