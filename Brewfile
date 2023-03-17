@@ -115,6 +115,7 @@ brew "fx"
 # Lightweight and flexible command-line JSON processor
 # https://stedolan.github.io/jq/
 brew "jq"
+brew "htop"
 # GNU multiple precision arithmetic library
 # https://gmplib.org/
 brew "gmp"
@@ -192,7 +193,6 @@ cask "discord"
 # https://www.docker.com/
 cask "docker"
 cask "drawio"
-cask "dropbox"
 # Eclipse IDE for Java EE developers
 # https://eclipse.org/
 cask "eclipse-jee"
@@ -213,20 +213,14 @@ cask "graalvm-ce-java11"
 cask "graalvm-ce-java17"
 cask "graalvm-ce-java19"
 cask "iterm2"
-# Names: Jami, Savoir-faire Linux Ring
-# Decentralised instant messenger and softphone
-# https://jami.net/
-cask "jami"
 cask "jetbrains-toolbox"
 # Menu bar calendar
 # https://www.mowglii.com/itsycal/
 cask "itsycal"
 cask "keka"
 cask "keystore-explorer"
-cask "logseq"
 # Clipboard manager
 # https://maccy.app/
-cask "maccy"
 cask "messenger"
 # Development environment, tooling platform and application framework
 # https://netbeans.apache.org/
@@ -234,7 +228,6 @@ cask "netbeans"
 cask "notion"
 cask "obsidian"
 cask "postman"
-cask "proxyman"
 # GUI for streamlined Redis application development
 # https://redis.com/redis-enterprise/redis-insight/
 cask "redisinsight"
@@ -250,14 +243,11 @@ cask "springtoolsuite"
 cask "sublime-text"
 cask "telegram"
 cask "thingsmacsandboxhelper"
-cask "todoist"
 cask "tower"
-cask "upwork"
 # Virtual machines UI using QEMU
 # https://getutm.app/
 cask "utm"
 cask "vanilla"
-cask "viber"
 cask "visual-studio-code"
 cask "visualvm"
 cask "vlc"
@@ -321,12 +311,9 @@ mas "Amphetamine", id: 937984704
 mas "AudioBookBinder", id: 413969927
 mas "Battery Health 2", id: 1120214373
 mas "CleanMyDrive 2", id: 523620159
-mas "Color Picker", id: 1545870783
 mas "Grammarly for Safari", id: 1462114288
-mas "Keepa - Price Tracker", id: 1533805339
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
-mas "Mast", id: 1437429129
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "pomodorome", id: 1484801884
@@ -335,9 +322,7 @@ mas "Spark", id: 1176895641
 mas "Startup Disk Full Fixer", id: 1346655838
 mas "Things", id: 904280696
 mas "Trello", id: 1278508951
-mas "Tweetbot", id: 1384080005
 mas "Xcode", id: 497799835
-mas "WhatsApp", id: 1147396723
 
 #### Testing ####
 # Brew
