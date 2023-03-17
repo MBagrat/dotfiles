@@ -306,12 +306,10 @@ cask "font-jetbrains-mono-nerd-font"
 
 #### Mac App Store ####
 mas "1Password for Safari", id: 1569813296
-mas "Apple Configurator", id: 1037126344
 mas "Amphetamine", id: 937984704
 mas "AudioBookBinder", id: 413969927
 mas "Battery Health 2", id: 1120214373
 mas "CleanMyDrive 2", id: 523620159
-mas "Grammarly for Safari", id: 1462114288
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
 mas "Numbers", id: 409203825
