@@ -214,9 +214,6 @@ cask "graalvm-ce-java17"
 cask "graalvm-ce-java19"
 cask "iterm2"
 cask "jetbrains-toolbox"
-# Menu bar calendar
-# https://www.mowglii.com/itsycal/
-cask "itsycal"
 cask "keka"
 cask "keystore-explorer"
 # Clipboard manager
