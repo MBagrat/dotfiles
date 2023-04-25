@@ -227,6 +227,7 @@ cask "messenger"
 cask "netbeans"
 cask "notion"
 cask "obsidian"
+cask "openvpn-connect"
 cask "postman"
 # GUI for streamlined Redis application development
 # https://redis.com/redis-enterprise/redis-insight/
@@ -310,6 +311,7 @@ mas "Amphetamine", id: 937984704
 mas "AudioBookBinder", id: 413969927
 mas "Battery Health 2", id: 1120214373
 mas "CleanMyDrive 2", id: 523620159
+mas "Dato", id: 1470584107
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
 mas "Numbers", id: 409203825
