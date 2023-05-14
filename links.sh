@@ -54,4 +54,7 @@ create_link $DOTFILES/vim/.vimrc $HOME/.vimrc
 # Removes nvim folder from $HOME/.config (if it exists) and symlinks the global nvim folder from the .dotfiles/nvim
 create_link $DOTFILES/nvim/ $HOME/.config/nvim
 
+# Removes .p10k.zsh config file from $HOME (if it exists) and symlinks the global .p10k.zsh file from the .dotfiles/zsh
+create_link $DOTFILES/zsh/.p10k.zsh $HOME/.p10k.zsh
+
 ls -hula ~ | grep "\->"
