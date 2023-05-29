@@ -90,6 +90,9 @@ brew "subversion"
 # Very fast implementation of tldr in Rust
 # https://github.com/dbrgn/tealdeer
 brew "tealdeer"
+# Tool to build, change, and version infrastructure
+# https://www.terraform.io/
+brew "terraform"
 # Terminal multiplexer
 # https://tmux.github.io/
 brew "tmux"
@@ -104,6 +107,7 @@ brew "bluetoothconnector"
 # Music player with an ncurses based interface
 # https://cmus.github.io/
 brew "cmus"
+brew "cocoapods"
 brew "coreutils"
 # Installed for omz plugin :: zsh-interactive-cd ::
 # Command-line fuzzy finder written in Go
@@ -188,6 +192,7 @@ cask "corretto"
 cask "corretto8"
 cask "corretto11"
 cask "corretto17"
+cask "daisydisk"
 cask "discord"
 # Pack, ship and run any application as a lightweight container
 # https://www.docker.com/
@@ -206,12 +211,6 @@ cask "folx"
 cask "fork"
 cask "gimp"
 cask "google-chrome"
-# GraalVM High Performance. Cloud Native. Polyglot.
-# https://www.graalvm.org
-cask "graalvm-ce-java8"
-cask "graalvm-ce-java11"
-cask "graalvm-ce-java17"
-cask "graalvm-ce-java19"
 cask "iterm2"
 cask "jetbrains-toolbox"
 cask "keka"
@@ -219,6 +218,8 @@ cask "keystore-explorer"
 # Clipboard manager
 # https://maccy.app/
 cask "messenger"
+cask "microsoft-remote-desktop"
+cask "mongodb-compass"
 # Development environment, tooling platform and application framework
 # https://netbeans.apache.org/
 cask "netbeans"
@@ -226,6 +227,7 @@ cask "notion"
 cask "obsidian"
 cask "openvpn-connect"
 cask "postman"
+cask "readdle-spark"
 # GUI for streamlined Redis application development
 # https://redis.com/redis-enterprise/redis-insight/
 cask "redisinsight"
@@ -240,15 +242,22 @@ cask "spotify"
 cask "springtoolsuite"
 cask "sublime-text"
 cask "telegram"
+cask "temurin"
+cask "temurin8"
+cask "temurin11"
+cask "temurin17"
 cask "thingsmacsandboxhelper"
 cask "tower"
 # Virtual machines UI using QEMU
 # https://getutm.app/
 cask "utm"
+cask "vagrant"
+cask "vagrant-vmware-utility"
 cask "vanilla"
 cask "visual-studio-code"
 cask "visualvm"
 cask "vlc"
+cask "vmware-fusion"
 cask "zoom"
 
 #### Quicklook ####
@@ -304,22 +313,24 @@ cask "font-jetbrains-mono-nerd-font"
 
 #### Mac App Store ####
 mas "1Password for Safari", id: 1569813296
-mas "Amphetamine", id: 937984704
-mas "AudioBookBinder", id: 413969927
-mas "Battery Health 2", id: 1120214373
-mas "CleanMyDrive 2", id: 523620159
-mas "Dato", id: 1470584107
-mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "pomodorome", id: 1484801884
-mas "ScreenBrush", id: 1233965871
-mas "Spark", id: 1176895641
+mas "AudioBookBinder", id: 413969927
+mas "Keynote", id: 409183694
 mas "Startup Disk Full Fixer", id: 1346655838
-mas "Things", id: 904280696
 mas "Trello", id: 1278508951
 mas "Xcode", id: 497799835
+mas "Dato", id: 1470584107
+mas "pomodorome", id: 1484801884
+mas "Battery Health 2", id: 1120214373
+mas "Things", id: 904280696
+mas "Unsplash Wallpapers", id: 1284863847
+mas "Pages", id: 409201541
+mas "Color Picker", id: 1545870783
+mas "ScreenBrush", id: 1233965871
+mas "Amphetamine", id: 937984704
+mas "Spark", id: 1176895641
+mas "Numbers", id: 409203825
+mas "CleanMyDrive 2", id: 523620159
 
 #### Testing ####
 # Brew

@@ -42,3 +42,8 @@ eval "$(op completion zsh)"; compdef _op op
 # I've disabled this for now because I only use "ls" which is
 # referenced in my aliases.zsh file directly.
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+# Project ENV variables
+export npm_config_azure_user_name=op://AmeriaBank/Azure_Devops/username
+export npm_config_azure_access_token=op://AmeriaBank/Azure_Devops/access_token_base64
+export npm_config_azure_user_email=op://AmeriaBank/Azure_Devops/username
