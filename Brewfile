@@ -37,6 +37,7 @@ brew "gradle"
 # Java-based scripting language
 # https://www.groovy-lang.org/
 brew "groovy"
+brew "helm"
 # User-friendly cURL replacement (command-line HTTP client)
 # https://httpie.io/
 brew "httpie"
@@ -215,6 +216,7 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 cask "keka"
 cask "keystore-explorer"
+cask "openlens"
 # Clipboard manager
 # https://maccy.app/
 cask "messenger"
@@ -250,14 +252,11 @@ cask "thingsmacsandboxhelper"
 cask "tower"
 # Virtual machines UI using QEMU
 # https://getutm.app/
-cask "utm"
-cask "vagrant"
-cask "vagrant-vmware-utility"
+cask "utm"  
 cask "vanilla"
 cask "visual-studio-code"
 cask "visualvm"
 cask "vlc"
-cask "vmware-fusion"
 cask "zoom"
 
 #### Quicklook ####

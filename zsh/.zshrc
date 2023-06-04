@@ -95,6 +95,13 @@ plugins=(
     zsh-wakatime
 )
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
