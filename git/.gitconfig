@@ -78,9 +78,8 @@
 
 [user]
 
-	email = bagrat.mukaelyan@gmail.com
+	email = bagrat.mukaelyan@ameriabank.am
 	name = Bagrat Mukaelyan
-	signingkey = 6DB2D151
 
 [core]
 
@@ -155,12 +154,6 @@
 
 	# Use `hexdump` to diff binary files.
 	textconv = hexdump -v -C
-
-[help]
-
-	# Automatically correct and execute mistyped commands.
-	autocorrect = 1
-
 [merge]
 
 	# Include summaries of merged commits in newly created merge commit messages
@@ -201,6 +194,12 @@
 
 [gpg]
 
-	program = /usr/local/bin/gpg
+	program = /opt/homebrew/bin/gpg
+
 [tag]
+
 	gpgSign = true
+
+[mergetool]
+
+	keepBackup = true
