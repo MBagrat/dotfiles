@@ -95,12 +95,8 @@ plugins=(
     zsh-wakatime
 )
 
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
+# Enable Homebrew’s completion
+FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
 source $ZSH/oh-my-zsh.sh
 

@@ -5,6 +5,7 @@ tap "homebrew/services"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "graalvm/tap"
+tap "mdogan/zulu"
 tap "spring-io/tap"
 tap "buildpacks/tap"
 tap "maciejwalkowiak/brew"
@@ -14,6 +15,9 @@ tap "1password/tap"
 # All in one for **env
 # https://anyenv.github.io/
 brew "anyenv"
+brew "azure-cli"
+brew "awscli"
+brew "aws-cdk"
 brew "btop"
 # Top-like interface for container metrics
 # https://bcicen.github.io/ctop/
@@ -81,6 +85,7 @@ brew "pinentry-mac"
 # Postgres C API library
 # https://www.postgresql.org/docs/15/libpq.html
 brew "libpq"
+# brew "podman"
 # The Spring Boot CLI is a command line tool that you can 
 # use if you want to quickly develop a Spring application
 # https://docs.spring.io/spring-boot/docs/2.7.x/reference/html/cli.html#cli
@@ -91,12 +96,14 @@ brew "subversion"
 # Very fast implementation of tldr in Rust
 # https://github.com/dbrgn/tealdeer
 brew "tealdeer"
+brew "telnet"
 # Tool to build, change, and version infrastructure
 # https://www.terraform.io/
 brew "terraform"
 # Terminal multiplexer
 # https://tmux.github.io/
 brew "tmux"
+brew "trash-cli"
 # JavaScript package manager
 # https://yarnpkg.com/
 brew "yarn"
@@ -104,7 +111,7 @@ brew "yarn"
 #### TERMINAL APPS ####
 # Simple macOS CLI to connect/disconnect a Bluetooth device. 
 # https://github.com/lapfelix/BluetoothConnector
-brew "bluetoothconnector"
+# brew "bluetoothconnector"
 # Music player with an ncurses based interface
 # https://cmus.github.io/
 brew "cmus"
@@ -194,6 +201,7 @@ cask "corretto8"
 cask "corretto11"
 cask "corretto17"
 cask "daisydisk"
+cask "dbeaver-community"
 cask "discord"
 # Pack, ship and run any application as a lightweight container
 # https://www.docker.com/
@@ -212,11 +220,12 @@ cask "folx"
 cask "fork"
 cask "gimp"
 cask "google-chrome"
+cask "google-cloud-sdk"
 cask "iterm2"
 cask "jetbrains-toolbox"
 cask "keka"
 cask "keystore-explorer"
-cask "openlens"
+cask "lens"
 # Clipboard manager
 # https://maccy.app/
 cask "messenger"
@@ -226,7 +235,9 @@ cask "mongodb-compass"
 # https://netbeans.apache.org/
 cask "netbeans"
 cask "notion"
+cask "obs"
 cask "obsidian"
+cask "openlens"
 cask "openvpn-connect"
 cask "postman"
 cask "readdle-spark"
@@ -244,10 +255,29 @@ cask "spotify"
 cask "springtoolsuite"
 cask "sublime-text"
 cask "telegram"
+# Temurin JDK
 cask "temurin"
 cask "temurin8"
 cask "temurin11"
 cask "temurin17"
+# GraalVM
+# Supported GraalVM releases
+cask "graalvm-ce-java17"
+cask "graalvm-ce-java11"
+# cask "graalvm-ce-lts-java11"
+# Experimental GraalVM releases
+cask "graalvm-ce-java19"
+# GraalVM releases of deprecated JDK versions
+cask "graalvm-ce-java8"
+# cask "graalvm-ce-lts-java8"
+# cask "graalvm-ce-java16"
+# Zulu JDK
+cask "zulu-jdk8"
+cask "zulu-jdk11"
+cask "zulu-jdk17"
+cask "zulu-jdk20"
+cask "zulu-mc"
+
 cask "thingsmacsandboxhelper"
 cask "tower"
 # Virtual machines UI using QEMU
