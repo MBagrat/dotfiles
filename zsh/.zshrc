@@ -95,8 +95,8 @@ plugins=(
     zsh-wakatime
 )
 
-# Enable Homebrew’s completion
-FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+# Enable Homebrew shell completion
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 source $ZSH/oh-my-zsh.sh
 
