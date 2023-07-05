@@ -146,18 +146,31 @@
 	gpgsign = false
 
 [diff]
+    tool = meld
+    # Detect copies as well as renames.
+    renames = copies
+  	# Use `hexdump` to diff binary files.
+  	textconv = hexdump -v -C
 
-	# Detect copies as well as renames.
-	renames = copies
+[difftool]
+    prompt = false
 
-[diff "bin"]
+[difftool "meld"]
+    trustExitCode = true
+    cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
 
-	# Use `hexdump` to diff binary files.
-	textconv = hexdump -v -C
 [merge]
+    tool = meld
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
 
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
+[mergetool]
+    prompt = false
+  	keepBackup = true
+
+[mergetool "meld"]
+    trustExitCode = true
+    cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
 
 [push]
 
@@ -198,8 +211,4 @@
 
 [tag]
 
-	gpgSign = falls
-
-[mergetool]
-
-	keepBackup = true
+	gpgSign = false
