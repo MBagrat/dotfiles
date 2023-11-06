@@ -9,6 +9,7 @@ tap "spring-io/tap"
 tap "buildpacks/tap"
 tap "maciejwalkowiak/brew"
 tap "1password/tap"
+tap "mdogan/zulu"
 
 #### DEVELOPMENT ####
 # All in one for **env
@@ -37,6 +38,7 @@ brew "gradle"
 # Java-based scripting language
 # https://www.groovy-lang.org/
 brew "groovy"
+brew "helm"
 # User-friendly cURL replacement (command-line HTTP client)
 # https://httpie.io/
 brew "httpie"
@@ -52,7 +54,7 @@ brew "just"
 brew "kotlin"
 # Also known as: kubectl, kubectl@1.24, kubernetes-cli@1.24
 # https://kubernetes.io/
-brew "kubectl"
+# brew "kubectl"
 # Java-based project management
 # https://maven.apache.org/
 brew "maven"
@@ -65,6 +67,7 @@ brew "openjdk"
 brew "openjdk@8"
 brew "openjdk@11"
 brew "openjdk@17"
+brew "openjdk@21"
 # Cryptography and SSL/TLS Toolkit
 # https://openssl.org/
 brew "openssl@1.1"
@@ -125,7 +128,6 @@ brew "imagemagick"
 # Kubernetes CLI To Manage Your Clusters In Style!
 # https://k9scli.io/
 brew "k9s"
-brew "kubectl"
 # YAML Parser
 # https://github.com/yaml/libyaml
 brew "libyaml"
@@ -162,6 +164,9 @@ brew "neovim"
 # Library for command-line editing
 # https://tiswww.case.edu/php/chet/readline/rltop.html
 brew "readline"
+# Internet file retriever
+# https://www.gnu.org/software/wget/
+brew "wget"
 # YAML syntax highlighter to bring colours where only jq could
 # https://github.com/andreazorzetto/yh
 brew "yh"
@@ -181,13 +186,13 @@ cask "anydesk"
 cask "appcleaner"
 cask "brewservicesmenubar"
 cask "browserosaurus"
-cask "cleanshot"
 # AWS Corretto JDK
 # https://corretto.aws/
 cask "corretto"
 cask "corretto8"
 cask "corretto11"
 cask "corretto17"
+cask "corretto"
 cask "discord"
 # Pack, ship and run any application as a lightweight container
 # https://www.docker.com/
@@ -216,15 +221,17 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 cask "keka"
 cask "keystore-explorer"
+cask "lens"
 # Clipboard manager
 # https://maccy.app/
 cask "messenger"
 # Development environment, tooling platform and application framework
 # https://netbeans.apache.org/
+cask "mongodb-compass"
+cask "miro"
 cask "netbeans"
 cask "notion"
 cask "obsidian"
-cask "openvpn-connect"
 cask "postman"
 # GUI for streamlined Redis application development
 # https://redis.com/redis-enterprise/redis-insight/
@@ -240,6 +247,10 @@ cask "spotify"
 cask "springtoolsuite"
 cask "sublime-text"
 cask "telegram"
+cask "temurin8"
+cask "temurin11"
+cask "temurin17"
+cask "temurin"
 cask "thingsmacsandboxhelper"
 cask "tower"
 # Virtual machines UI using QEMU
@@ -250,6 +261,10 @@ cask "visual-studio-code"
 cask "visualvm"
 cask "vlc"
 cask "zoom"
+cask "zulu-mc"
+cask "zulu-jdk8"
+cask "zulu-jdk11"
+cask "zulu-jdk17"
 
 #### Quicklook ####
 cask "qlcolorcode"
@@ -319,6 +334,7 @@ mas "Spark", id: 1176895641
 mas "Startup Disk Full Fixer", id: 1346655838
 mas "Things", id: 904280696
 mas "Trello", id: 1278508951
+mas "WhatsApp Desktop", id: 1147396723
 mas "Xcode", id: 497799835
 
 #### Testing ####
