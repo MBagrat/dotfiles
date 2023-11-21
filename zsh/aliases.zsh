@@ -44,10 +44,3 @@ alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 # Project folders
 ## Personal
 alias mbb="cd $HOME/Workspace/personal/projects/development/mbagrat-blog"
-## Work
-alias myameria="cd $HOME/workspace/work/projects/myameria"
-alias admin="cd $HOME/workspace/work/projects/myameria/admin"
-alias backend="cd $HOME/workspace/work/projects/myameria/backend"
-alias cyclist="cd $HOME/workspace/work/projects/myameria/backend/myameria-cyclist"
-alias frontend="cd $HOME/workspace/work/projects/myameria/frontend"
-alias keycloak="cd $HOME/workspace/work/projects/myameria/keycloak"

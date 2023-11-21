@@ -122,3 +122,5 @@ if [ -f $DOTFILES/zsh/path.zsh ]; then
 else
     print "404: ~/.dotfiles/zsh/path.zsh not found."
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

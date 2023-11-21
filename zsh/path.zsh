@@ -7,6 +7,9 @@ export PATH="/usr/local/sbin/:$PATH"
 # Load dotfiles binaries
 export PATH="$DOTFILES/bin:$PATH"
 
+# Jetbrains Toolbox script paths
+export PATH=$PATH:$HOME/Library/Application\ Support/JetBrains/Toolbox/scripts/
+
 # AWS CLI completion script for Zsh
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html
 complete -C '/usr/local/bin/aws_completer' aws
