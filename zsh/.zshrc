@@ -89,6 +89,7 @@ plugins=(
     jhipster
     man
     tmux
+    you-should-use
     zsh-autosuggestions
     zsh-interactive-cd
     zsh-syntax-highlighting
