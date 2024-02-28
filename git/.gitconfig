@@ -178,7 +178,8 @@
 	default = simple
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
-
+	# When you push a branch that doesn't have an upstream branch configured, Git will automaticly set the upstream branch and push to it.
+    autoSetupRemote = true
 # URL shorthands
 
 [url "git@github.com:"]

@@ -125,3 +125,4 @@ else
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Applications/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"

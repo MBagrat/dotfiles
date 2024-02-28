@@ -62,4 +62,6 @@ create_link $HOME/.dotfiles/npm/.npmrc $HOME/.npmrc
 
 create_link $HOME/.dotfiles/tower/CompareTools $HOME/Library/Application Support/com.fournova.Tower3/CompareTools
 
+create_link $HOME/.dotfiles/warp $HOME/.warp
+
 ls -hula ~ | grep "\->"
