@@ -8,7 +8,7 @@ create_link() {
 	if [ -f $1 ] || [ -d $1 ]; then
         ln -s $1 $2
 	else
-		echo "404: ${1} not found."
+		print "404: ${1} not found."
 	fi
 }
 
@@ -59,5 +59,9 @@ create_link $HOME/.dotfiles/zsh/.p10k.zsh $HOME/.p10k.zsh
 
 # Removes nvim folder from $HOME/.config (if it exists) and symlinks the global nvim folder from the .dotfiles/nvim
 create_link $HOME/.dotfiles/npm/.npmrc $HOME/.npmrc
+
+create_link $HOME/.dotfiles/tower/CompareTools $HOME/Library/Application Support/com.fournova.Tower3/CompareTools
+
+create_link $HOME/.dotfiles/warp $HOME/.warp
 
 ls -hula ~ | grep "\->"

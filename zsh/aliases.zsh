@@ -41,4 +41,5 @@ alias reset-doc="defaults write com.apple.dock ResetLaunchPad -bool true; killal
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 
 # Project folders
+## Personal
 alias mbb="cd $HOME/Workspace/personal/projects/development/mbagrat-blog"

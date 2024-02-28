@@ -96,6 +96,9 @@ plugins=(
     zsh-wakatime
 )
 
+# Enable Homebrew shell completion
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -120,3 +123,6 @@ if [ -f $DOTFILES/zsh/path.zsh ]; then
 else
     print "404: ~/.dotfiles/zsh/path.zsh not found."
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Applications/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"
