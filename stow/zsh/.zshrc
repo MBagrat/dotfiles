@@ -111,17 +111,17 @@ export LANG=en_US.UTF-8
 ## User configuration
 
 # Import separate alias file
-if [ -f $DOTFILES/zsh/aliases.zsh ]; then
-    source $DOTFILES/zsh/aliases.zsh
+if [ -f $DOTFILES/stow/zsh/.zsh_aliases ]; then
+    source $DOTFILES/stow/zsh/.zsh_aliases
 else
-    print "404: ~/.dotfiles/zsh/aliases.zsh not found."
+    print "404: ~/.dotfiles/stow/zsh/.zsh_aliases not found."
 fi
 
 # Inmport separate path file
-if [ -f $DOTFILES/zsh/path.zsh ]; then
-    source $DOTFILES/zsh/path.zsh
+if [ -f $DOTFILES/stow/zsh/.zsh_path ]; then
+    source $DOTFILES/stow/zsh/.zsh_path
 else
-    print "404: ~/.dotfiles/zsh/path.zsh not found."
+    print "404: ~/.dotfiles/stow/zsh/.zsh_path not found."
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
