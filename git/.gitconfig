@@ -213,3 +213,5 @@
 [tag]
 
 	gpgSign = false
+[credential]
+	helper = osxkeychain

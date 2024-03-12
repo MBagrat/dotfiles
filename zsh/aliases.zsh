@@ -39,6 +39,7 @@ alias buc="brew upgrade -g && brew bundle -g && brew bundle cleanup --force -g"
 alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
 
 # Mac OS
+alias vim=nvim
 alias xcode="open -a Xcode"
 alias reset-doc="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"

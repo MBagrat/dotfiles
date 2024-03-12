@@ -27,15 +27,8 @@ source "$(pack completion -s zsh)"
 # https://anyenv.github.io/
 eval "$(anyenv init - zsh)"
 
-# https://github.com/rbenv/ruby-build/wiki#macos
-# shellcheck disable=SC2155
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
-# Ruby GEM
-export GEM_HOME=${"$(ruby -e 'puts Gem.user_dir')"}
-export PATH="$GEM_HOME/bin:$PATH"
-
-# Postgres C API library
-export PATH="/usr/local/opt/libpq/bin:$PATH"
+# Postgres Client API library
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # 1password zsh completion
 # https://developer.1password.com/docs/cli/get-started#shell-completion
