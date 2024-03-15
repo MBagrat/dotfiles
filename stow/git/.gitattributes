@@ -1,0 +1,8 @@
+# Automatically normalize line endings for all text-based files
+# Disabled because of https://github.com/mathiasbynens/dotfiles/issues/149 :(
+#* text=auto
+
+# https://help.github.com/articles/dealing-with-line-endings/
+#
+# These are explicitly windows files and should use crlf
+# *.bat           text eol=crlf
