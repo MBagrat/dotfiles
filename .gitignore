@@ -71,5 +71,4 @@ nvim/plugged
 
 # *.lock.json
 Brewfile.lock.json
-plugins
 lazy-lock.json
