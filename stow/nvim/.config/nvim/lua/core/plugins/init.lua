@@ -1,7 +1,8 @@
-require("lazy").setup({
+require('lazy').setup({
 
   { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
   { 'nvim-lualine/lualine.nvim' },
+  { 'nvimdev/dashboard-nvim', event = 'VimEnter' },
   { 'nvim-tree/nvim-tree.lua' },
   { 'nvim-tree/nvim-web-devicons' },
   { 'folke/which-key.nvim' },
@@ -25,12 +26,23 @@ require("lazy").setup({
   { 'rafamadriz/friendly-snippets' },
 
   {
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
+    'folke/noice.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify'
+    }
   },
   {
-    "nvim-telescope/telescope.nvim", tag = "0.1.6",
-    dependencies = { "nvim-lua/plenary.nvim" }
+    'iamcco/markdown-preview.nvim',
+    run = {
+      'cd app && npm install',
+    }
+  },
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.6',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    }
   },
 })
 
