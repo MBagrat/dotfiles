@@ -32,29 +32,43 @@ function M.config()
       color_devicons = true,
       vimgrep_arguments = {
         "rg",
-        "--color=never",
-        "--no-heading",
-        "--with-filename",
-        "--line-number",
-        "--column",
-        "--smart-case",
-        "--hidden",
-        "--glob=!.git/",
-      },
+        "--follow",        -- Follow symbolic links
+        "--hidden",        -- Search for hidden files
+        "--no-heading",    -- Don't group matches by each file
+        "--with-filename", -- Print the file path with the matched lines
+        "--line-number",   -- Show line numbers
+        "--column",        -- Show column numbers
+        "--smart-case",    -- Smart case search
 
+        -- Exclude some patterns from search
+        "--glob=!**/.git/*",
+        "--glob=!**/.idea/*",
+        "--glob=!**/.vscode/*",
+        "--glob=!**/build/*",
+        "--glob=!**/dist/*",
+        "--glob=!**/yarn.lock",
+        "--glob=!**/package-lock.json",
+      },
       mappings = {
         i = {
-          ["<C-n>"] = actions.cycle_history_next,
-          ["<C-p>"] = actions.cycle_history_prev,
-
-          ["<C-j>"] = actions.move_selection_next,
-          ["<C-k>"] = actions.move_selection_previous,
+          ["<C-n>"] = actions.move_selection_next,
+          ["<C-p>"] = actions.move_selection_previous,
+          ["<C-c>"] = actions.close,
+          ["<C-j>"] = actions.cycle_history_next,
+          ["<C-k>"] = actions.cycle_history_prev,
+          ["<C-q>"] = function(...)
+            actions.smart_send_to_qflist(...)
+            actions.open_qflist(...)
+          end,
+          ["<CR>"] = actions.select_default,
         },
         n = {
-          ["<esc>"] = actions.close,
-          ["j"] = actions.move_selection_next,
-          ["k"] = actions.move_selection_previous,
-          ["q"] = actions.close,
+          ["<C-n>"] = actions.move_selection_next,
+          ["<C-p>"] = actions.move_selection_previous,
+          ["<C-q>"] = function(...)
+            actions.smart_send_to_qflist(...)
+            actions.open_qflist(...)
+          end,
         },
       },
     },
@@ -70,6 +84,21 @@ function M.config()
       find_files = {
         theme = "dropdown",
         previewer = false,
+        hidden = true,
+        no_ignore = false,
+        no_ignore_parent = false,
+        find_command = {
+          "rg",
+          "--files",
+          "--hidden",
+          "--glob=!**/.git/*",
+          "--glob=!**/.idea/*",
+          "--glob=!**/.vscode/*",
+          "--glob=!**/build/*",
+          "--glob=!**/dist/*",
+          "--glob=!**/yarn.lock",
+          "--glob=!**/package-lock.json",
+        },
       },
 
       buffers = {
