@@ -13,7 +13,7 @@ return {
         showDiagnosticsDirectly = false,
         path = "yaml-language-server",
         config = {
-          schemas = {
+          schemas = { 
             kubernetes = "templates/**",
           },
           completion = true,
