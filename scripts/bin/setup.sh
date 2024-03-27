@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # This is test sh file to create project from scratch.
 # I will modify this file leather for my personal needs.
 
