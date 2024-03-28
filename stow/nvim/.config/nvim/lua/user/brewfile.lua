@@ -3,4 +3,8 @@ local M = {
   ft = "Brewfile",
 }
 
+function M.config()
+
+end
+
 return M
