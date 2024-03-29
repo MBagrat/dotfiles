@@ -18,9 +18,8 @@ function M.config()
     sync_root_with_cwd = true,
     respect_buf_cwd = true,
     view = {
-      adaptive_size = false,
+      adaptive_size = true,
       side = "left",
-      width = 30,
       preserve_window_proportions = true,
     },
     git = {

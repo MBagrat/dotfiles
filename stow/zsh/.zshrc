@@ -4,7 +4,6 @@
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
 # source
-plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
 plug "$HOME/.config/zsh/functions.zsh"
 
@@ -24,3 +23,5 @@ plug "zsh-users/zsh-history-substring-search"
 plug "MichaelAquilina/zsh-you-should-use"
 
 plug "$HOME/.config/zsh/p10k.zsh"
+plug "$HOME/.config/zsh/aliases/aliases.zsh"
+plug "$HOME/.config/zsh/aliases/omz/git/git.zsh"
