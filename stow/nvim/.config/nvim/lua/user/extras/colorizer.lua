@@ -1,3 +1,5 @@
+-- Short description: Colorize hex colors in css, html, and lua files
+-- Github repository: NvChad/nvim-colorizer.lua
 local M = {
   "NvChad/nvim-colorizer.lua",
   event = { "BufReadPost", "BufNewFile" },

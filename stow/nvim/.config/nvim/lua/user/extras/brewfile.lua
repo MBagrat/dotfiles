@@ -1,3 +1,5 @@
+-- Short description: Brewfile syntax highlighting
+-- Github repository: bfontaine/Brewfile.vim
 local M = {
   "bfontaine/Brewfile.vim",
   ft = "Brewfile",

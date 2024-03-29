@@ -1,3 +1,5 @@
+-- Short description: Eyeliner is a plugin that highlights the key you just pressed
+-- GitHub repository: jinh0/eyeliner.nvim
 local M = {
   "jinh0/eyeliner.nvim",
   event = "VeryLazy",

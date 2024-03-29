@@ -1,3 +1,5 @@
+-- Short description: Dressing is a modal input and selection UI for Neovim.
+-- GitHub repository: stevearc/dressing.nvim
 local M = {
   "stevearc/dressing.nvim",
   event = "VeryLazy",

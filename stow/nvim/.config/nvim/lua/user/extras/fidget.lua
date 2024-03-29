@@ -1,3 +1,5 @@
+-- Short description: Fidget is a plugin that allows you to interact with your code using a REPL.
+-- GitHub repository: j-hui/fidget.nvim
 local M = {
   "j-hui/fidget.nvim",
 }

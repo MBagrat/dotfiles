@@ -1,3 +1,5 @@
+-- Short description: Better quickfix window with preview and Autos-enableing
+-- Github repository: kevinhwang91/nvim-bqf
 local M = {
   "kevinhwang91/nvim-bqf",
   event = "VeryLazy",

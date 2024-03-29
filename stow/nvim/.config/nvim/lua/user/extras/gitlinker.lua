@@ -1,3 +1,5 @@
+-- Short description: Open the current line on GitHub with `gitlinker.nvim`
+-- GitHub repository: linrongbin16/gitlinker.nvim
 local M = {
   "linrongbin16/gitlinker.nvim",
   dependencies = { { "nvim-lua/plenary.nvim" } },

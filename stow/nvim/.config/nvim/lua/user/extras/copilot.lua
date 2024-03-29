@@ -1,3 +1,5 @@
+-- Short description: Copilot is a plugin that provides autocompletion for Neovim.
+-- GitHub repository: zbirenbaum/copilot.nvim
 local M = {
   "zbirenbaum/copilot.lua",
   cmd = "Copilot",

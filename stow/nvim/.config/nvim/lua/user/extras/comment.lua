@@ -1,3 +1,5 @@
+-- Short description: Commenting is a plugin that allows you to comment out code.
+-- GitHub repository: numToStr/Comment.nvim
 local M = {
   "numToStr/Comment.nvim",
   lazy = false,

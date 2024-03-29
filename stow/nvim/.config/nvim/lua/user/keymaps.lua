@@ -21,8 +21,8 @@ keymap("n", "#", "#zz", opts)
 keymap("n", "g*", "g*zz", opts)
 keymap("n", "g#", "g#zz", opts)
 
-keymap('n', '<C-s>', '<cmd>w<CR>', opts) -- desc = 'File Save'
-keymap('n', '<C-c>', '<ESC>', opts) --desc = 'File Copy whole'
+keymap('n', '<C-s>', '<cmd>w<CR>', opts)  -- desc = 'File Save' 
+keymap('n', '<C-c>', '<ESC>', opts)       --desc = 'File Copy whole'
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
