@@ -1,3 +1,5 @@
+-- Short description: NvimTree plugin provides a file explorer. It is a tree explorer plugin for neovim. 
+-- Github repository: nvim-tree/nvim-tree.lua
 local M = {
   "nvim-tree/nvim-tree.lua",
   event = "VeryLazy",
@@ -20,6 +22,7 @@ function M.config()
     view = {
       adaptive_size = true,
       side = "left",
+      signcolumn = "yes",
       preserve_window_proportions = true,
     },
     git = {
@@ -46,7 +49,10 @@ function M.config()
         },
       },
       icons = {
-        git_placement = "before",
+        git_placement = "signcolumn",
+        -- show = {
+        --   git = true,
+        -- }
         padding = " ",
         symlink_arrow = " ➛ ",
         glyphs = {

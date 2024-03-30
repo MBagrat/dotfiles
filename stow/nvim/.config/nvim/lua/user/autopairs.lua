@@ -1,3 +1,5 @@
+-- Short description: Autopairs configuration for neovim. This plugin automatically inserts closing pairs.
+-- Github repository: windwp/nvim-autopairs
 local M = {
   "windwp/nvim-autopairs",
 }

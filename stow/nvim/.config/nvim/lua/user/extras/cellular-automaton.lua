@@ -1,3 +1,5 @@
+-- Short description: Cellular Automaton in Neovim with Lua and Fennel supports
+-- Github repository: eandrju/cellular-automaton.nvim
 local M = {
   "eandrju/cellular-automaton.nvim",
 }

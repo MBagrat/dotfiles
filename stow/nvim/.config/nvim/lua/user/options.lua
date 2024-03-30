@@ -1,3 +1,5 @@
+-- Short description: Set global options for neovim using vim.opt and vim.g.
+-- Github repository: mbagrat/dotfiles
 vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages

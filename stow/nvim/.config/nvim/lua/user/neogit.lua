@@ -1,3 +1,5 @@
+-- Short description: Neogit is a git client for Neovim that is written in Lua.
+-- Github repository: TimUntersberger/neogit
 local M = {
   "neogitorg/neogit",
   event = "VeryLazy",

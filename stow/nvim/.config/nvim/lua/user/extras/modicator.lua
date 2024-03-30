@@ -1,3 +1,5 @@
+-- Short description: Modicator is a plugin that shows the current mode in the statusline.
+-- Github repository: mawkler/modicator.nvim
 local M = {
   "mawkler/modicator.nvim",
   event = "BufEnter",

@@ -1,3 +1,5 @@
+-- Short description: Neovim plugin for smooth scrolling.
+-- Github repository: karb94/neoscroll.nvim
 local M = {
   "karb94/neoscroll.nvim",
 }

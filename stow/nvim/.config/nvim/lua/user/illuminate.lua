@@ -1,3 +1,5 @@
+-- Short description: Highlight all instances of the word under the cursor in the current buffer.
+-- Github repository: RRethy/vim-illuminate
 local M = {
   "RRethy/vim-illuminate",
   event = "VeryLazy",

@@ -1,3 +1,5 @@
+-- Short description: LSP configuration for neovim. This plugin provides language server protocol support.
+-- Github repository: neovim/nvim-lspconfig
 local M = {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },

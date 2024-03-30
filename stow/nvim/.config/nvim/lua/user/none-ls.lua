@@ -1,3 +1,5 @@
+-- Short description: Configuration for none-ls.nvim which is a plugin that provides a simple way to configure and install LSP servers.
+-- Github repository: nvimtools/none-ls.nvim
 local M = {
   "nvimtools/none-ls.nvim",
   dependencies = {

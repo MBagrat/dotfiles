@@ -1,3 +1,5 @@
+-- Short description: Neotest provides a test runner for neovim. It supports running tests for various languages and test frameworks.
+-- Github repository: nvim-neotest/neotest
 local M = {
   "nvim-neotest/neotest",
   dependencies = {

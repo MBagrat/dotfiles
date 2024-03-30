@@ -1,3 +1,5 @@
+-- Short description: UFO is a plugin that provides folding with a focus on performance and extensibility.
+-- Github repository: kevinhwang91/nvim-ufo
 local M = {
   "kevinhwang91/nvim-ufo",
   dependencies = {

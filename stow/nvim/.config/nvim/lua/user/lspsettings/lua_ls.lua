@@ -1,4 +1,4 @@
--- https://luals.github.io/wiki/settings/
+-- Short description: Settings for the Lua language server
 return {
   settings = {
     Lua = {

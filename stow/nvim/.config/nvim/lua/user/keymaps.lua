@@ -1,3 +1,5 @@
+-- Short description: Keymaps for neovim. This file contains keymaps for neovim.
+-- Github repository: mbagrat/dotfiles
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 

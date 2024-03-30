@@ -1,3 +1,5 @@
+-- Short description: Telescope is a highly extendable fuzzy finder over lists. It is a plugin for Neovim.
+-- Github repository: nvim-telescope/telescope.nvim
 local M = {
   "nvim-telescope/telescope.nvim",
   dependencies = { { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true } },
@@ -153,6 +155,9 @@ function M.config()
       },
     },
   }
+  require("telescope").load_extension "fzf"
+  require("telescope").load_extension "projects"
+  require("telescope").load_extension "noice"
 end
 
 return M

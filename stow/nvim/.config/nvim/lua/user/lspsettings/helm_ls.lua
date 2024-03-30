@@ -1,3 +1,4 @@
+-- Short description: Helm Ls configuration for neovim.
 return {
   settings = {
     ['helm-ls'] = {

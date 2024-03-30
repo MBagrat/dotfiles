@@ -1,3 +1,5 @@
+-- Short description: Mason is a plugin that installs and configures LSP servers.
+-- Github repository: williamboman/mason-lspconfig.nvim
 local M = {
   "williamboman/mason-lspconfig.nvim",
   dependencies = {

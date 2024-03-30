@@ -1,3 +1,5 @@
+-- Short description: Completion plugin for neovim. It is a plugin for autocompletion.
+-- Github repository: hrsh7th/nvim-cmp
 local M = {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",

@@ -1,3 +1,5 @@
+-- Short description: Indentation lines for neovim. This plugin shows indentation lines in the buffer.
+-- Github repository: lukas-reineke/indent-blankline.nvim
 local M = {
   "lukas-reineke/indent-blankline.nvim",
   event = "VeryLazy",

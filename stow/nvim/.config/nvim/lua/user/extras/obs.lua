@@ -1,3 +1,5 @@
+-- Short description: obs.nvim is a plugin that provides a neovim interface to Obsidian.
+-- Github repository: IlyasYOY/obs.nvim
 local M = {
   "IlyasYOY/obs.nvim",
   dependencies = {
