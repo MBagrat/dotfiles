@@ -30,4 +30,4 @@ Setup dotfiles
 - clone dotfiles repository `git clone https://github.com/MBagrat/dotfiles ~/.dotfiles/` to `~/.dotfiles` directory
 - move dotfiles to `~/dotfiles/stow` directory  
 - `stow -t ~ *` to symlink all dotfiles to home directory
-- `brew bundle -g` to install all packages from Brewfile
+- `brew bundle -g` to install all packages from Brewfile 
