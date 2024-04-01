@@ -1,3 +1,5 @@
+-- Short description: Add a mark to the current file. This is useful for quickly jumping back to a file.
+-- Github repository: ThePrimeagen/harpoon
 local M = {
   "ThePrimeagen/harpoon",
   event = "VeryLazy",

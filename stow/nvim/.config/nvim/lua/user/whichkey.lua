@@ -1,3 +1,5 @@
+-- Short description: Which-key is a plugin that shows keybindings in a popup.
+-- Github repository: folke/which-key.nvim
 local M = {
   "folke/which-key.nvim",
 }

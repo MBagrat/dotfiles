@@ -1,3 +1,5 @@
+-- Short description: Project.nvim is a plugin that provides a way to manage projects in neovim.
+-- Github repository: ahmedkhalf/project.nvim
 local M = {
   "ahmedkhalf/project.nvim",
   event = "VeryLazy",

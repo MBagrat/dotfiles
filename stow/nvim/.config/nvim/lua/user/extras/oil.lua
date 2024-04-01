@@ -1,3 +1,5 @@
+-- Short description: Oil is a plugin that provides a command to open the parent directory of the current file.
+-- Github repository: stevearc/oil.nvim
 local M = {
   "stevearc/oil.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },

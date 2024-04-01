@@ -1,3 +1,5 @@
+-- Short description: Gitsigns configuration for showing git changes in the sign column.
+-- Github repository: lewis6991/gitsigns.nvim
 local M = {
   "lewis6991/gitsigns.nvim",
   event = "BufEnter",

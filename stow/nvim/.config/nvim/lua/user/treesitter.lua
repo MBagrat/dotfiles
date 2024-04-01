@@ -1,3 +1,5 @@
+-- Short description: Treesitter provides syntax highlighting and indentation for neovim. It is a parser generator tool and an incremental parsing library.
+-- Github repository: nvim-treesitter/nvim-treesitter
 local M = {
   "nvim-treesitter/nvim-treesitter",
   event = { "BufReadPost", "BufNewFile" },

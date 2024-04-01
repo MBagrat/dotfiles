@@ -1,3 +1,5 @@
+-- Short description: Navic is a file explorer for neovim.
+-- Github repository: SmiteshP/nvim-navic
 local M = {
   "SmiteshP/nvim-navic",
 }

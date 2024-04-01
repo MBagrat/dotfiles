@@ -1,3 +1,5 @@
+-- Short description: Toggleterm is a plugin that allows you to open a terminal in a floating window.
+-- Github repository: akinsho/toggleterm.nvim
 local M = {
   "akinsho/toggleterm.nvim",
   event = "VeryLazy",

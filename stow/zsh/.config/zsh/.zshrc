@@ -1,11 +1,10 @@
 #!/bin/sh
 
+# Zsh configuration file for command line completion (zcompdump) 
+ZSH_COMPDUMP=$HOME/.cache/zsh/zcompdump-$HOST
+
 # zap - zsh plugin manager install location
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
-
-# source
-plug "$HOME/.config/zsh/exports.zsh"
-plug "$HOME/.config/zsh/functions.zsh"
 
 # plugins
 plug "romkatv/powerlevel10k"
@@ -22,6 +21,12 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-history-substring-search"
 plug "MichaelAquilina/zsh-you-should-use"
 
-plug "$HOME/.config/zsh/p10k.zsh"
+# scripts
+plug "$HOME/.config/zsh/scripts/exports.zsh"
+plug "$HOME/.config/zsh/scripts/history.zsh"
+plug "$HOME/.config/zsh/scripts/functions.zsh"
+# themes
+plug "$HOME/.config/zsh/themes/p10k.zsh"
+# aliasses
 plug "$HOME/.config/zsh/aliases/aliases.zsh"
 plug "$HOME/.config/zsh/aliases/omz/git/git.zsh"

@@ -1,3 +1,5 @@
+-- Short description: Keymaps for neovim. This file contains keymaps for neovim.
+-- Github repository: mbagrat/dotfiles
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
@@ -21,8 +23,8 @@ keymap("n", "#", "#zz", opts)
 keymap("n", "g*", "g*zz", opts)
 keymap("n", "g#", "g#zz", opts)
 
-keymap('n', '<C-s>', '<cmd>w<CR>', opts)  -- desc = 'File Save' 
-keymap('n', '<C-c>', '<ESC>', opts)       --desc = 'File Copy whole'
+-- keymap('n', '<C-s>', '<cmd>w<CR>', opts)  -- desc = 'File Save' 
+-- keymap('n', '<C-c>', '<ESC>', opts)       --desc = 'File Copy whole'
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)

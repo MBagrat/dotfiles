@@ -1,3 +1,5 @@
+-- Short description: Neotate is a plugin that provides a lot of useful features for working with tabs.
+-- Github repository: kawre/neotab.nvim
 local M = {
   "kawre/neotab.nvim",
   event = "InsertEnter",

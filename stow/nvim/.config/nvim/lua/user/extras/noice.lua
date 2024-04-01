@@ -1,3 +1,5 @@
+-- Short description: Noice is a plugin that provides a lot of useful features for working with notifications.
+-- Github repository: folke/noice.nvim
 local M = {
   'folke/noice.nvim',
   dependencies = {

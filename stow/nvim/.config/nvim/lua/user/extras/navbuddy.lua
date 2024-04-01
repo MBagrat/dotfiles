@@ -1,3 +1,5 @@
+-- Short description: Neovim plugin for code navigation and file management. 
+-- Github repository: SmiteshP/nevim-navbuddy
 local M = {
   "SmiteshP/nvim-navbuddy",
   dependencies = {

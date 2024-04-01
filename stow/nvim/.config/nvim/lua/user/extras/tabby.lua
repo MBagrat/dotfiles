@@ -1,3 +1,5 @@
+-- Short description: Tabby is a simple tabline plugin for neovim. It is a minimalistic tabline plugin that is easy to configure.
+-- Github repository: nanozuki/tabby.nvim
 local theme = {
   fill = "TabLineFill",
   head = "TabLine",

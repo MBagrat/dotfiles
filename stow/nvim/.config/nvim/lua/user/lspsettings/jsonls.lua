@@ -1,3 +1,4 @@
+-- Short description: JSON Language Server settings for neovim.
 return {
   settings = {
     json = {

@@ -1,3 +1,5 @@
+-- Short description: Icon definitions for nvim-tree and other plugins_str
+-- Github repository: kyazdani42/nvim-web-devicons
 return {
   kind = {
     Array = " ",
