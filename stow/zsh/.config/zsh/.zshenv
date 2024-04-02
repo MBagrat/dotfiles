@@ -1,3 +1,6 @@
+# Completion configuration
+PATH="$PATH:/opt/homebrew/bin"
+
 # XDG Base Directory Specification
 XDG_DATA_HOME="$HOME/.local/share"
 XDG_CONFIG_HOME="$HOME/.config"

@@ -3,8 +3,12 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
-# Load dotfiles binaries
-export PATH="$DOTFILES/bin:$PATH"
+[ -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history/" ] || mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history/"
+[ -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/" ] || mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/"
+
+# Completion configuration
+autoload -Uz compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/.zcompdump-${HOST}-${ZSH_VERSION}"
+compinit -C -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/.zcompdump-${HOST}-${ZSH_VERSION}"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -13,8 +17,23 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
+# History file configuration
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=10000
+
+# History command configuration
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt share_history          # share command history Data
+
+DOTFILES=$HOME/.dotfiles
+
+# Load dotfiles binaries
+export PATH="$PATH:$DOTFILES/bin"
 
 # Jetbrains Toolbox script paths
 export PATH=$PATH:$HOME/Library/Application\ Support/JetBrains/Toolbox/scripts/

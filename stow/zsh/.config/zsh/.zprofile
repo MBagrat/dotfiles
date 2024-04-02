@@ -1,11 +1,11 @@
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
 
-source $XDG_CONFIG_HOME/zsh/scripts/functions.zsh && eval_brew
+# source $XDG_CONFIG_HOME/zsh/scripts/functions.zsh && eval_brew
 
 # Path to brew installation
-export HOMEBREW_PREFIX="$(brew --prefix)";
-export HOMEBREW_CELLAR="$(brew --cellar)";
-export HOMEBREW_REPOSITORY="$(brew --repository)";
-export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin${PATH+:$PATH}";
-export MANPATH="$(brew --prefix)/share/man${MANPATH+:$MANPATH}:";
-export INFOPATH="$(brew --prefix)/share/info:${INFOPATH:-}";
+HOMEBREW_PREFIX="$(brew --prefix)";
+HOMEBREW_CELLAR="$(brew --cellar)";
+HOMEBREW_REPOSITORY="$(brew --repository)";
+PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin${PATH+:$PATH}";
+MANPATH="$(brew --prefix)/share/man${MANPATH+:$MANPATH}:";
+INFOPATH="$(brew --prefix)/share/info:${INFOPATH:-}";
