@@ -53,4 +53,5 @@ alias rmds="find . -name ".DS_Store" -depth -exec rm -f {} \;"
 
 # Project folders
 ## Personal
+alias kc-sd="kc.sh start-dev"
 alias mbb="cd $HOME/Workspace/personal/projects/development/mbagrat-blog"

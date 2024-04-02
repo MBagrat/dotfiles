@@ -10,13 +10,6 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
 autoload -Uz compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/.zcompdump-${HOST}-${ZSH_VERSION}"
 compinit -C -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/.zcompdump-${HOST}-${ZSH_VERSION}"
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # History file configuration
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history/.zsh_history"
 HISTSIZE=50000
@@ -63,7 +56,5 @@ eval "$(op completion zsh)"; compdef _op op
 # referenced in my aliases.zsh file directly.
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
-# Project ENV variables
-export npm_config_azure_user_name=op://AmeriaBank/Azure_Devops/username
-export npm_config_azure_access_token=op://AmeriaBank/Azure_Devops/access_token_base64
-export npm_config_azure_user_email=op://AmeriaBank/Azure_Devops/username
+# Load keycloak binaries
+export PATH="$PATH:$HOME/Workspace/soft/keycloak/keycloak/bin"
