@@ -72,3 +72,6 @@ nvim/plugged
 # *.lock.json
 Brewfile.lock.json
 lazy-lock.json
+
+*.zcompdump
+*.zsh_history

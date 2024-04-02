@@ -49,6 +49,7 @@ alias xcode="open -a Xcode"
 alias cssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias reset-doc="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias rmds="find . -name ".DS_Store" -depth -exec rm -f {} \;"
 
 # Project folders
 ## Personal

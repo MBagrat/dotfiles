@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# history
-HISTFILE=$HOME/.zsh_history
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
@@ -21,8 +18,6 @@ fi
 
 # Jetbrains Toolbox script paths
 export PATH=$PATH:$HOME/Library/Application\ Support/JetBrains/Toolbox/scripts/
-
-autoload -Uz compinit && compinit
 
 # Generate the kubectl completion script for Zsh on this path ($HOME/.oh-my-zsh/cache/completions/_kubectl)
 # https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos
