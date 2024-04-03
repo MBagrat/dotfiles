@@ -1,0 +1,17 @@
+k9s:
+  cluster: cluster.local
+  namespace:
+    active: secure2
+    lockFavorites: false
+    favorites:
+    - all
+    - default
+    - myameria
+    - secure
+    - myameria2
+    - secure2
+  view:
+    active: po
+  featureGates:
+    nodeShell: false
+  portForwardAddress: localhost
