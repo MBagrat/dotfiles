@@ -11,8 +11,8 @@ k9s:
     logoless: false
     crumbsless: false
     noIcons: false
-    reactive: false
-    skin: monokai
+    reactive: true
+    skin: darcula
     defaultsToFullScreen: false
   skipLatestRevCheck: false
   disablePodCounting: false

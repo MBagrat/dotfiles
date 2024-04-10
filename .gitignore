@@ -72,3 +72,9 @@ nvim/plugged
 # *.lock.json
 Brewfile.lock.json
 lazy-lock.json
+
+# log file
+*.log
+
+# k9s clusters folder
+**/clusters/
