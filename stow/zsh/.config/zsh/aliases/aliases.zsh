@@ -40,6 +40,7 @@ alias dt="cd $HOME/Desktop"
 alias dl="cd $HOME/Downloads"
 alias ws="cd $HOME/workspace"
 alias icloud="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias my-sb="cd $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/my-second-brain"
 
 # Mac OS
 alias c="clear"
@@ -48,8 +49,8 @@ alias aenv="anyenv"
 alias xcode="open -a Xcode"
 alias cssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias reset-doc="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
-alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias rmds="find . -name ".DS_Store" -depth -exec rm -f {} \;"
+alias reload-dns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias rm-ds="find . -name ".DS_Store" -depth -exec rm -f {} \;"
 
 # Project folders
 ## Personal
