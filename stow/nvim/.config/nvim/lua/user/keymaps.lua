@@ -5,7 +5,7 @@ vim.g.maplocalleader = " "
 
 -- noremap description: Do not remap the right-hand side to the left-hand side.
 -- silent description: Do not echo the command to the command line.
-local opts = { noremap = true, silent = true, desc = "description"}
+local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
 keymap("n", "<Space>", "", opts)                                                                        -- desc "Clear search"
@@ -25,9 +25,6 @@ keymap("n", "*", "*zz", opts)                                                   
 keymap("n", "#", "#zz", opts)                                                                           -- desc "Highlight search result"
 keymap("n", "g*", "g*zz", opts)                                                                         -- desc "Highlight search result"
 keymap("n", "g#", "g#zz", opts)                                                                         -- desc "Highlight search result"
-
--- keymap('n', '<C-s>', '<cmd>w<CR>', opts)  -- desc = 'File Save'
--- keymap('n', '<C-c>', '<ESC>', opts)       --desc = 'File Copy whole'
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)                                                                           -- desc "Indent left"
