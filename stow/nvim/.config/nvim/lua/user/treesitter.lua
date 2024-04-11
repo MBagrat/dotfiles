@@ -7,8 +7,73 @@ local M = {
 }
 
 function M.config()
-  require("nvim-treesitter.configs").setup ({
-    sesensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python", "yaml", "ruby" },
+  require("nvim-treesitter.configs").setup {
+    modules = {},
+    -- A list of parser names, or "all" (the five listed parsers should always be installed)
+    ensure_installed = {
+      "angular",
+      "bash",
+      "css",
+      "csv",
+      "dart",
+      "dockerfile",
+      "git_config",
+      "git_rebase",
+      "gitattributes",
+      "gitcommit",
+      "gitignore",
+      "gpg",
+      "graphql",
+      "helm",
+      "html",
+      "http",
+      "java",
+      "javascript",
+      "json",
+      "json5",
+      "jsonc",
+      "kotlin",
+      "lua",
+      "luadoc",
+      "luap",
+      "luau",
+      "make",
+      "markdown",
+      "markdown_inline",
+      "mermaid",
+      "meson",
+      "pod",
+      "properties",
+      "python",
+      "regex",
+      "ruby",
+      "rust",
+      "scala",
+      "scheme",
+      "solidity",
+      "sql",
+      "ssh_config",
+      "swift",
+      "tmux",
+      "todotxt",
+      "toml",
+      "typescript",
+      "vim",
+      "vimdoc",
+      "vue",
+      "xml",
+      "yaml",
+    },
+
+    -- Install parsers synchronously (only applied to `ensure_installed`)
+    sync_install = false,
+
+    -- Automatically install missing parsers when entering buffer
+    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+    auto_install = true,
+
+    -- List of parsers to ignore installing (or "all")
+    ignore_install = {},
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = false,
@@ -20,7 +85,7 @@ function M.config()
       end,
     },
     indent = { enable = true },
-  })
+  }
 end
 
 return M

@@ -6,22 +6,8 @@ local M = {
 }
 
 function M.config()
-  local wk = require "which-key"
-  wk.register {
-    ["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-    ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-    ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-    ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-    ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
-    ["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
-    ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-  }
-
   local icons = require "user.icons"
   local actions = require "telescope.actions"
-
 
   require("telescope").setup {
     defaults = {
@@ -34,13 +20,13 @@ function M.config()
       color_devicons = true,
       vimgrep_arguments = {
         "rg",
-        "--follow",        -- Follow symbolic links
-        "--hidden",        -- Search for hidden files
-        "--no-heading",    -- Don't group matches by each file
+        "--follow", -- Follow symbolic links
+        "--hidden", -- Search for hidden files
+        "--no-heading", -- Don't group matches by each file
         "--with-filename", -- Print the file path with the matched lines
-        "--line-number",   -- Show line numbers
-        "--column",        -- Show column numbers
-        "--smart-case",    -- Smart case search
+        "--line-number", -- Show line numbers
+        "--column", -- Show column numbers
+        "--smart-case", -- Smart case search
 
         -- Exclude some patterns from search
         "--glob=!**/.git/*",
@@ -155,6 +141,26 @@ function M.config()
       },
     },
   }
+
+  local wk = require "which-key"
+  wk.register({
+    b = {
+      name = "Buffers",
+      b = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
+    },
+    f = {
+      name = "Find",
+      b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+      c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+      f = { "<cmd>Telescope find_files<cr>", "Find files" },
+      p = { "<cmd>Telescope projects<cr>", "Projects" },
+      t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+      h = { "<cmd>Telescope help_tags<cr>", "Help" },
+      l = { "<cmd>Telescope resume<cr>", "Last Search" },
+      r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+    },
+  }, { prefix = "<leader>" })
+
   require("telescope").load_extension "fzf"
   require("telescope").load_extension "projects"
   require("telescope").load_extension "noice"
