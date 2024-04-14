@@ -1,5 +1,4 @@
--- Short description: Autocommands for various events in NeoVim
--- Github repository: nvim-lua/plenary.nvim
+-- Short description: Autocommands for various events in NeoVim to make it more user-friendly.
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   callback = function()
     vim.cmd "set formatoptions-=cro"
