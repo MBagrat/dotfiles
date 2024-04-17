@@ -20,6 +20,7 @@ MacOS package manager `brew`
    - `brew install fzf`    <!-- fuzzy finder -->
    - `brew install tpm`    <!-- after installing tmux plugin manager execute `< prefix > + shift+I` to install plugins --> 
    - `brew install lazygit` <!-- simple terminal UI for git commands -->
+   - `brew install bash bc coreutils gawk gsed` <!-- GNU utilities -->
 - Packages which not available in brew
    - zap - zsh plugin manager 
        - `zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1`
