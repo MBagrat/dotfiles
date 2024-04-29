@@ -10,8 +10,9 @@ local M = {
 function M.config()
   -- there are four styles on tokyonight theme: storm, moon, night and day
   vim.cmd[[colorscheme tokyonight-storm]]
+
   require("tokyonight").setup {
-    style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+    style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
     light_style = "day",
     transparent = true,
     terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)

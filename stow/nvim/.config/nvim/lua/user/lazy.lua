@@ -16,8 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup {
   spec = LAZY_PLUGIN_SPEC,
   install = {
-    ---@param colors ColorScheme
-    colorscheme = { "tokyonight-night", "default" },
+    colorscheme = { "tokyonight-storm", "default" },
   },
   ui = {
     border = "rounded",
