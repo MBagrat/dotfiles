@@ -80,6 +80,7 @@
 
 	email = bagrat.mukaelyan@ameriabank.am
 	name = Bagrat Mukaelyan
+	signingkey = 73C6A602C54943F563DB9AB64282EADB6DB2D151
 
 [core]
 
@@ -143,7 +144,7 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = false
+	gpgsign = true
 
 [diff]
     tool = meld
@@ -166,7 +167,7 @@
 
 [mergetool]
     prompt = false
-  	keepBackup = true
+	keepBackup = false
 
 [mergetool "meld"]
     trustExitCode = true
@@ -209,6 +210,7 @@
 [gpg]
 
 	program = /usr/local/bin/gpg
+	format = openpgp
 
 [tag]
 
