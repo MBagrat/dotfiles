@@ -10,8 +10,8 @@ function M.config()
   local wk = require "which-key"
   wk.register({
     g = {
-      name = "LazyGit",
-      g = { "<cmd>LazyGit<CR>", "LazyGit" },
+      name = "Git",
+      g = { "<cmd>LazyGit<CR>", "Lazy Git" },
     },
   }, { prefix = "<leader>" })
 end
