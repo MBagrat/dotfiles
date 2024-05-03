@@ -9,7 +9,7 @@ local M = {
 
 function M.config()
   -- there are four styles on tokyonight theme: storm, moon, night and day
-  vim.cmd[[colorscheme tokyonight-storm]]
+  vim.cmd[[colorscheme tokyonight-night]]
 
   require("tokyonight").setup {
     style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
