@@ -11,7 +11,7 @@ alias cd..=".cd .." # Typo addressed.
 
 alias sl='ls -hula ~ | grep "\->"'
 
-# exa
+# eza
 if [[ -z $commands[eza] ]]; then
     echo 'eza is not installed. See https://github.com/eza-community/eza'
     return 1
@@ -43,6 +43,8 @@ alias icloud="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias my-sb="cd $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/my-second-brain"
 
 # Mac OS
+alias stow-link="stow -t ~ *"
+alias stow-unlink="stow -D -t ~ *"
 alias c="clear"
 alias vim="nvim"
 alias aenv="anyenv"

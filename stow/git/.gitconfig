@@ -71,6 +71,10 @@
 	# Detect whitespace errors when applying a patch.
 	whitespace = fix
 
+[init]
+
+	defaultBranch = main
+
 [branch]
 
 	# Show most recently changed branches first.
@@ -141,24 +145,20 @@
 	changed = green
 	untracked = cyan
 
-[commit]
-
-	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
-
 [diff]
-    tool = meld
-    # Detect copies as well as renames.
-    renames = copies
-  	# Use `hexdump` to diff binary files.
-  	textconv = hexdump -v -C
+
+  tool = meld
+  # Detect copies as well as renames.
+  renames = copies
+  # Use `hexdump` to diff binary files.
+  textconv = hexdump -v -C
 
 [difftool]
-    prompt = false
+  prompt = false
 
 [difftool "meld"]
-    trustExitCode = true
-    cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
+  trustExitCode = true
+  cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
 
 [merge]
     tool = meld
@@ -180,8 +180,14 @@
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 	# When you push a branch that doesn't have an upstream branch configured, Git will automaticly set the upstream branch and push to it.
-    autoSetupRemote = true
-# URL shorthands
+  autoSetupRemote = true
+  # URL shorthands
+
+[includeIf "gitdir:~/Workspace/work/"]
+  path = ~/.gitconfig-work
+
+[includeIf "gitdir:~/Workspace/personal/"]
+  path = ~/.gitconfig-personal
 
 [url "git@github.com:"]
 
@@ -202,18 +208,3 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
-
-[init]
-
-	defaultBranch = main
-
-[gpg]
-
-	program = /usr/local/bin/gpg
-	format = openpgp
-
-[tag]
-
-	gpgSign = false
-[credential]
-	helper = osxkeychain
