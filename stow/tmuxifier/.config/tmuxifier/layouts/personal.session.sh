@@ -1,6 +1,6 @@
 # Set a custom session root path. Default is `$HOME`.
 # Must be called before `initialize_session`.
-session_root "~/Workspace/personal/projects"
+session_root "$HOME/Workspace/personal/projects"
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
@@ -22,9 +22,10 @@ if initialize_session "personal"; then
   # Arguments:
   #   - $1: Window ID or name to select.
   #
-  select_window "Dotfiles"
-  select_window "Website"
-  select_window "Services"
+  select_window 1
+  # select_window "Dotfiles"
+  # select_window "Website"
+  # select_window "Services"
 
 fi
 
