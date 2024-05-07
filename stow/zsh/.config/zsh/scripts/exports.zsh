@@ -47,6 +47,12 @@ source "$(pack completion -s zsh)"
 # https://anyenv.github.io/
 eval "$(anyenv init - zsh)"
 
+# Load tmuxifier scripts
+# https://github.com/jimeh/tmuxifier
+export PATH="$PATH:$HOMEBREW_PREFIX/opt/tpm/share/tpm/plugins/tmuxifier/bin"
+eval "$(tmuxifier init -)"
+export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmuxifier/layouts"
+
 # Postgres Client API library
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
