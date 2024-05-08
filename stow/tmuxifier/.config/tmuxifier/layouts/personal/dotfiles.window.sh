@@ -6,6 +6,8 @@ window_root "$HOME/.dotfiles"
 # layout file name.
 new_window "Dotlfiles"
 
+run_cmd "nvim"
+
 # Split window into panes.
 # split_v 20
 # split_h 60

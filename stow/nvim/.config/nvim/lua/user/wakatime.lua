@@ -3,8 +3,4 @@ local M = {
   lazy = false,
 }
 
-function M.setup()
-
-end
-
 return M

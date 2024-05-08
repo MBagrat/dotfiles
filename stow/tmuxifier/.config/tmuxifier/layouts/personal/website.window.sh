@@ -1,10 +1,12 @@
 # Set window root path. Default is `$session_root`.
 # Must be called before `new_window`.
-# window_root "~/Desktop"
+window_root "$HOME/Workspace/personal/projects/personal-website"
 
 # Create new window. If no argument is given, window name will be based on
 # layout file name.
 new_window "Website"
+
+run_cmd "nvim"
 
 # Split window into panes.
 # split_v 20
