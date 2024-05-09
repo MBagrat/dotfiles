@@ -6,6 +6,7 @@
 # scripts
 plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/exports.zsh"
 plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/functions.zsh"
+plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/keymaps.zsh"
 
 # customized plugins
 plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/supercharge.zsh"
@@ -37,4 +38,4 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/p10k.zsh" ]] || source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/p10k.zsh" 
+[[ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/p10k.zsh" ]] || source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/p10k.zsh"

@@ -125,6 +125,7 @@ cask "openvpn-connect"
 cask "spotify"
 cask "utm"
 cask "vlc"
+cask "zed"
 # Messanger's
 cask "discord"
 cask "slack"
