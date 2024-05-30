@@ -1,5 +1,3 @@
--- Short description: LSP configuration for neovim. This plugin provides language server protocol support.
--- Github repository: neovim/nvim-lspconfig
 local M = {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
@@ -21,62 +19,65 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 end
 
-local on_attach = function(client, bufnr)
+M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
 
   if client.supports_method "textDocument/inlayHint" then
-    vim.lsp.inlay_hint.enable(bufnr, true)
+    vim.lsp.inlay_hint.enable(true, {bufnr})
   end
 end
 
-local common_capabilities = function()
+function M.common_capabilities()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.textDocument.completion.completionItem.snippetSupport = true
   return capabilities
 end
 
-local toggle_inlay_hints = function()
+M.toggle_inlay_hints = function()
   local bufnr = vim.api.nvim_get_current_buf()
-  vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({bufnr}), {bufnr})
 end
 
 function M.config()
   local wk = require "which-key"
-  wk.register({
-    l = {
-      name = "LSP",
-      a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action", mode = { "n", "v" } },
-      f = {
-        "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
-        "Format",
-      },
-      i = { "<cmd>LspInfo<cr>", "Info" },
-      j = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
-      h = { "<cmd>lua require('user.lspconfig').toggle_inlay_hints()<cr>", "Hints" },
-      k = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
-      l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-      q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-      r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+  wk.register {
+    ["<leader>la"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+    ["<leader>lf"] = {
+      "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
+      "Format",
     },
-  }, { prefix = "<leader>" })
+    ["<leader>li"] = { "<cmd>LspInfo<cr>", "Info" },
+    ["<leader>lj"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
+    ["<leader>lh"] = { "<cmd>lua require('user.lspconfig').toggle_inlay_hints()<cr>", "Hints" },
+    ["<leader>lk"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
+    ["<leader>ll"] = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+    ["<leader>lq"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
+    ["<leader>lr"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+  }
+
+  wk.register {
+    ["<leader>la"] = {
+      name = "LSP",
+      a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action", mode = "v" },
+    },
+  }
 
   local lspconfig = require "lspconfig"
   local icons = require "user.icons"
 
   local servers = {
-    "lua_ls",
-    "luau_ls",
-    "cssls",
-    "html",
-    "helm_ls",
-    "tsserver",
-    "eslint",
-    "tsserver",
-    "pyright",
-    "bashls",
-    "jsonls",
-    "yamlls",
-    "yaml-language-server",
+      "lua_ls",
+      "cssls",
+      "html",
+      "helm_ls",
+      "tsserver",
+      "eslint",
+      "tsserver",
+      "pyright",
+      "bashls",
+      "jsonls",
+      "yamlls",
+      "yaml-language-server",
   }
 
   local default_diagnostic_config = {
@@ -105,7 +106,7 @@ function M.config()
 
   vim.diagnostic.config(default_diagnostic_config)
 
-  for _, sign in ipairs(vim.tbl_get(vim.diagnostic.config(), "signs", "values") or {}) do
+  for _, sign in pairs(vim.tbl_get(vim.diagnostic.config(), "signs", "values") or {}) do
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
   end
 
@@ -115,8 +116,8 @@ function M.config()
 
   for _, server in pairs(servers) do
     local opts = {
-      on_attach = on_attach,
-      capabilities = common_capabilities(),
+      on_attach = M.on_attach,
+      capabilities = M.common_capabilities(),
     }
 
     local require_ok, settings = pcall(require, "user.lspsettings." .. server)
