@@ -140,7 +140,7 @@
 	gpgsign = true
 
 [gpg]
-    format = openpgp
+  	format = openpgp
 	program = /usr/local/bin/gpg
 
 [tag]
@@ -194,6 +194,9 @@
     cmd = "idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\" --wait"
     trustExitCode = true
 
+[pull]
+  ff = only
+
 [push]
   	# https://git-scm.com/docs/git-config#git-config-pushdefaultVy
 	default = simple
@@ -218,5 +221,8 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 
-[includeIf "gitdir:~/Workspace/work/"]
-    path = ~/.gitconfig-work
+[includeIf "gitdir:~/Workspace/work/myameria/"]
+    path = ~/.gitconfig-work-myameria
+
+[includeIf "gitdir:~/Workspace/work/personal/"]
+    path = ~/.gitconfig-work-personal
