@@ -1,10 +1,10 @@
 # Set a custom session root path. Default is `$HOME`.
 # Must be called before `initialize_session`.
-session_root "$HOME/Workspace/personal/projects"
+session_root "$HOME/Workspace/work/personal/projects"
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
-if initialize_session "personal"; then
+if initialize_session "work-personal"; then
 
   # Load specified window layout.
   #
@@ -12,11 +12,11 @@ if initialize_session "personal"; then
   #   - $1: Name of or file path to window layout to load.
   #   - $2: (optional) Override default window name.
   #
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/dotfiles.window.sh"
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/learning.window.sh"
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/nvim.window.sh"
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/services.window.sh"
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/website.window.sh"
+  load_window "$TMUXIFIER_LAYOUT_PATH/work/personal/dotfiles.window.sh"
+  load_window "$TMUXIFIER_LAYOUT_PATH/work/personal/learning.window.sh"
+  load_window "$TMUXIFIER_LAYOUT_PATH/work/personal/nvim.window.sh"
+  load_window "$TMUXIFIER_LAYOUT_PATH/work/personal/services.window.sh"
+  load_window "$TMUXIFIER_LAYOUT_PATH/work/personal/website.window.sh"
 
   # Select a specific window.
   #
