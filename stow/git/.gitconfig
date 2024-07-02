@@ -221,7 +221,7 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 
-[includeIf "gitdir:~/Workspace/work/myameria/"]
+[includeIf "gitdir:~/Workspace/work/ameriabank/"]
     path = ~/.gitconfig-work-myameria
 
 [includeIf "gitdir:~/Workspace/work/personal/"]
