@@ -3,9 +3,8 @@ tap "buildpacks/tap"
 tap "graalvm/tap"
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
+tap "hashicorp/tap"
 tap "maciejwalkowiak/brew"
 tap "mdogan/zulu"
 tap "spring-io/tap"
@@ -53,7 +52,6 @@ brew "httpie"
 brew "lazygit"
 brew "libheif"
 brew "luarocks"
-brew "imagemagick"
 brew "jhipster"
 brew "jmeter"
 brew "jq"
@@ -69,7 +67,6 @@ brew "mackup"
 brew "mas"
 brew "maven"
 brew "minikube"
-brew "neofetch"
 brew "neovim"
 brew "nowplaying-cli"
 brew "podman"
@@ -107,17 +104,19 @@ cask "daisydisk"
 cask "docker"
 cask "drawio"
 cask "duckduckgo"
+cask "flux"
 cask "figma"
 cask "firefox"
 cask "flameshot"
 cask "gimp"
 cask "google-chrome"
+cask "hiddenbar"
 cask "iterm2"
+cask "itermai"
 cask "keka"
 cask "kitty" 
 cask "microsoft-remote-desktop"
 cask "miro"
-cask "multipass"
 cask "msty"
 cask "netnewswire"
 cask "notion"
@@ -127,13 +126,14 @@ cask "obsidian"
 cask "ollama"
 cask "openvpn-connect"
 cask "spotify"
+cask "todoist"
 cask "utm"
 cask "vlc"
 cask "yandex"
 cask "zed"
 # Messanger's
 cask "discord"
-cask "signal"
+# cask "signal"
 cask "slack"
 cask "telegram"
 cask "viber"
@@ -154,13 +154,12 @@ cask "sublime-text"
 cask "tower"
 cask "visual-studio-code"
 cask "warp"
-cask "wave"
+# cask "wave"
 cask "zed"
 # Utils
 cask "folx"
-cask "meld"
 cask "fliqlo"
-cask "vanilla"
+# cask "vanilla"
 cask "monitorcontrol"
 cask "browserosaurus"
 cask "brewservicesmenubar"
@@ -189,16 +188,16 @@ cask "font-meslo-lg-dz"
 cask "font-meslo-lg-nerd-font"
 cask "font-sf-mono-nerd-font-ligaturized"
 # Java: Amazon Corretto releases
-cask "corretto8"
-cask "corretto11"
-cask "corretto17"
-cask "corretto21"
+cask "corretto@8"
+cask "corretto@11"
+cask "corretto@17"
+cask "corretto@21"
 cask "corretto"
 # Java: Eclipse Temurin releases
-cask "temurin8"
-cask "temurin11"
-cask "temurin17"
-cask "temurin21"
+cask "temurin@8"
+cask "temurin@11"
+cask "temurin@17"
+cask "temurin@21"
 cask "temurin"
 # Java: GraalVM CE releases
 # repository: https://github.com/graalvm/homebrew-tap
@@ -217,8 +216,6 @@ cask "jetbrains-toolbox"
 cask "netbeans"
 cask "springtoolsuite"
 # Java: Tool's
-cask "jmc"
-cask "jprofiler"
 cask "keystore-explorer"
 cask "visualvm"
 # Java: Mission Controls
@@ -234,6 +231,8 @@ mas "Battery Health 2", id: 1120214373
 mas "CleanMyDrive 2", id: 523620159
 mas "Color Picker", id: 1545870783
 mas "Dato", id: 1470584107
+mas "Hand Mirror", id: 1502839586
+# mas "HEIC Converter", id: 1294126402
 mas "Ivory", id: 6444602274
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
@@ -242,9 +241,11 @@ mas "Pages", id: 409201541
 mas "Pixea", id: 1507782672
 mas "pomodorome", id: 1484801884
 mas "ScreenBrush", id: 1233965871
+mas "Spark", id: 1176895641
 mas "Startup Disk Full Fixer", id: 1346655838
 mas "Things", id: 904280696
 mas "Trello", id: 1278508951
 mas "Unsplash Wallpapers", id: 1284863847
 mas "WhatsApp", id: 1147396723
+mas "WaterMinder", id: 1415257369
 mas "Xcode", id: 497799835
