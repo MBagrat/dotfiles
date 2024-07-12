@@ -1,13 +1,9 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
-  "theme": "Tokyo Night",
+  "theme": {
+    "mode": "system",
+    "dark": "Tokyo Night",
+    "light": "Tokyo Night Light"
+  },
   "ui_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 15,
@@ -17,5 +13,9 @@
       "milliseconds": 1000
     }
   },
-  "relative_line_numbers": true
+  "relative_line_numbers": true,
+  "auto_install_extensions": {
+    "java": true,
+    "tokyo-night": true
+  }
 }
