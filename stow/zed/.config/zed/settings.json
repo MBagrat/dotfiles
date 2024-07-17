@@ -1,4 +1,13 @@
 {
+  "assistant": {
+    "version": "1",
+    "default_open_ai_model": "gpt-3.5-turbo",
+    "provider": {
+      "name": "openai",
+      "default_model": "gpt-4o",
+      "available_models": ["gpt-4", "gpt-4-turbo-preview", "gpt-4o", "gpt-3.5-turbo"]
+    }
+  },
   "theme": {
     "mode": "system",
     "dark": "Tokyo Night",
@@ -15,7 +24,15 @@
   },
   "relative_line_numbers": true,
   "auto_install_extensions": {
+    "toml": true,
     "java": true,
-    "tokyo-night": true
+    "kotlin": true,
+    "liquid": true,
+    "tmux": true,
+    "git-firefly": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "tokyo-night": true,
+    "intellij-newui-theme": true
   }
 }
