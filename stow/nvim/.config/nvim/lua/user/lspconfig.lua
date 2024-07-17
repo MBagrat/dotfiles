@@ -72,12 +72,10 @@ function M.config()
       "helm_ls",
       "tsserver",
       "eslint",
-      "tsserver",
       "pyright",
       "bashls",
       "jsonls",
       "yamlls",
-      "yaml-language-server",
   }
 
   local default_diagnostic_config = {
