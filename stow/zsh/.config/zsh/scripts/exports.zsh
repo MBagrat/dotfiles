@@ -3,6 +3,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
+# Load zsh profiler module
+zmodload zsh/zprof
+
 [ -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history/" ] || mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history/"
 [ -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/" ] || mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/"
 
@@ -70,10 +73,3 @@ eval "$(op completion zsh)"; compdef _op op
 export PATH="$PATH:$HOME/Workspace/soft/keycloak/keycloak/bin"
 
 ### Project ENV variables ###
-
-# nodejs related variables
-export NODE_OPTIONS=--openssl-legacy-provider
-# npm related environment variables
-export npm_config_azure_user_name="op://work/azure_devops/username"
-export npm_config_azure_access_token="op://work/azure_devops/access_token_base64"
-export npm_config_azure_user_email="op://work/azure_devops/username"

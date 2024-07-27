@@ -182,6 +182,9 @@ cask "zulu-jdk21"
 cask "zulu"
 # Java: IDE's
 cask "jetbrains-toolbox"
+cask "eclipse-installer"
+cask "springtoolsuite"
+cask "netbeans"
 # Java: Tool's
 cask "keystore-explorer"
 cask "visualvm"
