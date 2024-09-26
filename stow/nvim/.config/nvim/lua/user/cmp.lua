@@ -34,6 +34,7 @@ local M = {
       dependencies = {
         "rafamadriz/friendly-snippets",
       },
+      build = "make install_jsregexp"
     },
     {
       "hrsh7th/cmp-nvim-lua",
@@ -109,7 +110,7 @@ function M.config()
         "s",
       }),
     },
-    formatting = {
+    formattingConfig = {
       fields = { "kind", "abbr", "menu" },
       format = function(entry, vim_item)
         vim_item.kind = icons.kind[vim_item.kind]

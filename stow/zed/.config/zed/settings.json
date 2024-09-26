@@ -1,12 +1,18 @@
 {
-  "assistant": {
-    "version": "1",
-    "default_open_ai_model": "gpt-3.5-turbo",
-    "provider": {
-      "name": "openai",
-      "default_model": "gpt-4o",
-      "available_models": ["gpt-4", "gpt-4-turbo-preview", "gpt-4o", "gpt-3.5-turbo"]
+  "language_models": {
+    "openai": {
+      "version": "1",
+      "available_models": []
     }
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4o"
+    },
+    "version": "2",
+    "default_open_ai_model": "gpt-3.5-turbo",
+    "provider": null
   },
   "theme": {
     "mode": "system",
@@ -22,13 +28,17 @@
       "milliseconds": 1000
     }
   },
+  "format_on_save": "on",
   "relative_line_numbers": true,
   "auto_install_extensions": {
+    "lua": true,
+    "ruby": true,
     "toml": true,
     "java": true,
     "kotlin": true,
     "liquid": true,
     "tmux": true,
+    "sql": true,
     "git-firefly": true,
     "dockerfile": true,
     "docker-compose": true,

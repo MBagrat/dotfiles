@@ -1,15 +1,13 @@
 local M = {
     "iamcco/markdown-preview.nvim",
-    cmd = {"MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop"},
-    ft = {"markdown"},
-    build = function()
-        vim.fn["mkdp#util#install"]()
-    end
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
 }
 
 function M.config()
     local wk = require "which-key"
-    wk.register({
+    wk.add({
         m = {
             name = "+Markdown",
             o = {"<cmd>MarkdownPreview<cr>", "Open Markdown Preview"},

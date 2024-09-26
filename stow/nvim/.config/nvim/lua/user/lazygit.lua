@@ -1,19 +1,16 @@
 local M = {
-  "kdheepak/lazygit.nvim",
-  -- optional for floating window border decoration
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-  },
+	"kdheepak/lazygit.nvim",
+	-- optional for floating window border decoration
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+	},
 }
 
 function M.config()
-  local wk = require "which-key"
-  wk.register({
-    g = {
-      name = "Git",
-      g = { "<cmd>LazyGit<CR>", "Lazy Git" },
-    },
-  }, { prefix = "<leader>" })
+	local wk = require("which-key")
+	wk.add({
+		{ "<leader>gg", "<cmd>LazyGit<CR>", desc = "Lazy Git" },
+	})
 end
 
 return M

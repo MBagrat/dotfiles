@@ -9,7 +9,6 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
 keymap("n", "<Space>", "", opts)                                                                        -- desc "Clear search"
-keymap("n", "<esc><esc>", "<cmd>noh<CR>", opts)                                                         -- desc "Clear search"
 keymap("n", "<C-i>", "<C-i>", opts)                                                                     -- desc "Jump to definition"
 
 -- Better window navigation

@@ -43,6 +43,8 @@ alias icloud="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias my-sb="cd $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/my-second-brain"
 
 # Mac OS
+alias python=python3
+alias pip=pip3
 alias stow-link="stow -t ~ *"
 alias stow-unlink="stow -D -t ~ *"
 alias c="clear"

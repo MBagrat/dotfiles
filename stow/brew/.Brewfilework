@@ -23,9 +23,9 @@ brew "coreutils"
 brew "gawk"
 brew "gsed"
 brew "btop"
-# brew "cmake"
+brew "cmake"
 brew "cmus"
-# brew "composer"
+brew "composer"
 brew "cocoapods"
 brew "coreutils"
 brew "ctop"
@@ -67,16 +67,16 @@ brew "maven"
 brew "minikube"
 brew "neovim"
 brew "nowplaying-cli"
-# brew "podman"
+brew "podman"
 brew "php"
 brew "pinentry-mac"
-# brew "qemu"
+brew "qemu"
 brew "ripgrep"
 brew "speedtest-cli"
 brew "stow"
-# brew "tealdeer"
+brew "tealdeer"
 brew "telnet"
-# brew "terraform"
+brew "terraform"
 brew "tpm"
 brew "tmux"
 brew "trash-cli"
@@ -85,8 +85,8 @@ brew "wget"
 brew "yarn"
 brew "yh"
 brew "pack"
-# brew "spring-boot"
-# brew "microk8s"
+brew "spring-boot"
+brew "microk8s"
 
 # App's
 cask "1password"
@@ -95,18 +95,18 @@ cask "adguard"
 cask "alacritty"
 cask "alfred"
 cask "anydesk"
-# cask "apparency"
+cask "apparency"
 cask "appcleaner"
-# cask "arc"
+cask "arc"
 cask "daisydisk"
 cask "docker"
 cask "drawio"
-# cask "duckduckgo"
+cask "duckduckgo"
 cask "flux"
-# cask "figma"
-# cask "firefox"
+cask "figma"
+cask "firefox"
 cask "flameshot"
-# cask "gimp"
+cask "gimp"
 cask "google-chrome"
 cask "hiddenbar"
 cask "iterm2"
@@ -114,49 +114,49 @@ cask "itermai"
 cask "keka"
 cask "kitty"
 cask "microsoft-remote-desktop"
-# cask "miro"
+cask "miro"
 cask "msty"
-# cask "netnewswire"
-# cask "notion"
+cask "netnewswire"
+cask "notion"
 cask "notion-calendar"
-# cask "obs"
+cask "obs"
 cask "obsidian"
 cask "ollama"
 cask "openvpn-connect"
 cask "spotify"
-# cask "todoist"
-# cask "utm"
-# cask "vlc"
-# cask "yandex"
+cask "todoist"
+cask "utm"
+cask "vlc"
 # Messanger's
-# cask "discord"
-# cask "signal"
+cask "discord"
+cask "signal"
 cask "slack"
 cask "telegram"
-# cask "viber"
-# cask "wechat"
+cask "viber"
+cask "wechat"
+cask "whatsapp"
 cask "zoom"
 # Editor's
-# cask "dbeaver-community"
-# cask "fork"
+cask "dbeaver-community"
+cask "fork"
 cask "lens"
 cask "mongodb-compass"
-# cask "pgadmin4"
-# cask "podman-desktop"
+cask "pgadmin4"
+cask "podman-desktop"
 cask "postman"
-# cask "proxyman"
-# cask "pulsar"
-# cask "redisinsight"
+cask "proxyman"
+cask "pulsar"
+cask "redisinsight"
 cask "sublime-text"
 cask "tower"
 cask "visual-studio-code"
-# cask "warp"
-# cask "wave"
+cask "warp"
+cask "wave"
 cask "zed"
 # Utils
 cask "folx"
 cask "fliqlo"
-# cask "vanilla"
+cask "vanilla"
 cask "monitorcontrol"
 cask "browserosaurus"
 cask "brewservicesmenubar"
@@ -208,29 +208,29 @@ cask "zulu-jdk17"
 cask "zulu-jdk21"
 cask "zulu"
 # Java: IDE's
-# cask "eclipse-jee"
+cask "eclipse-jee"
 cask "jetbrains-toolbox"
-# cask "netbeans"
-# cask "springtoolsuite"
+cask "netbeans"
+cask "springtoolsuite"
 # Java: Tool's
 cask "keystore-explorer"
 cask "visualvm"
 # Java: Mission Controls
-# cask "zulu-mc"
+cask "zulu-mc"
 # Learning
 cask "flutter"
 
 # Mac App Store
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
-# mas "AudioBookBinder", id: 413969927
+mas "AudioBookBinder", id: 413969927
 mas "Battery Health 2", id: 1120214373
 mas "CleanMyDrive 2", id: 523620159
 mas "Color Picker", id: 1545870783
 mas "Dato", id: 1470584107
 mas "Hand Mirror", id: 1502839586
-# mas "HEIC Converter", id: 1294126402
-# mas "Ivory", id: 6444602274
+mas "HEIC Converter", id: 1294126402
+mas "Ivory", id: 6444602274
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
 mas "Numbers", id: 409203825
@@ -239,10 +239,9 @@ mas "Pixea", id: 1507782672
 mas "pomodorome", id: 1484801884
 mas "ScreenBrush", id: 1233965871
 mas "Spark", id: 1176895641
-# mas "Startup Disk Full Fixer", id: 1346655838
+mas "Startup Disk Full Fixer", id: 1346655838
 mas "Things", id: 904280696
-# mas "Trello", id: 1278508951
+mas "Trello", id: 1278508951
 mas "Unsplash Wallpapers", id: 1284863847
-# mas "WhatsApp", id: 1147396723
 mas "WaterMinder", id: 1415257369
 mas "Xcode", id: 497799835
