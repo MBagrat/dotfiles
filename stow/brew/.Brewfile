@@ -121,6 +121,7 @@ cask "spotify"
 cask "wakatime"
 # Messanger's
 cask "slack"
+cask "tower"
 cask "telegram"
 cask "zoom"
 # Editor's
