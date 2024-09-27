@@ -1,0 +1,48 @@
+{
+  "language_models": {
+    "openai": {
+      "version": "1",
+      "available_models": []
+    }
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4o"
+    },
+    "version": "2",
+    "default_open_ai_model": "gpt-3.5-turbo",
+    "provider": null
+  },
+  "theme": {
+    "mode": "system",
+    "dark": "Tokyo Night",
+    "light": "Tokyo Night Light"
+  },
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_size": 15,
+  "buffer_font_size": 15,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "format_on_save": "on",
+  "relative_line_numbers": true,
+  "auto_install_extensions": {
+    "lua": true,
+    "ruby": true,
+    "toml": true,
+    "java": true,
+    "kotlin": true,
+    "liquid": true,
+    "tmux": true,
+    "sql": true,
+    "git-firefly": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "tokyo-night": true,
+    "intellij-newui-theme": true
+  }
+}

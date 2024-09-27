@@ -1,39 +1,40 @@
-vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
-vim.g.mapleader = " "
-
--- bootstrap lazy and all plugins
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-
-if not vim.loop.fs_stat(lazypath) then
-  local repo = "https://github.com/folke/lazy.nvim.git"
-  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
-end
-
-vim.opt.rtp:prepend(lazypath)
-
-local lazy_config = require "configs.lazy"
-
--- load plugins
-require("lazy").setup({
-  {
-    "NvChad/NvChad",
-    lazy = false,
-    branch = "v2.5",
-    import = "nvchad.plugins",
-    config = function()
-      require "options"
-    end,
-  },
-
-  { import = "plugins" },
-}, lazy_config)
-
--- load theme
-dofile(vim.g.base46_cache .. "defaults")
-dofile(vim.g.base46_cache .. "statusline")
-
-require "nvchad.autocmds"
-
-vim.schedule(function()
-  require "mappings"
-end)
+require "user.launch"
+require "user.options"
+require "user.keymaps"
+require "user.autocmds"
+spec "user.alpha"
+spec "user.colorscheme"
+spec "user.devicons"
+spec "user.lualine"
+spec "user.navic"
+spec "user.breadcrumbs"
+spec "user.gitsigns"
+spec "user.noice"
+spec "user.project"
+spec "user.whichkey"
+spec "user.nvimtree"
+spec "user.treesitter"
+spec "user.telescope"
+spec "user.lazygit"
+spec "user.mason"
+spec "user.lspconfig"
+spec "user.none-ls"
+spec "user.cmp"
+spec "user.cmpcmdline"
+spec "user.comment"
+spec "user.indentline"
+spec "user.autosave"
+spec "user.autopairs"
+spec "user.harpoon"
+spec "user.neotest"
+spec "user.brewfile"
+spec "user.obs"
+spec "user.wakatime"
+spec "user.vimhelm"
+spec "user.toggleterm"
+spec "user.tabby"
+spec "user.scratch"
+spec "user.schemastore"
+spec "user.markdownpreview"
+spec "user.illuminate"
+require "user.lazy"

@@ -1,5 +1,4 @@
 [alias]
-
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
@@ -66,24 +65,34 @@
 	# Show the user email for the current repository.
 	whoami = config user.email
 
-[apply]
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
 
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[apply]
 	# Detect whitespace errors when applying a patch.
 	whitespace = fix
 
-[branch]
+[init]
+	defaultBranch = main
 
+[branch]
 	# Show most recently changed branches first.
 	sort = -committerdate
 
-[user]
-
-	email = bagrat.mukaelyan@ameriabank.am
-	name = Bagrat Mukaelyan
-	signingkey = 4282EADB6DB2D151
-
 [core]
-
 	# Use custom `.gitignore` and `.gitattributes`.
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
@@ -117,100 +126,107 @@
 	editor = subl
 
 [color]
-
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
 
-[color "branch"]
-
-	current = yellow reverse
-	local = yellow
-	remote = green
-
-[color "diff"]
-
-	meta = yellow bold
-	frag = magenta bold # line info
-	old = red # deletions
-	new = green # additions
-
-[color "status"]
-
-	added = yellow
-	changed = green
-	untracked = cyan
+[user]
+	email = bagrat.mukaelyan@gmail.com
+	name = Bagrat Mukaelyan
+	signingkey = 73C6A602C54943F563DB9AB64282EADB6DB2D151
 
 [commit]
-
 	# https://help.github.com/articles/signing-commits-using-gpg/
+	gpgsign = true
+
+[gpg]
+  	format = openpgp
+	program = /usr/local/bin/gpg
+
+[tag]
 	gpgSign = true
 
+[credential]
+	helper = osxkeychain
+
+# [diff]
+#   tool = meld
+#   # Detect copies as well as renames.
+#   renames = copies
+#   # Use `hexdump` to diff binary files.
+#   textconv = hexdump -v -C
+
+# [difftool]
+#   prompt = false
+
+# [difftool "meld"]
+#   trustExitCode = true
+#   cmd = "open -W -a Meld --args \"$LOCAL\" \"$REMOTE\""
+
+# [merge]
+#   tool = meld
+#   # Include summaries of merged commits in newly created merge commit messages
+#   log = true
+
+# [mergetool]
+#   prompt = false
+# 	keepBackup = true
+
+# [mergetool "meld"]
+#   trustExitCode = true
+#   cmd = "open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\""
+
 [diff]
-    tool = meld
-    # Detect copies as well as renames.
-    renames = copies
-  	# Use `hexdump` to diff binary files.
-  	textconv = hexdump -v -C
+    tool = intellij
 
 [difftool]
-    prompt = false
+    prompt=false
 
-[difftool "meld"]
+[difftool "intellij"]
     trustExitCode = true
-    cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
+    cmd = "idea diff \"$LOCAL\" \"$REMOTE\" --wait"
 
 [merge]
-    tool = meld
-    # Include summaries of merged commits in newly created merge commit messages
     log = true
+    tool = intellij
 
 [mergetool]
-    prompt = false
-  	keepBackup = true
+    prompt=false
+    keepBackup = true
 
-[mergetool "meld"]
+[mergetool "intellij"]
+    cmd = "idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\" --wait"
     trustExitCode = true
-    cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
+
+[pull]
+  ff = only
 
 [push]
-
-	# https://git-scm.com/docs/git-config#git-config-pushdefault
+  	# https://git-scm.com/docs/git-config#git-config-pushdefaultVy
 	default = simple
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 	# When you push a branch that doesn't have an upstream branch configured, Git will automaticly set the upstream branch and push to it.
     autoSetupRemote = true
-# URL shorthands
 
 [url "git@github.com:"]
-
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
 
 [url "git://github.com/"]
-
 	insteadOf = "github:"
 
 [url "git@gist.github.com:"]
-
 	insteadOf = "gst:"
 	pushInsteadOf = "gist:"
 	pushInsteadOf = "git://gist.github.com/"
 
 [url "git://gist.github.com/"]
-
 	insteadOf = "gist:"
 
-[init]
+[includeIf "gitdir:~/Workspace/work/ameriabank/"]
+    path = ~/.gitconfig-work-myameria
 
-	defaultBranch = main
-
-[gpg]
-
-	program = /usr/local/bin/gpg
-
-[tag]
-
-	gpgSign = true
+[includeIf "gitdir:~/Workspace/work/personal/"]
+    path = ~/.gitconfig-work-personal
