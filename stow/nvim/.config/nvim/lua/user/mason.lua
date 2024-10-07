@@ -13,7 +13,7 @@ function M.config()
     "cssls",
     "eslint",
     "html",
-    "tsserver",
+    "ts_ls",
     "pyright",
     "bashls",
     "jsonls",

@@ -153,6 +153,7 @@ cask "whatsapp"
 cask "zoom"
 # Editor's
 cask "dbeaver-community"
+cask "gitbutler"
 cask "fork"
 cask "lens"
 cask "mongodb-compass"
