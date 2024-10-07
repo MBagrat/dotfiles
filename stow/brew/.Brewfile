@@ -21,12 +21,13 @@ brew "bash"
 brew "bc"
 brew "black"
 brew "coreutils"
-brew "composer"
 brew "gawk"
 brew "gsed"
 brew "btop"
 brew "cmake"
 brew "cmus"
+brew "composer"
+brew "cocoapods"
 brew "coreutils"
 brew "ctop"
 brew "libssh2"
@@ -75,6 +76,7 @@ brew "openjdk@17"
 brew "openjdk@21"
 brew "openjdk"
 brew "nowplaying-cli"
+brew "podman"
 brew "php"
 brew "prettier"
 brew "pinentry-mac"
@@ -83,6 +85,7 @@ brew "ripgrep"
 brew "rust"
 brew "speedtest-cli"
 brew "stow"
+brew "tealdeer"
 brew "telnet"
 brew "terraform"
 brew "tpm"
@@ -94,6 +97,7 @@ brew "yarn"
 brew "yh"
 brew "pack"
 brew "spring-boot"
+brew "microk8s"
 
 # App's
 cask "1password"
@@ -102,50 +106,72 @@ cask "adguard"
 cask "alacritty"
 cask "alfred"
 cask "anydesk"
+cask "apparency"
 cask "appcleaner"
+cask "arc"
 cask "chatgpt"
 cask "daisydisk"
 cask "docker"
 cask "orbstack"
 cask "drawio"
+cask "duckduckgo"
 cask "flux"
+cask "figma"
 cask "firefox"
+cask "flameshot"
+cask "gimp"
 cask "google-chrome"
 cask "hiddenbar"
 cask "iterm2"
 cask "itermai"
 cask "keka"
 cask "kitty"
+cask "microsoft-remote-desktop"
+cask "miro"
 cask "msty"
 cask "multipass"
 cask "netnewswire"
 cask "notion"
 cask "notion-calendar"
+cask "obs"
 cask "obsidian"
 cask "ollama"
 cask "openvpn-connect"
 cask "spotify"
+cask "todoist"
+cask "utm"
+cask "vlc"
 cask "wakatime"
 # Messanger's
+cask "discord"
+cask "signal"
 cask "slack"
-cask "tower"
 cask "telegram"
+cask "viber"
+cask "wechat"
+cask "whatsapp"
 cask "zoom"
 # Editor's
+cask "dbeaver-community"
 cask "fork"
 cask "lens"
 cask "mongodb-compass"
+cask "pgadmin4"
+cask "podman-desktop"
 cask "postman"
-# cask "proxyman"
+cask "proxyman"
+cask "pulsar"
 cask "redisinsight"
 cask "sublime-text"
 cask "tower"
 cask "visual-studio-code"
+cask "warp"
+cask "wave"
 cask "zed"
 # Utils
 cask "folx"
 cask "fliqlo"
-# cask "vanilla"
+cask "vanilla"
 cask "monitorcontrol"
 cask "browserosaurus"
 cask "brewservicesmenubar"
@@ -204,6 +230,8 @@ cask "netbeans"
 # Java: Tool's
 cask "keystore-explorer"
 cask "visualvm"
+# Java: Mission Controls
+cask "zulu-mc"
 # Learning
 cask "flutter"
 
@@ -216,6 +244,8 @@ mas "CleanMyDrive 2", id: 523620159
 mas "Color Picker", id: 1545870783
 mas "Dato", id: 1470584107
 mas "Hand Mirror", id: 1502839586
+mas "HEIC Converter", id: 1294126402
+mas "Ivory", id: 6444602274
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
 mas "Numbers", id: 409203825
@@ -224,8 +254,9 @@ mas "Pixea", id: 1507782672
 mas "pomodorome", id: 1484801884
 mas "ScreenBrush", id: 1233965871
 mas "Spark", id: 1176895641
+mas "Startup Disk Full Fixer", id: 1346655838
 mas "Things", id: 904280696
+mas "Trello", id: 1278508951
 mas "Unsplash Wallpapers", id: 1284863847
 mas "WaterMinder", id: 1415257369
-mas "whatsapp", id: 310633997
 mas "Xcode", id: 497799835

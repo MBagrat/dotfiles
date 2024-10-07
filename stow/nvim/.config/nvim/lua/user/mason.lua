@@ -7,18 +7,18 @@ local M = {
   },
 }
 
-
 function M.config()
   local servers = {
     "lua_ls",
     "cssls",
+    "eslint",
     "html",
     "tsserver",
     "pyright",
     "bashls",
     "jsonls",
     "yamlls",
-    "zk"
+    "zk",
   }
 
   require("mason").setup {
