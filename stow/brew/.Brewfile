@@ -11,6 +11,15 @@ tap "spring-io/tap"
 tap "ubuntu/microk8s"
 tap "shaunsingh/SFMono-Nerd-Font-Ligaturized"
 
+# uname -m returns the architecture of the system.
+# - For ARM-based Macs, this returns "arm64".
+# - For Intel-based Macs, it returns "x86_64".
+arch = `uname -m`.chomp
+
+if arch == "arm64"
+  cask "chatgpt"
+end
+
 brew "libyaml"
 brew "openssl@3"
 brew "readline"
@@ -98,7 +107,9 @@ brew "yh"
 brew "pack"
 brew "spring-boot"
 brew "microk8s"
-
+if arch == "arm64"
+  cask "chatgpt"
+end
 # App's
 cask "1password"
 cask "1password-cli"
@@ -108,8 +119,6 @@ cask "alfred"
 cask "anydesk"
 cask "apparency"
 cask "appcleaner"
-cask "arc"
-cask "chatgpt"
 cask "daisydisk"
 cask "docker"
 cask "orbstack"
