@@ -69,6 +69,7 @@ GitHub.sublime-settings
 # vim-plug package folder
 nvim/plugged
 
+### Custom configs
 # *.lock.json
 Brewfile.lock.json
 lazy-lock.json
@@ -78,3 +79,12 @@ lazy-lock.json
 
 # k9s clusters folder
 **/clusters/
+
+# Others
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+data
