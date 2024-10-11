@@ -14,6 +14,7 @@ return {
             ".idea",
           },
         },
+        group_empty_dirs = true,
       },
     },
   },
