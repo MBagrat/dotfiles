@@ -130,6 +130,7 @@
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
 
+# This git config setup for my personal mac using
 [user]
 	email = bagrat.mukaelyan@gmail.com
 	name = Bagrat Mukaelyan
@@ -192,14 +193,14 @@
 
 [mergetool]
     prompt=false
-    keepBackup = true
+	keepBackup = true
 
 [mergetool "intellij"]
     cmd = "idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\" --wait"
     trustExitCode = true
 
 [pull]
-  ff = only
+    ff = only
 
 [push]
   	# https://git-scm.com/docs/git-config#git-config-pushdefaultVy
