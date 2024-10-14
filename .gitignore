@@ -80,6 +80,9 @@ lazy-lock.json
 # k9s clusters folder
 **/clusters/
 
+# .ruby-lsp
+.ruby-lsp/
+
 # Others
 tt.*
 .tests
