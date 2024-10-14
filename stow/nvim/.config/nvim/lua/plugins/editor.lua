@@ -12,6 +12,7 @@ return {
             "node_modules",
             ".git",
             ".idea",
+            ".ruby-lsp",
           },
         },
         group_empty_dirs = true,
