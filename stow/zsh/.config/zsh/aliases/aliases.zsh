@@ -62,3 +62,4 @@ alias rm-ds="find . -name ".DS_Store" -depth -exec rm -f {} \;"
 ## Personal
 alias kc-sd="kc.sh start-dev"
 alias mbb="cd $HOME/Workspace/personal/projects/development/mbagrat-blog"
+alias oo="cd /Users/mbagrat/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/my-second-brain/"
