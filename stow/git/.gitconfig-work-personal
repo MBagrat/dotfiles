@@ -1,7 +1,7 @@
 [user]
 	email = bagrat.mukaelyan@gmail.com
 	name = Bagrat Mukaelyan
-  	signingkey = 7129C8EE1557999A
+	signingkey = 7129C8EE1557999A
 
 [commit]
 	gpgsign = true

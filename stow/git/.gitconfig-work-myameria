@@ -2,5 +2,15 @@
 	email = bagrat.mukaelyan@ameriabank.am
 	name = Bagrat Mukaelyan
 
+[commit]
+	gpgsign = false
+
+[tag]
+	gpgSign = false
+
+[gpg]
+	format = openpgp
+	program = /opt/homebrew/bin/gpg
+
 [credential]
 	helper = osxkeychain
