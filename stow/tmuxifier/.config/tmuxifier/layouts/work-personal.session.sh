@@ -13,6 +13,7 @@ if initialize_session "work-personal"; then
   #   - $2: (optional) Override default window name.
   #
   load_window "$TMUXIFIER_LAYOUT_PATH/work/personal/dotfiles.window.sh"
+  load_window "$TMUXIFIER_LAYOUT_PATH/work/personal/obsidian.window.sh"
   load_window "$TMUXIFIER_LAYOUT_PATH/work/personal/learning.window.sh"
   load_window "$TMUXIFIER_LAYOUT_PATH/work/personal/nvim.window.sh"
   load_window "$TMUXIFIER_LAYOUT_PATH/work/personal/services.window.sh"
