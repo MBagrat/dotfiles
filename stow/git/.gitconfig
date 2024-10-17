@@ -231,3 +231,6 @@
 
 [includeIf "gitdir:~/Workspace/work/personal/"]
 	path = ~/.gitconfig-work-personal
+
+[includeIf "gitdir:~/Library/Mobile Documents/iCloud~md~obsidian/Documents/my-second-brain/"]
+	path = ~/.gitconfig-work-personal
