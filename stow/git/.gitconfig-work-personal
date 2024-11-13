@@ -1,0 +1,17 @@
+[user]
+	email = bagrat.mukaelyan@gmail.com
+	name = Bagrat Mukaelyan
+	signingkey = 7129C8EE1557999A
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	format = openpgp
+	program = /opt/homebrew/bin/gpg
+
+[tag]
+	gpgSign = true
+
+[credential]
+	helper = osxkeychain
