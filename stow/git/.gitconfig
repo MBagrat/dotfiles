@@ -8,7 +8,7 @@
 	# Show the diff between the latest commit and the current state.
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
-	# `git di $number` shows the diff between the state `$number` revisions ago and the current state.
+	# Show the diff between a previous state and the current state.
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 
 	# Pull in remote changes for the current repository and all its submodules.
@@ -23,7 +23,7 @@
 	# Switch to a branch, creating it if necessary.
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
-	# Show verbose output about tags, branches or remotes
+	# Show verbose output about tags, branches, or remotes.
 	tags = tag -l
 	branches = branch --all
 	remotes = remote --verbose
@@ -43,27 +43,29 @@
 	# Remove the old tag with this name and tag the latest commit with it.
 	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
 
-	# Find branches containing commit
+	# Find branches containing a commit.
 	fb = "!f() { git branch -a --contains $1; }; f"
 
-	# Find tags containing commit
+	# Find tags containing a commit.
 	ft = "!f() { git describe --always --contains $1; }; f"
 
-	# Find commits by source code
+	# Find commits by source code.
 	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
 
-	# Find commits by commit message
+	# Find commits by commit message.
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
 	# Remove branches that have already been merged with main.
-	# a.k.a. ‘delete merged’
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
-	# List contributors with number of commits.
+	# List contributors with the number of commits.
 	contributors = shortlog --summary --numbered
 
 	# Show the user email for the current repository.
 	whoami = config user.email
+
+[color]
+	ui = auto
 
 [color "branch"]
 	current = yellow reverse
@@ -72,9 +74,9 @@
 
 [color "diff"]
 	meta = yellow bold
-	frag = magenta bold # line info
-	old = red # deletions
-	new = green # additions
+	frag = magenta bold
+	old = red
+	new = green
 
 [color "status"]
 	added = yellow
@@ -82,62 +84,30 @@
 	untracked = cyan
 
 [apply]
-	# Detect whitespace errors when applying a patch.
 	whitespace = fix
 
 [init]
 	defaultBranch = main
 
 [branch]
-	# Show most recently changed branches first.
 	sort = -committerdate
 
 [core]
-	# Use custom `.gitignore` and `.gitattributes`.
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
-
-	# Treat spaces before tabs and all kinds of trailing whitespace as an error.
-	# [default] trailing-space: looks for spaces at the end of a line
-	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
 	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
-
-	# Make `git rebase` safer on macOS.
-	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 	trustctime = false
-
-	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
-	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
-
-	# Speed up commands involving untracked files such as `git status`.
-	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
-
-  # This means that Git will process all text files and make sure that CRLF is replaced
-  # with LF when writing that file to the object database and turn all LF back into CRLF
-  # when writing out into the working directory.
 	autocrlf = input
-
-  # By default, Git uses whatever you’ve set as your default text editor via one of the
-  # shell environment variables VISUAL or EDITOR, or else falls back to the vi editor
-  # to create and edit your commit and tag messages. To change that default to something
-  # else, you can use the core.editor setting:
 	editor = subl
 
-[color]
-	# Use colors in Git commands that are capable of colored output when
-	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	ui = auto
-
-# This git config setup for my personal mac using
 [user]
 	email = bagrat.mukaelyan@gmail.com
 	name = Bagrat Mukaelyan
 	signingkey = 4282EADB6DB2D151
 
 [commit]
-	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = true
 
 [gpg]
@@ -150,65 +120,17 @@
 [credential]
 	helper = osxkeychain
 
-# [diff]
-#   tool = meld
-#   # Detect copies as well as renames.
-#   renames = copies
-#   # Use `hexdump` to diff binary files.
-#   textconv = hexdump -v -C
-
-# [difftool]
-#   prompt = false
-
-# [difftool "meld"]
-#   trustExitCode = true
-#   cmd = "open -W -a Meld --args \"$LOCAL\" \"$REMOTE\""
-
-# [merge]
-#   tool = meld
-#   # Include summaries of merged commits in newly created merge commit messages
-#   log = true
-
-# [mergetool]
-#   prompt = false
-# 	keepBackup = true
-
-# [mergetool "meld"]
-#   trustExitCode = true
-#   cmd = "open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\""
-
-[diff]
-	tool = intellij
-
-[difftool]
-	prompt=false
-
-[difftool "intellij"]
-	trustExitCode = true
-	cmd = "idea diff \"$LOCAL\" \"$REMOTE\" --wait"
-
-[merge]
-	log = true
-	tool = intellij
-
-[mergetool]
-	prompt=false
-	keepBackup = true
-
-[mergetool "intellij"]
-	cmd = "idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\" --wait"
-	trustExitCode = true
+[rebase]
+	autostash = true
 
 [pull]
 	ff = only
+	rebase = true
 
 [push]
-  # https://git-scm.com/docs/git-config#git-config-pushdefaultVy
 	default = simple
-	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
-	# When you push a branch that doesn't have an upstream branch configured, Git will automaticly set the upstream branch and push to it.
-  autoSetupRemote = true
+	autoSetupRemote = true
 
 [url "git@github.com:"]
 	insteadOf = "gh:"
@@ -225,6 +147,29 @@
 
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
+
+[diff]
+	tool = intellij
+
+[difftool]
+	prompt = false
+
+[difftool "intellij"]
+	trustExitCode = true
+	cmd = "idea diff \"$LOCAL\" \"$REMOTE\" --wait"
+
+[merge]
+	log = true
+	ff = false
+	tool = intellij
+
+[mergetool]
+	prompt = false
+	keepBackup = true
+
+[mergetool "intellij"]
+	trustExitCode = true
+	cmd = "idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\" --wait"
 
 [includeIf "gitdir:~/Workspace/work/bank/"]
 	path = ~/.gitconfig-work-bank
