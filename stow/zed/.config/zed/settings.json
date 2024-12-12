@@ -43,6 +43,7 @@
     "dockerfile": true,
     "docker-compose": true,
     "tokyo-night": true,
-    "intellij-newui-theme": true
+    "intellij-newui-theme": true,
+    "wakatime": true
   }
 }
