@@ -8,6 +8,7 @@ tap 'hashicorp/tap'
 tap 'maciejwalkowiak/brew'
 tap 'mdogan/zulu'
 tap 'spring-io/tap'
+tap 'atomicjar/tap'
 tap 'ubuntu/microk8s'
 tap 'shaunsingh/SFMono-Nerd-Font-Ligaturized'
 
@@ -108,11 +109,13 @@ cask '1password'
 cask '1password-cli'
 cask 'adguard'
 cask 'alacritty'
+cask 'alcove'
 cask 'alfred'
 cask 'anydesk'
 cask 'appcleaner'
 cask 'arc'
 cask 'chatgpt' if arch == 'arm64'
+cask 'clop'
 cask 'daisydisk'
 cask 'docker'
 cask 'orbstack'
@@ -130,6 +133,7 @@ cask 'keka'
 cask 'keycastr' if arch == 'x86_64'
 cask 'kitty'
 cask 'microsoft-remote-desktop' if arch == 'arm64'
+cask 'meetingbar'
 cask 'miro'
 cask 'msty'
 cask 'multipass'
@@ -140,14 +144,15 @@ cask 'obs'
 cask 'obsidian'
 cask 'ollama'
 cask 'openvpn-connect' if arch == 'x86_64'
+cask 'pearcleaner'
 cask 'rectangle'
 cask 'spotify'
 cask 'todoist'
 cask 'twist' if arch == 'arm64'
+cask 'testcontainers-desktop'
 cask 'utm'
 cask 'vlc'
 cask 'wakatime'
-cask 'yandex' if arch == 'x86_64'
 cask 'yandex-music' if arch == 'x86_64'
 # Messanger's
 cask 'discord'
@@ -170,7 +175,7 @@ cask 'podman-desktop'
 cask 'postman'
 cask 'proxyman'
 cask 'pulsar'
-cask 'redisinsight'
+cask 'redis-insight'
 cask 'sublime-text'
 cask 'tower'
 cask 'visual-studio-code'
@@ -252,12 +257,14 @@ mas 'Battery Health 2', id: 1_120_214_373
 mas 'CleanMyDrive 2', id: 523_620_159
 mas 'Color Picker', id: 1_545_870_783
 mas 'Dato', id: 1_470_584_107
+mas 'Dropover - Easier Drag & Drop', id: 1_355_679_052
 mas 'Hand Mirror', id: 1_502_839_586
 mas 'HEIC Converter', id: 1_294_126_402
 mas 'Ivory', id: 6_444_602_274
 mas 'Keynote', id: 409_183_694
 mas 'Magnet', id: 441_258_766
 mas 'Numbers', id: 409_203_825
+mas 'OttPlayer', id: 1_306_611_194
 mas 'Pages', id: 409_201_541
 mas 'Pixea', id: 1_507_782_672
 mas 'pomodorome', id: 1_484_801_884

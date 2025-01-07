@@ -31,11 +31,7 @@ setopt share_history          # share command history Data
 
 DOTFILES=$HOME/.dotfiles
 
-# Load dotfiles binaries
-export PATH="$PATH:$DOTFILES/bin"
-
-# Jetbrains Toolbox script paths
-export PATH=$PATH:$HOME/Library/Application\ Support/JetBrains/Toolbox/scripts/
+export LC_ALL=en_US.UTF-8;
 
 # Generate the kubectl completion script for Zsh on this path ($HOME/.oh-my-zsh/cache/completions/_kubectl)
 # https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos
@@ -68,8 +64,5 @@ eval "$(op completion zsh)"; compdef _op op
 # I've disabled this for now because I only use "ls" which is
 # referenced in my aliases.zsh file directly.
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-
-# Load keycloak binaries
-export PATH="$PATH:$HOME/Workspace/soft/keycloak/keycloak/bin"
 
 ### Project ENV variables ###
