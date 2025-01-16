@@ -157,6 +157,7 @@ cask 'utm'
 cask 'vlc'
 cask 'wakatime'
 cask 'yandex-music' if arch == 'x86_64'
+cask 'zen-browser' if arch == 'x86_64'
 # Messanger's
 cask 'discord'
 cask 'messenger' if arch == 'x86_64'
