@@ -1,4 +1,7 @@
 {
+  "features": {
+    "inline_completion_provider": "zed"
+  },
   "language_models": {
     "openai": {
       "version": "1",
@@ -12,12 +15,16 @@
     },
     "version": "2",
     "default_open_ai_model": "claude-3-5-sonnet-latest",
-    "provider": "zed.dev"
+    "provider": "zed.dev",
+    "inline_alternatives": [{ "model": "claude-3-5-sonnet-latest", "provider": "zed.dev" }]
   },
   "theme": {
     "mode": "system",
     "dark": "Tokyo Night",
     "light": "Tokyo Night Light"
+  },
+  "inlay_hints": {
+    "enabled": true
   },
   "tab_bar": {
     "show": false
@@ -34,6 +41,7 @@
   "format_on_save": "on",
   "relative_line_numbers": true,
   "auto_install_extensions": {
+    "dart": true,
     "lua": true,
     "ruby": true,
     "toml": true,
@@ -48,5 +56,6 @@
     "tokyo-night": true,
     "intellij-newui-theme": true,
     "wakatime": true
-  }
+  },
+  "metrics": false
 }

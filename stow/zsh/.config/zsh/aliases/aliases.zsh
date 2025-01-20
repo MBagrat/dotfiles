@@ -18,7 +18,7 @@ if [[ -z $commands[eza] ]]; then
 fi
 
 # general use
-alias ls='eza'                                                         # ls
+alias ls='eza --color=always --icons=always --long --git --all'                                                         # ls
 alias l='eza -lbF --git'                                               # list, size, type, git
 alias ll='eza -lbGF --git'                                             # long list
 alias llm='eza -lbGF --git --sort=modified'                            # long list, modified date sort
