@@ -104,6 +104,7 @@ brew 'wget'
 brew 'yarn'
 brew 'yh'
 brew 'pack'
+brew 'zoxide'
 brew 'spring-boot'
 brew 'microk8s'
 # App's

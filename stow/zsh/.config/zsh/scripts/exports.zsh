@@ -60,6 +60,10 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # https://developer.1password.com/docs/cli/get-started#shell-completion
 eval "$(op completion zsh)"; compdef _op op
 
+# zoxide 
+# https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init zsh)"
+
 # Make sure coreutils are loaded before system commands
 # I've disabled this for now because I only use "ls" which is
 # referenced in my aliases.zsh file directly.
