@@ -4,7 +4,7 @@ return {
     lazy = true,
     opts = { style = "tokyonight-night" },
   },
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load tokyonight-night
   {
     "LazyVim/LazyVim",
     opts = {
