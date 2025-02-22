@@ -18,8 +18,9 @@ if [[ -z $commands[eza] ]]; then
 fi
 
 # general use
-alias ls='eza --color=always --icons=always --long --git --all'                                                         # ls
 alias l='eza -lbF --git'                                               # list, size, type, git
+alias lsh='eza --long --group --group-directories-first --icons --header --time-style long-iso'
+alias ls='eza --all --long --group --group-directories-first --icons --header --time-style long-iso'
 alias ll='eza -lbGF --git'                                             # long list
 alias llm='eza -lbGF --git --sort=modified'                            # long list, modified date sort
 alias la='eza -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
