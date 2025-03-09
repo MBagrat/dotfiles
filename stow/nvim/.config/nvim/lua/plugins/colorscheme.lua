@@ -2,7 +2,7 @@ return {
   {
     "folke/tokyonight.nvim",
     lazy = true,
-    opts = { style = "tokyonight-night" },
+    opts = { style = "night" },
   },
   -- Configure LazyVim to load tokyonight-night
   {

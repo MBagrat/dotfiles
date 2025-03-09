@@ -1,4 +1,4 @@
 return {
   "bfontaine/Brewfile.vim",
-  ft = "Brewfile",
+  ft = { "Brewfile", ".Brewfile" },
 }
