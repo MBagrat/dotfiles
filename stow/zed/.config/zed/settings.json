@@ -1,6 +1,6 @@
 {
   "features": {
-    "inline_completion_provider": "zed"
+    "edit_prediction_provider": "zed"
   },
   "language_models": {
     "openai": {
