@@ -49,14 +49,17 @@ eval "$(anyenv init - zsh)"
 # Load tmuxifier scripts
 # https://github.com/jimeh/tmuxifier
 export EDITOR="nvim"
-export PATH="$PATH:$HOMEBREW_PREFIX/opt/tpm/share/tpm/plugins/tmuxifier/bin"
+export TMUXIFIER=$HOMEBREW_PREFIX/opt/tpm/share/tpm/plugins/tmuxifier
+export PATH="${TMUXIFIER}/bin:$PATH"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmuxifier/layouts"
-eval "$(tmuxifier init - zsh)"
+eval "$(tmuxifier init -)"
 
 # Postgres Client API library
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/libpq/bin:$PATH"
 
-export PATH="${HOMEBREW_PREFIX}/share/flutter/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/share/flutter/bin:$PATH"
+
+export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
 
 # 1password zsh completion
 # https://developer.1password.com/docs/cli/get-started#shell-completion

@@ -132,6 +132,11 @@
 	followTags = true
 	autoSetupRemote = true
 
+[merge]
+	log = true
+	ff = false
+    commit = no
+
 [url "git@github.com:"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
@@ -146,30 +151,7 @@
 	pushInsteadOf = "git://gist.github.com/"
 
 [url "git://gist.github.com/"]
-	insteadOf = "gist:"
-
-[diff]
-	tool = intellij
-
-[difftool]
-	prompt = false
-
-[difftool "intellij"]
-	trustExitCode = true
-	cmd = "idea diff \"$LOCAL\" \"$REMOTE\" --wait"
-
-[merge]
-	log = true
-	ff = false
-	tool = intellij
-
-[mergetool]
-	prompt = false
-	keepBackup = true
-
-[mergetool "intellij"]
-	trustExitCode = true
-	cmd = "idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\" --wait"
+  insteadOf = "gist:"
 
 [includeIf "gitdir:~/Workspace/work/bank/"]
 	path = ~/.gitconfig-work-bank

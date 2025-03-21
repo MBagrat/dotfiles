@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 LOCAL="$1"
 REMOTE="$2"
@@ -34,17 +34,17 @@ fi
 if [ -n "$MERGING" ]; then
 	BASE="$3"
 	MERGE="$4"
-	
+
 	# Sanitize BASE path
 	if [[ ! "$BASE" =~ ^/ ]]; then
 		BASE=$(echo "$BASE" | sed -e 's/^\.\///')
 		BASE="$PWD/$BASE"
-		
+
 		if [ ! -f "$BASE" ]; then
 			BASE=/dev/null
 		fi
 	fi
-	
+
 	# Sanitize MERGE path
 	if [[ ! "$MERGE" =~ ^/ ]]; then
 		MERGE=$(echo "$MERGE" | sed -e 's/^\.\///')
@@ -55,10 +55,10 @@ if [ -n "$MERGING" ]; then
 			MERGE=$(echo "$LOCAL" | sed -e 's/\.LOCAL\.[0-9]*//')
 		fi
 	fi
-	
+
 	sleep 1 # required to create different modification timestamp
 	touch "$BACKUP"
-	
+
 	open -W -a "$CMD" --args --auto-merge "$LOCAL" "$BASE" "$REMOTE" --output="$MERGED"
 else
 	open -W -a "$CMD" --args "$LOCAL" "$REMOTE"
@@ -68,7 +68,7 @@ if [ -n "$MERGING" ]; then
 	# Check if the merged file has changed
 	if [ "$MERGE" -ot "$BACKUP" ]; then
 		exit 1
-	fi	
+	fi
 fi
 
 exit 0

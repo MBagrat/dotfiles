@@ -64,3 +64,23 @@ alias rm-ds="find . -name ".DS_Store" -depth -exec rm -f {} \;"
 alias kc-sd="kc.sh start-dev"
 alias mbb="cd $HOME/Workspace/personal/projects/development/mbagrat-blog"
 alias oo="cd /Users/mbagrat/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/my-second-brain/"
+
+alias load_artifactory_creds='set_artifactory_env'
+
+set_artifactory_env() {
+    export ARTIFACTORY_URI="$(op read op://work/azure_devops/credentials/artifactory_uri)"
+    export ARTIFACTORY_EMAIL="$(op read op://work/azure_devops/credentials/email)"
+    export ARTIFACTORY_USERNAME="$(op read op://work/azure_devops/credentials/user_name)"
+    export ARTIFACTORY_PASSWORD="$(op read op://work/azure_devops/credentials/npm_encoded_access_token)"
+    echo "Artifactory credentials loaded successfully."
+}
+
+alias unload_artifactory_creds='unset_artifactory_env'
+
+unset_artifactory_env() {
+    unset ARTIFACTORY_URI
+    unset ARTIFACTORY_EMAIL
+    unset ARTIFACTORY_USERNAME
+    unset ARTIFACTORY_PASSWORD
+    echo "Artifactory credentials removed successfully."
+}

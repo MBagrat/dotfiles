@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array>
+  <array>
     <dict>
         <key>ApplicationIdentifier</key>
         <string>org.gnome.meld</string>
@@ -19,20 +19,36 @@
         <true/>
     </dict>
     <dict>
-      <key>ApplicationIdentifier</key>
-      <string>com.microsoft.VSCode</string>
-      <key>ApplicationName</key>
-      <string>Visual Studio Code</string>
-      <key>DisplayName</key>
-      <string>Visual Studio Code</string>
-      <key>LaunchScript</key>
-      <string>vscode.sh</string>
-      <key>Identifier</key>
-      <string>code</string>
-      <key>SupportsMergeTool</key>
-      <true/>
-      <key>SupportsDiffChangeset</key>
-      <true/>
+        <key>ApplicationIdentifier</key>
+        <string>com.microsoft.VSCode</string>
+        <key>ApplicationName</key>
+        <string>Visual Studio Code</string>
+        <key>DisplayName</key>
+        <string>Visual Studio Code</string>
+        <key>LaunchScript</key>
+        <string>vscode.sh</string>
+        <key>Identifier</key>
+        <string>code</string>
+        <key>SupportsMergeTool</key>
+        <true/>
+        <key>SupportsDiffChangeset</key>
+        <true/>
     </dict>
-</array>
+    <dict>
+        <key>ApplicationIdentifier</key>
+        <string>com.jetbrains.intellij</string>
+        <key>ApplicationName</key>
+        <string>Intellij IDEA</string>
+        <key>DisplayName</key>
+        <string>Intellij IDEA</string>
+        <key>LaunchScript</key>
+        <string>idea.sh</string>
+        <key>Identifier</key>
+        <string>idea</string>
+        <key>SupportsMergeTool</key>
+        <true/>
+        <key>SupportsDiffChangeset</key>
+        <true/>
+    </dict>
+  </array>
 </plist>

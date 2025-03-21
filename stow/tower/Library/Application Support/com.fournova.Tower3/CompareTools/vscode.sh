@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 LOCAL="$1"
 REMOTE="$2"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 LOCAL="$1"
 REMOTE="$2"
@@ -18,16 +18,16 @@ fi
 MERGING="$4"
 BACKUP="/tmp/$(date +"%Y%d%m%H%M%S")"
 
-CMD=$(which code)
+CMD=$(which idea)
 
 if [ ! $CMD ] >/dev/null; then
-	if [ -e '/usr/local/bin/code' ]; then
-		CMD='/usr/local/bin/code'
+	if [ -e "$HOME/Library/Application Support/JetBrains/Toolbox/scripts/idea" ]; then
+		CMD="$HOME/Library/Application Support/JetBrains/Toolbox/scripts/idea"
 	fi
 fi
 
 if [ ! -x "$CMD" ]; then
-	echo "Visual Studio Code command line tool 'code' could not be found. Please make sure it has been installed in /usr/local/bin/." >&2
+	echo "IntelliJ IDEA command line tool 'idea' could not be found. Please make sure it is installed." >&2
 	exit 128
 fi
 
@@ -50,7 +50,7 @@ if [ -n "$MERGING" ]; then
 
 	"$CMD" --wait "$MERGE"
 else
-	"$CMD" --wait --diff "$LOCAL" "$REMOTE"
+	"$CMD" "$LOCAL" "$REMOTE" 
 fi
 
 if [ -n "$MERGING" ]; then
