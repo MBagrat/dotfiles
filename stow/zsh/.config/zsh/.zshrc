@@ -39,3 +39,6 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/themes/p10k.zsh" ]] || source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/themes/p10k.zsh"
+
+# eval "$(starship init zsh)"
+# export STARSHIP_CONFIG="$HOME/.dotfiles/stow/starship/.config/startship/starship.toml"
