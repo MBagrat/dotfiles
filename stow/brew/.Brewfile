@@ -172,7 +172,7 @@ cask 'zoom'
 # Editor's
 cask 'dbeaver-community' if arch == 'x86_64'
 cask 'gitbutler' if arch == 'x86_64'
-cask 'fork' if arch == 'x86_64'
+cask 'fork'
 cask 'lens'
 cask 'mongodb-compass'
 cask 'pgadmin4'
