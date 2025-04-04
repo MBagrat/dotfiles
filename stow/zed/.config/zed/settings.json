@@ -1,4 +1,8 @@
 {
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -11,12 +15,14 @@
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-thinking-latest"
     },
     "version": "2",
-    "default_open_ai_model": "claude-3-5-sonnet-latest",
+    "default_open_ai_model": "claude-3-7-sonnet-thinking-latest",
     "provider": "zed.dev",
-    "inline_alternatives": [{ "model": "claude-3-5-sonnet-latest", "provider": "zed.dev" }]
+    "inline_alternatives": [
+      { "model": "claude-3-7-sonnet-thinking-latest", "provider": "zed.dev" }
+    ]
   },
   "theme": {
     "mode": "system",
