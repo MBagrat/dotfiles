@@ -1,3 +1,4 @@
+# Taps
 tap '1password/tap'
 tap 'buildpacks/tap'
 tap 'graalvm/tap'
@@ -13,188 +14,259 @@ tap 'ubuntu/microk8s'
 tap 'netbirdio/tap'
 tap 'shaunsingh/SFMono-Nerd-Font-Ligaturized'
 
+# Architecture Detection
 # uname -m returns the architecture of the system.
 # - For ARM-based Macs, this returns "arm64".
 # - For Intel-based Macs, it returns "x86_64".
 arch = `uname -m`.chomp
 
-brew 'libyaml'
-brew 'openssl@3'
-brew 'readline'
-brew 'ansible'
-brew 'anyenv'
-brew 'gmp'
-brew 'bash'
-brew 'bc'
-brew 'black'
-brew 'bat'
-brew 'chezmoi'
-brew 'tlrc'
-brew 'thefuck'
+# Essential System Tools
 brew 'coreutils'
 brew 'gawk'
 brew 'gsed'
-brew 'btop'
-brew 'cmake'
-brew 'cmus'
-brew 'composer'
-brew 'cocoapods'
-brew 'coreutils'
-brew 'ctop'
-brew 'libssh2'
 brew 'curl'
-brew 'dive'
-brew 'eza'
-brew 'fx'
-brew 'fd'
-brew 'fzf'
-brew 'libavif'
-brew 'gd'
-brew 'git'
-brew 'go'
-brew 'gnupg'
-brew 'gradle'
-brew 'graphviz'
-brew 'groovy'
-brew 'helm'
-brew 'htop'
-brew 'httpie'
-brew 'lazygit'
-brew 'libheif'
-brew 'luarocks'
-brew 'jhipster'
-brew 'jmeter'
-brew 'jq'
-brew 'julia'
-brew 'just'
-brew 'k9s'
-brew 'kdoctor'
-brew 'kind'
-brew 'kotlin'
-brew 'kubernetes-cli'
-brew 'libpq'
-brew 'mackup'
-brew 'mas'
-brew 'maven'
-brew 'minikube'
-brew 'microk8s'
-brew 'minikube'
-brew 'netbird'
-brew 'neovim'
-# Java: Openjdk
-brew 'openjdk@8' if arch == 'x86_64'
-brew 'openjdk@11'
-brew 'openjdk@17'
-brew 'openjdk@21'
-brew 'openjdk'
-brew 'nowplaying-cli'
-brew 'podman'
-brew 'php'
-brew 'pngpaste'
-brew 'prettier'
-brew 'pinentry-mac'
-brew 'qemu'
-brew 'ripgrep'
-brew 'rust'
-brew 'speedtest-cli'
-brew 'starship'
-brew 'stow'
-brew 'tealdeer'
-brew 'telnet'
-brew 'terraform'
-brew 'tpm'
-brew 'tmux'
+brew 'wget'
+brew 'bash'
+brew 'bc'
 brew 'trash-cli'
 brew 'tree'
-brew 'wget'
+brew 'pinentry-mac'
+brew 'openssl@3'
+brew 'readline'
+
+# Package Managers
+brew 'mas'  # Mac App Store CLI
 brew 'yarn'
-brew 'yh'
-brew 'pack'
-brew 'poppler'
+
+# Development Environment Management
+brew 'anyenv'
+brew 'cocoapods'
+cask 'wakatime'
+
+# Security & Encryption
+brew 'gnupg'
+
+# Development Tools & Version Control
+brew 'git'
+brew 'lazygit'
+brew 'neovim'
+brew 'tmux'
+brew 'tpm'
+brew 'starship'
+brew 'stow'
+brew 'chezmoi'
+brew 'mackup'
+
+# Search and Navigation Tools
+brew 'fzf'
+brew 'ripgrep'
+brew 'fd'
 brew 'zoxide'
-brew 'spring-boot'
+brew 'eza'
+brew 'bat'
+brew 'fx'
+brew 'jq'
+brew 'yh'
+
+# System Monitoring & Performance
+brew 'htop'
+brew 'btop'
+brew 'ctop'
+brew 'speedtest-cli'
+
+# Languages and Runtimes
+brew 'go'
+brew 'rust'
+brew 'kotlin'
+brew 'julia'
+brew 'php'
+brew 'composer'
+brew 'black'
+brew 'prettier'
+brew 'luarocks'
+
+# Build Tools & Package Managers
+brew 'cmake'
+brew 'gradle'
+brew 'maven'
+brew 'just'
+brew 'pack'
+
+# Container and Cloud Tools
+brew 'kubernetes-cli'
+brew 'helm'
+brew 'terraform'
+brew 'k9s'
+brew 'kind'
+brew 'minikube'
 brew 'microk8s'
-# App's
+brew 'podman'
+brew 'netbird'
+brew 'ansible'
+brew 'dive'
+brew 'kdoctor'
+
+# Virtualization & Emulation
+brew 'qemu'
+
+# Development Libraries
+brew 'libyaml'
+brew 'libssh2'
+brew 'libavif'
+brew 'gd'
+brew 'libheif'
+brew 'libpq'
+brew 'poppler'
+brew 'gmp'
+
+# Development Tools
+brew 'spring-boot'
+brew 'jhipster'
+brew 'jmeter'
+brew 'graphviz'
+brew 'groovy'
+brew 'httpie'
+brew 'tealdeer'
+brew 'telnet'
+
+# Media & Entertainment
+brew 'cmus'
+brew 'nowplaying-cli'
+brew 'pngpaste'
+
+# CLI Helpers & Utils
+brew 'tlrc'
+brew 'thefuck'
+
+# Applications
+## Productivity & Utilities
 cask '1password'
 cask '1password-cli'
 cask 'adguard'
-cask 'alacritty' if arch == 'x86_64'
 cask 'alfred'
-cask 'anydesk' if arch == 'x86_64'
 cask 'appcleaner'
 cask 'keyboardcleantool'
-cask 'arc'
-cask 'chatgpt' if arch == 'arm64'
 cask 'daisydisk'
-cask 'docker'
-cask 'orbstack' if arch == 'x86_64'
-cask 'drawio'
-cask 'firefox'
-cask 'flameshot' if arch == 'arm64'
-cask 'google-chrome'
-cask 'google-drive' if arch == 'x86_64'
 cask 'hiddenbar'
-cask 'iterm2'
-cask 'itermai'
-cask 'keka'
-cask 'keycastr' if arch == 'x86_64'
-cask 'kitty' if arch == 'x86_64'
-cask 'microsoft-remote-desktop' if arch == 'arm64'
-cask 'miro'
-cask 'msty'
-cask 'multipass' if arch == 'x86_64'
-cask 'netbird-ui' if arch == 'x86_64'
-cask 'netnewswire'
-cask 'notion'
-cask 'notion-calendar'
-cask 'obs' if arch == 'x86_64'
-cask 'obsidian'
-cask 'ollama'
-cask 'openvpn-connect' if arch == 'x86_64'
-cask 'pearcleaner'
 cask 'rectangle'
-cask 'spotify'
-cask 'testcontainers-desktop'
-cask 'utm'
-cask 'vlc'
-cask 'wakatime'
-cask 'yandex-music' if arch == 'x86_64'
-cask 'zen-browser' if arch == 'x86_64'
-# Messanger's
-cask 'discord' if arch == 'x86_64'
-cask 'messenger' if arch == 'x86_64'
-cask 'signal' if arch == 'x86_64'
-cask 'slack'
-cask 'telegram'
-cask 'viber' if arch == 'x86_64'
-cask 'wechat' if arch == 'x86_64'
-cask 'whatsapp' if arch == 'x86_64'
-cask 'zoom'
-# Editor's
-cask 'dbeaver-community' if arch == 'x86_64'
-cask 'gitbutler' if arch == 'x86_64'
-cask 'fork'
-cask 'lens'
-cask 'mongodb-compass'
-cask 'pgadmin4'
-cask 'podman-desktop' if arch == 'x86_64'
-cask 'postman'
-cask 'mockoon'
-cask 'proxyman'
-cask 'redis-insight' if arch == 'x86_64'
-cask 'sublime-text' if arch == 'x86_64'
-cask 'tower'
-cask 'visual-studio-code'
-cask 'warp' if arch == 'x86_64'
-cask 'wave' if arch == 'x86_64'
-cask 'zed'
-# Utils
-cask 'folx'
-cask 'fliqlo'
+cask 'pearcleaner'
+cask 'keka'
+cask 'itermai'
+cask 'msty'
 cask 'vanilla'
 cask 'browserosaurus'
 cask 'brewservicesmenubar'
 cask 'thingsmacsandboxhelper'
+
+## Browsers
+cask 'arc'
+cask 'firefox'
+cask 'google-chrome'
+if arch == 'x86_64'
+  cask 'zen-browser'
+end
+
+## Terminal Emulators
+cask 'iterm2'
+if arch == 'x86_64'
+  cask 'alacritty'
+  cask 'kitty'
+  cask 'warp'
+end
+
+## Development Tools & IDEs
+cask 'visual-studio-code'
+cask 'zed'
+cask 'drawio'
+cask 'keystore-explorer'
+cask 'flutter'
+if arch == 'x86_64'
+  cask 'sublime-text'
+  cask 'dbeaver-community'
+  cask 'gitbutler'
+end
+cask 'fork'
+cask 'tower'
+cask 'lens'
+cask 'mongodb-compass'
+cask 'pgadmin4'
+cask 'postman'
+cask 'mockoon'
+cask 'proxyman'
+if arch == 'x86_64'
+  cask 'redis-insight'
+  cask 'podman-desktop'
+  cask 'wave'
+#   cask 'windsurf'
+end
+
+## Virtualization & Containers
+cask 'docker'
+cask 'testcontainers-desktop'
+cask 'utm'
+if arch == 'x86_64'
+  cask 'orbstack'
+  cask 'multipass'
+end
+
+## Communication & Messaging
+cask 'slack'
+cask 'telegram'
+cask 'zoom'
+if arch == 'x86_64'
+  cask 'discord'
+  cask 'messenger'
+  cask 'signal'
+  cask 'viber'
+  cask 'wechat'
+  cask 'whatsapp'
+end
+
+## Media & Entertainment
+cask 'spotify'
+cask 'vlc'
+cask 'folx'
+cask 'fliqlo'
+if arch == 'x86_64'
+  cask 'yandex-music'
+end
+
+## Productivity & Note-taking
+cask 'notion'
+cask 'notion-calendar'
+cask 'obsidian'
+cask 'todoist'
+cask 'netnewswire'
+if arch == 'x86_64'
+  cask 'google-drive'
+end
+
+## Remote & Collaboration
+if arch == 'x86_64'
+  cask 'anydesk'
+  cask 'netbird-ui'
+  cask 'openvpn-connect'
+end
+if arch == 'arm64'
+  cask 'microsoft-remote-desktop'
+end
+
+## AI & Development
+cask 'ollama'
+if arch == 'arm64'
+  cask 'chatgpt'
+  cask 'lm-studio'
+end
+
+## Screen Recording & Streaming
+if arch == 'x86_64'
+  cask 'keycastr'
+  cask 'obs'
+end
+if arch == 'arm64'
+  cask 'flameshot'
+end
+
 # Quick Look Plugins
 cask 'qlcolorcode'
 cask 'qlimagesize'
@@ -207,7 +279,8 @@ cask 'qlprettypatch'
 cask 'quicklook-csv'
 cask 'qlplayground'
 cask 'webpquicklook'
-# Font's
+
+# Fonts
 cask 'font-fira-code'
 cask 'font-fira-code-nerd-font'
 cask 'font-fira-mono'
@@ -218,64 +291,81 @@ cask 'font-meslo-lg'
 cask 'font-meslo-lg-dz'
 cask 'font-meslo-lg-nerd-font'
 cask 'font-sf-mono-nerd-font-ligaturized'
-# Java: Amazon Corretto releases
+
+# Java Development
+## Amazon Corretto (Alternative Distribution)
 cask 'corretto@8'
 cask 'corretto@11'
 cask 'corretto@17'
 cask 'corretto@21'
-cask 'corretto'
-# Java: Eclipse Temurin releases
-cask 'temurin@8'
-cask 'temurin@11'
-cask 'temurin@17'
-cask 'temurin@21'
-cask 'temurin'
-# Java: GraalVM CE releases
-# repository: https://github.com/graalvm/homebrew-tap
-cask 'graalvm-community-jdk17'
-cask 'graalvm-community-jdk21'
-cask 'graalvm-community-jdk22'
-# Java: Zulu JDK releases
-cask 'zulu-jdk8'
-cask 'zulu-jdk11'
-cask 'zulu-jdk17'
-cask 'zulu-jdk21'
-cask 'zulu'
-# Java: IDE's
+
+## Java IDEs
 cask 'jetbrains-toolbox'
-cask 'eclipse-installer' if arch == 'x86_64'
 cask 'springtoolsuite'
 cask 'netbeans'
-# Java: Tool's
-cask 'keystore-explorer'
-cask 'visualvm'
-# Java: Mission Controls
-cask 'zulu-mc'
-# Learning
-cask 'flutter'
 
-# Mac App Store
-mas '1Password for Safari', id: 1_569_813_296
+## Java Tools
+cask 'visualvm'  # Add this line
+
+# Alternative JDK distributions (commented)
+
+# Java Development
+## OpenJDK (Official)
+# brew 'openjdk@8' if arch == 'x86_64'
+# brew 'openjdk@11'
+# brew 'openjdk@17'
+# brew 'openjdk@21'
+# brew 'openjdk'
+
+### Eclipse Temurin releases
+# cask 'temurin@8'
+# cask 'temurin@11'
+# cask 'temurin@17'
+# cask 'temurin@21'
+# cask 'temurin'
+
+### GraalVM CE releases
+# cask 'graalvm-community-jdk17'
+# cask 'graalvm-community-jdk21'
+# cask 'graalvm-community-jdk22'
+
+### Zulu JDK releases
+# cask 'zulu-jdk8'
+# cask 'zulu-jdk11'
+# cask 'zulu-jdk17'
+# cask 'zulu-jdk21'
+# cask 'zulu'
+
+# Mac App Store Applications
+## Productivity
+mas 'Things', id: 904_280_696
 mas 'Amphetamine', id: 937_984_704
-mas 'AudioBookBinder', id: 413_969_927
+mas 'Dato', id: 1_470_584_107
+mas 'Dropover - Easier Drag & Drop', id: 1_355_679_052
+mas 'Magnet', id: 441_258_766
+mas 'pomodorome', id: 1_484_801_884
+
+## Apple Apps
+mas 'Keynote', id: 409_183_694
+mas 'Numbers', id: 409_203_825
+mas 'Pages', id: 409_201_541
+mas 'Xcode', id: 497_799_835
+
+## Utilities
+mas '1Password for Safari', id: 1_569_813_296
 mas 'Battery Health 2', id: 1_120_214_373
 mas 'CleanMyDrive 2', id: 523_620_159
 mas 'Color Picker', id: 1_545_870_783
-mas 'Dato', id: 1_470_584_107
-mas 'Dropover - Easier Drag & Drop', id: 1_355_679_052
 mas 'Hand Mirror', id: 1_502_839_586
-mas 'HEIC Converter', id: 1_294_126_402
-mas 'Ivory', id: 6_444_602_274
-mas 'Keynote', id: 409_183_694
-mas 'Magnet', id: 441_258_766
-mas 'Numbers', id: 409_203_825
-mas 'Pages', id: 409_201_541
-mas 'Pixea', id: 1_507_782_672 if arch == 'x86_64'
-mas 'pomodorome', id: 1_484_801_884
-mas 'ScreenBrush', id: 1_233_965_871 if arch == 'x86_64'
-mas 'Spark', id: 1_176_895_641
 mas 'Startup Disk Full Fixer', id: 1_346_655_838
-mas 'Things', id: 904_280_696
-mas 'Unsplash Wallpapers', id: 1_284_863_847
 mas 'WaterMinder', id: 1_415_257_369
-mas 'Xcode', id: 497_799_835
+
+## Communication
+mas 'Spark', id: 1_176_895_641
+
+## Media & Design
+mas 'Unsplash Wallpapers', id: 1_284_863_847
+if arch == 'x86_64'
+  mas 'Pixea', id: 1_507_782_672
+  mas 'ScreenBrush', id: 1_233_965_871
+end
