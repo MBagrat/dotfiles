@@ -1,94 +1,141 @@
 #!/bin/sh
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
+# =============================================================================
+# Environment Variables
+# =============================================================================
+# This script sets up environment variables for the shell and system.
+# It includes paths, configuration locations, and other system-wide settings.
+# =============================================================================
 
-# Load zsh profiler module
-zmodload zsh/zprof
+# =============================================================================
+# XDG Base Directory Specification
+# =============================================================================
+# These variables define the base directories for various types of files
+# according to the XDG Base Directory Specification.
+# =============================================================================
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
-[ -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history/" ] || mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history/"
-[ -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/" ] || mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/"
+# =============================================================================
+# Shell Configuration
+# =============================================================================
+# These variables control various aspects of the shell's behavior.
+# =============================================================================
+export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+export ZSH_CACHE_DIR="${XDG_CACHE_HOME}/zsh"
+export ZSH_COMPDUMP="${ZSH_CACHE_DIR}/zcompdump-${ZSH_VERSION}"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+export ZSH_AUTOSUGGEST_USE_ASYNC=true
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=true
+export SHELL_SESSIONS_DISABLE=1
 
-# Disable shell sessions
-SHELL_SESSIONS_DISABLE=1
+# =============================================================================
+# Editor Configuration
+# =============================================================================
+# These variables configure the default editor and related settings.
+# =============================================================================
+export EDITOR="nvim"
+export VISUAL="nvim"
+export PAGER="less"
+export MANPAGER="less"
 
-# Completion configuration
-autoload -Uz compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/.zcompdump-${HOST}-${ZSH_VERSION}"
-compinit -C -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/.zcompdump-${HOST}-${ZSH_VERSION}"
+# =============================================================================
+# Language and Locale
+# =============================================================================
+# These variables control language and locale settings.
+# =============================================================================
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
 
-# History file configuration
-HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history/.zsh_history"
-HISTSIZE=50000
-SAVEHIST=10000
+# =============================================================================
+# Path Configuration
+# =============================================================================
+# These variables add directories to the system PATH.
+# =============================================================================
+# Base paths
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
-# History command configuration
-setopt extended_history       # record timestamp of command in HISTFILE
-setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_dups       # ignore duplicated commands history list
-setopt hist_ignore_space      # ignore commands that start with space
-setopt hist_verify            # show command with history expansion to user before running it
-setopt share_history          # share command history Data
+# Development tools paths
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/libpq/bin:$PATH"  # Postgres Client API library
+export PATH="$HOMEBREW_PREFIX/share/flutter/bin:$PATH"
+export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
 
-DOTFILES=$HOME/.dotfiles
+# Development environment paths
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:$PATH"
 
-export LC_ALL=en_US.UTF-8;
+# =============================================================================
+# Application Configuration
+# =============================================================================
+# These variables configure various applications and tools.
+# =============================================================================
+# FZF configuration
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d . $HOME"
+export FZF_TMUX=1
+export FZF_TMUX_OPTS="-p 80%"
 
-# Generate the kubectl completion script for Zsh on this path ($HOME/.oh-my-zsh/cache/completions/_kubectl)
-# https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos
-# shellcheck source=/usr/local/bin/kubectl
+# EZA configuration
+export EZA_CONFIG_DIR="$XDG_CONFIG_HOME/eza"
+
+# Bat configuration
+export BAT_THEME=tokyonight_night
+
+# =============================================================================
+# System Configuration
+# =============================================================================
+# These variables configure system-wide settings and behaviors.
+# =============================================================================
+# Homebrew configuration
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Dotfiles configuration
+export DOTFILES=$HOME/.dotfiles
+
+# Kubernetes completion
 source <(kubectl completion zsh)
 
-# Generate the buildpack completion script for Zsh on this path ($HOME/.pack/completion.zsh)
-# shellcheck source=/Users/mbagrat/.pack/completion.zsh
+# Buildpack completion
 source "$(pack completion -s zsh)"
 
-# All in one for **env
-# https://anyenv.github.io/
+# Anyenv initialization
 eval "$(anyenv init - zsh)"
 
-# Load tmuxifier scripts
-# https://github.com/jimeh/tmuxifier
-export EDITOR="nvim"
+# Tmuxifier configuration
 export TMUXIFIER=$HOMEBREW_PREFIX/opt/tpm/share/tpm/plugins/tmuxifier
 export PATH="${TMUXIFIER}/bin:$PATH"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmuxifier/layouts"
 eval "$(tmuxifier init -)"
 
-# Postgres Client API library
-export PATH="$HOMEBREW_PREFIX/opt/libpq/bin:$PATH"
-
-export PATH="$HOMEBREW_PREFIX/share/flutter/bin:$PATH"
-
-export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
-
-# 1password zsh completion
-# https://developer.1password.com/docs/cli/get-started#shell-completion
+# 1Password CLI completion
 eval "$(op completion zsh)"; compdef _op op
 
-# ---- FZF -----
-
-# Set up fzf key bindings and fuzzy completion
+# FZF key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 
-# ----- EZA -----
-export EZA_CONFIG_DIR="$XDG_CONFIG_HOME/eza"
-
-# ----- Bat (better cat) -----
-
-export BAT_THEME=tokyonight_night
-
-# ---- TheFuck -----
-
-# thefuck alias
+# TheFuck configuration
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
 
-# ---- Zoxide (better cd) ----
+# Zoxide configuration
 eval "$(zoxide init --cmd cd zsh)"
-
-# Make sure coreutils are loaded before system commands
-# I've disabled this for now because I only use "ls" which is
-# referenced in my aliases.zsh file directly.
-#export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-
-### Project ENV variables ###

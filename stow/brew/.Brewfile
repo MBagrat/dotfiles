@@ -35,7 +35,7 @@ brew 'openssl@3'
 brew 'readline'
 
 # Package Managers
-brew 'mas'  # Mac App Store CLI
+brew 'mas' # Mac App Store CLI
 brew 'yarn'
 
 # Development Environment Management
@@ -162,9 +162,7 @@ cask 'thingsmacsandboxhelper'
 cask 'arc'
 cask 'firefox'
 cask 'google-chrome'
-if arch == 'x86_64'
-  cask 'zen-browser'
-end
+cask 'zen-browser' if arch == 'x86_64'
 
 ## Terminal Emulators
 cask 'iterm2'
@@ -197,7 +195,7 @@ if arch == 'x86_64'
   cask 'redis-insight'
   cask 'podman-desktop'
   cask 'wave'
-#   cask 'windsurf'
+  cask 'windsurf'
 end
 
 ## Virtualization & Containers
@@ -227,9 +225,7 @@ cask 'spotify'
 cask 'vlc'
 cask 'folx'
 cask 'fliqlo'
-if arch == 'x86_64'
-  cask 'yandex-music'
-end
+cask 'yandex-music' if arch == 'x86_64'
 
 ## Productivity & Note-taking
 cask 'notion'
@@ -237,9 +233,7 @@ cask 'notion-calendar'
 cask 'obsidian'
 cask 'todoist'
 cask 'netnewswire'
-if arch == 'x86_64'
-  cask 'google-drive'
-end
+cask 'google-drive' if arch == 'x86_64'
 
 ## Remote & Collaboration
 if arch == 'x86_64'
@@ -247,9 +241,7 @@ if arch == 'x86_64'
   cask 'netbird-ui'
   cask 'openvpn-connect'
 end
-if arch == 'arm64'
-  cask 'microsoft-remote-desktop'
-end
+cask 'microsoft-remote-desktop' if arch == 'arm64'
 
 ## AI & Development
 cask 'ollama'
@@ -263,9 +255,7 @@ if arch == 'x86_64'
   cask 'keycastr'
   cask 'obs'
 end
-if arch == 'arm64'
-  cask 'flameshot'
-end
+cask 'flameshot' if arch == 'arm64'
 
 # Quick Look Plugins
 cask 'qlcolorcode'
@@ -305,7 +295,7 @@ cask 'springtoolsuite'
 cask 'netbeans'
 
 ## Java Tools
-cask 'visualvm'  # Add this line
+cask 'visualvm' # Add this line
 
 # Alternative JDK distributions (commented)
 
