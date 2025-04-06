@@ -1,4 +1,6 @@
-<p align="center"><img src="art/banner-2x.png"></p>
+# My Dotfiles
+
+![Banner](art/banner-2x.png)
 
 ## Introduction
 
