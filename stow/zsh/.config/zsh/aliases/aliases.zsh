@@ -66,6 +66,7 @@ alias kc-sd="kc.sh start-dev"
 alias mbb="cd $HOME/Workspace/personal/projects/development/mbagrat-blog"
 alias oo="cd /Users/mbagrat/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/my-second-brain/"
 
+# Artifactory Environment Variables 
 alias load_artifactory_creds='set_artifactory_env'
 
 set_artifactory_env() {
@@ -84,4 +85,17 @@ unset_artifactory_env() {
     unset ARTIFACTORY_USERNAME
     unset ARTIFACTORY_PASSWORD
     echo "Artifactory credentials removed successfully."
+}
+
+# AI Environment Variables 
+alias load_ai_env='set_ai_env'
+
+set_ai_env() {
+    export ANTHROPIC_API_KEY="$(op read op://Personal/anthropic/anthropic_api_key)"
+}
+
+alias unload_ai_env='unset_ai_env'
+
+unset_ai_env() {
+    unset ANTHROPIC_API_KEY
 }

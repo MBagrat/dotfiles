@@ -36,3 +36,6 @@ vim.opt.mouse = "nicr"
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
+
+-- views can only be fully collapsed with the global statusline
+vim.opt.laststatus = 3
