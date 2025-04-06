@@ -1,4 +1,4 @@
-# My Dotfiles
+# .dotfiles for macos
 
 ![Banner](art/banner-2x.png)
 
