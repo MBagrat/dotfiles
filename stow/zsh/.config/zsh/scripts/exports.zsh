@@ -139,3 +139,6 @@ eval $(thefuck --alias fk)
 
 # Zoxide configuration
 eval "$(zoxide init --cmd cd zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/mbagrat/.lmstudio/bin"

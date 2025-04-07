@@ -35,7 +35,7 @@ brew 'openssl@3'
 brew 'readline'
 
 # Package Managers
-brew 'mas' # Mac App Store CLI
+brew 'mas'
 brew 'yarn'
 
 # Development Environment Management
