@@ -246,8 +246,10 @@ elsif arch == 'arm64'
 end
 
 ## AI & Development
-cask 'ollama'
-if arch == 'arm64'
+if arch == 'x86_64'
+  cask 'msty'
+  cask 'ollama'
+elsif arch == 'arm64'
   cask 'chatgpt'
   cask 'lm-studio'
 end
@@ -256,8 +258,9 @@ end
 if arch == 'x86_64'
   cask 'keycastr'
   cask 'obs'
+elsif arch == 'arm64'
+  cask 'flameshot'
 end
-cask 'flameshot' if arch == 'arm64'
 
 # Quick Look Plugins
 cask 'qlcolorcode'
