@@ -32,7 +32,7 @@
     "enabled": true
   },
   "tab_bar": {
-    "show": false
+    "show": true
   },
   "ui_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_family": "JetBrainsMono Nerd Font",
