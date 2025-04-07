@@ -3,26 +3,6 @@
     "diagnostics": false,
     "metrics": false
   },
-  "features": {
-    "edit_prediction_provider": "zed",
-    "inline_completions": true,
-    "inline_completions_provider": "zed.dev"
-  },
-  "assistant": {
-    "version": "2",
-    "provider": "zed.dev",
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
-    },
-    "default_claude": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
-    },
-    "inline_alternatives": [
-      { "model": "claude-3-7-sonnet-latest", "provider": "zed.dev" }
-    ]
-  },
   "theme": {
     "mode": "system",
     "dark": "Tokyo Night",
@@ -31,8 +11,8 @@
   "inlay_hints": {
     "enabled": true
   },
-  "tab_bar": {
-    "show": true
+  "gutter": {
+    "line_numbers": false
   },
   "ui_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_family": "JetBrainsMono Nerd Font",
