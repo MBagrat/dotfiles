@@ -3,11 +3,8 @@
     "diagnostics": false,
     "metrics": false
   },
-  "theme": {
-    "mode": "system",
-    "dark": "Tokyo Night",
-    "light": "Tokyo Night Light"
-  },
+  "theme": "JetBrains New Light",
+  "icon_theme": "JetBrains New UI Icons (Light)",
   "inlay_hints": {
     "enabled": true
   },
@@ -39,6 +36,7 @@
     "dockerfile": true,
     "docker-compose": true,
     "tokyo-night": true,
+    "jetbrains-new-ui-icons": true,
     "intellij-newui-theme": true,
     "wakatime": true
   }
