@@ -56,6 +56,7 @@ brew 'starship'
 brew 'stow'
 brew 'chezmoi'
 brew 'mackup'
+brew 'uv'
 
 # Search and Navigation Tools
 brew 'fzf'
@@ -166,10 +167,10 @@ cask 'zen-browser' if arch == 'x86_64'
 
 ## Terminal Emulators
 cask 'iterm2'
+cask 'warp'
 if arch == 'x86_64'
   cask 'alacritty'
   cask 'kitty'
-  cask 'warp'
 end
 
 ## Development Tools & IDEs
