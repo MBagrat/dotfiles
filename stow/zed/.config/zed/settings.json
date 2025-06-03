@@ -1,9 +1,16 @@
 {
+  "assistant": {
+    "default_model": {
+      "provider": "ollama",
+      "model": "qwen2.5-coder:32b"
+    },
+    "version": "2"
+  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
-  "theme": "JetBrains New Light",
+  "theme": "JetBrains New Dark",
   "icon_theme": "JetBrains New UI Icons (Light)",
   "inlay_hints": {
     "enabled": true

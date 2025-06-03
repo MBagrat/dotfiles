@@ -129,6 +129,7 @@ eval "$(tmuxifier init -)"
 
 # 1Password CLI completion
 eval "$(op completion zsh)"; compdef _op op
+export EZA_CONFIG_DIR=$HOME/.config/eza
 
 # FZF key bindings and fuzzy completion
 eval "$(fzf --zsh)"
@@ -142,3 +143,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/mbagrat/.lmstudio/bin"
+
+# Android sdk environment variables
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin
