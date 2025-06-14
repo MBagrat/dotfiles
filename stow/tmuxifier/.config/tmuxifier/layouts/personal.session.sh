@@ -6,28 +6,27 @@ session_root "$HOME/Workspace/personal/projects"
 # argument is given, session name will be based on layout file name.
 if initialize_session "personal"; then
 
-  # Load specified window layout.
-  #
-  # Arguments:
-  #   - $1: Name of or file path to window layout to load.
-  #   - $2: (optional) Override default window name.
-  #
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/dotfiles.window.sh"
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/obsidian.window.sh"
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/learning.window.sh"
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/nvim.window.sh"
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/services.window.sh"
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/website.window.sh"
+	# Load specified window layout.
+	#
+	# Arguments:
+	#   - $1: Name of or file path to window layout to load.
+	#   - $2: (optional) Override default window name.
+	#
+	load_window "$TMUXIFIER_LAYOUT_PATH/personal/dotfiles.window.sh"
+	load_window "$TMUXIFIER_LAYOUT_PATH/personal/learning.window.sh"
+	load_window "$TMUXIFIER_LAYOUT_PATH/personal/nvim.window.sh"
+	load_window "$TMUXIFIER_LAYOUT_PATH/personal/services.window.sh"
+	load_window "$TMUXIFIER_LAYOUT_PATH/personal/website.window.sh"
 
-  # Select a specific window.
-  #
-  # Arguments:
-  #   - $1: Window ID or name to select.
-  #
-  select_window 1
-  # select_window "Dotfiles"
-  # select_window "Website"
-  # select_window "Services"
+	# Select a specific window.
+	#
+	# Arguments:
+	#   - $1: Window ID or name to select.
+	#
+	select_window 1
+	# select_window "Dotfiles"
+	# select_window "Website"
+	# select_window "Services"
 
 fi
 
