@@ -12,6 +12,7 @@ tap 'shaunsingh/sfmono-nerd-font-ligaturized'
 tap 'spring-io/tap'
 tap 'ubuntu/microk8s'
 
+brew 'bash'
 # Cryptography and SSL/TLS Toolkit
 brew 'openssl@3'
 # YAML Parser
@@ -33,6 +34,8 @@ brew 'bruno-cli'
 brew 'btop'
 # Core application library for C
 brew 'glib'
+brew 'gh'
+brew 'glab'
 # Manage your dotfiles across multiple diverse machines, securely
 brew 'chezmoi'
 # Cross-platform make
@@ -219,8 +222,19 @@ cask 'anydesk'
 cask 'appcleaner'
 # Chromium based browser
 cask 'arc'
+# Open-source browser prompter
+cask 'browserosaurus'
 # Menu item for starting and stopping homebrew services
 cask 'brewservicesmenubar'
+# Open source IDE for exploring and testing APIs
+cask 'bruno'
+# OpenJDK distribution from Amazon
+cask 'corretto@8'
+cask 'corretto@11'
+cask 'corretto@17'
+cask 'corretto@21'
+cask 'corretto'
+# Write, edit, and chat about your code with AI
 cask 'cursor'
 # Disk space visualiser
 cask 'daisydisk'
@@ -425,6 +439,7 @@ mas 'Trello', id: 1_278_508_951
 mas 'Unsplash Wallpapers', id: 1_284_863_847
 mas 'WaterMinder', id: 1_415_257_369
 mas 'Xcode', id: 497_799_835
+mas 'Messenger', id: 454_638_411
 mas 'Whatsapp Messenger', id: 310_633_997
 
 vscode 'angular.ng-template'
@@ -476,3 +491,4 @@ vscode 'vscjava.vscode-spring-initializr'
 vscode 'wakatime.vscode-wakatime'
 vscode 'wayou.vscode-todo-highlight'
 vscode '1password.op-vscode'
+vscode 'ritwickdey.liveserver'
