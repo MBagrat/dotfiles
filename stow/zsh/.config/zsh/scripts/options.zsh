@@ -31,15 +31,11 @@ setopt CORRECT              # Try to correct the spelling of commands
 setopt CDABLE_VARS          # Change directory to a path stored in a variable
 
 # =============================================================================
-# Completion Options
+# Path and Parameter Options
 # =============================================================================
-# These options control how command and argument completion works.
+# These options control path expansion and parameter behavior.
 # =============================================================================
-setopt COMPLETE_IN_WORD     # Complete from both ends of a word
-setopt ALWAYS_TO_END        # Move cursor to the end of a completed word
 setopt PATH_DIRS            # Perform path search even on command names with slashes
-setopt AUTO_MENU            # Show completion menu on a successive tab press
-setopt AUTO_LIST            # Automatically list choices on ambiguous completion
 setopt AUTO_PARAM_SLASH     # If completed parameter is a directory, add a trailing slash
 
 # =============================================================================

@@ -1,10 +1,8 @@
 autoload -Uz plug
 
-# completions
-zstyle ':completion:*' menu yes select
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+# Include hidden files in completion
 zmodload zsh/complist
-_comp_options+=(globdots)		# Include hidden files.
+_comp_options+=(globdots)
 zle_highlight=('paste:none')
 
 unsetopt BEEP

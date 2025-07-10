@@ -4,20 +4,9 @@
 # Performance Optimization
 # =============================================================================
 # This script contains settings and configurations to optimize Zsh performance.
-# It includes settings for the completion system, prompt rendering, and other
+# It includes settings for prompt rendering, system resources, and other
 # performance-critical aspects of the shell.
 # =============================================================================
-
-# =============================================================================
-# Completion System Optimization
-# =============================================================================
-# These settings optimize the Zsh completion system for better performance.
-# =============================================================================
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcache"
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcache"
 
 # =============================================================================
 # Prompt Performance
@@ -44,13 +33,6 @@ setopt NO_CHECK_JOBS    # Don't report on jobs when shell exit
 if [[ -n "$ZSH_PROFILE" ]]; then
     zmodload zsh/zprof
 fi
-
-# Optimize completion system
-# zstyle ':completion:*' use-cache on
-# zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump"
-# zstyle ':completion:*' menu select
-# zstyle ':completion:*' list-colors ''
-# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # Optimize prompt
 setopt PROMPT_SUBST          # Enable prompt substitution

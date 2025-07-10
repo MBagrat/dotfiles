@@ -112,12 +112,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Dotfiles configuration
 export DOTFILES=$HOME/.dotfiles
 
-# Kubernetes completion
-source <(kubectl completion zsh)
-
-# Buildpack completion
-source "$(pack completion -s zsh)"
-
 # Anyenv initialization
 eval "$(anyenv init - zsh)"
 
@@ -127,8 +121,6 @@ export PATH="${TMUXIFIER}/bin:$PATH"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmuxifier/layouts"
 eval "$(tmuxifier init -)"
 
-# 1Password CLI completion
-eval "$(op completion zsh)"; compdef _op op
 export EZA_CONFIG_DIR=$HOME/.config/eza
 
 # FZF key bindings and fuzzy completion
