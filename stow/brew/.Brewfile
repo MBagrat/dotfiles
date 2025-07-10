@@ -243,7 +243,7 @@ cask 'dbeaver-community'
 # Voice and text chat software
 cask 'discord'
 # App to build and share containerised applications and microservices
-cask 'docker'
+cask 'docker-desktop'
 # Online diagram software
 cask 'drawio'
 # Collaborative team software
@@ -277,7 +277,7 @@ cask 'google-drive'
 # Utility to hide menu bar items
 cask 'hiddenbar'
 # Testing client for REST, GraphQL, and HTTP APIs
-cask 'httpie'
+cask 'httpie-desktop'
 # Terminal emulator as alternative to Apple's Terminal app
 cask 'iterm2'
 # Enable generative AI features in iTerm2
@@ -319,7 +319,7 @@ cask 'obs'
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask 'obsidian'
 # Get up and running with large language models locally
-cask 'ollama'
+cask 'ollama-app'
 # Client program for the OpenVPN Access Server
 cask 'openvpn-connect'
 # Replacement for Docker Desktop
@@ -373,7 +373,7 @@ cask 'testcontainers-desktop'
 # Helper application for Things
 cask 'thingsmacsandboxhelper'
 # To-do list
-cask 'todoist'
+cask 'todoist-app'
 # Git client focusing on power and productivity
 cask 'tower'
 # Adaptive AI IDE
@@ -492,3 +492,4 @@ vscode 'wakatime.vscode-wakatime'
 vscode 'wayou.vscode-todo-highlight'
 vscode '1password.op-vscode'
 vscode 'ritwickdey.liveserver'
+vscode 'anthropic.claude-code'
