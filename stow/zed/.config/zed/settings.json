@@ -1,5 +1,5 @@
 {
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "ollama",
       "model": "qwen2.5-coder:32b"
@@ -30,11 +30,15 @@
   "format_on_save": "on",
   "relative_line_numbers": true,
   "auto_install_extensions": {
+    "make": true,
+    "terraform": true,
+    "ansible": true,
     "dart": true,
     "lua": true,
     "ruby": true,
     "toml": true,
     "java": true,
+    "scala": true,
     "kotlin": true,
     "liquid": true,
     "tmux": true,
@@ -46,5 +50,11 @@
     "jetbrains-new-ui-icons": true,
     "intellij-newui-theme": true,
     "wakatime": true
+  },
+  "tab_bar": {
+    "show": false,
+    "show_nav_history_buttons": true,
+    "show_tab_bar_buttons": true,
+    "show_close_button": true
   }
 }
