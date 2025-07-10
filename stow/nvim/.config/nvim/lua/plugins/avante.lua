@@ -3,13 +3,32 @@ return {
   event = "VeryLazy",
   version = false, -- Never set this value to "*"! Never!
   opts = {
-    -- add any opts here
-    -- for example
     provider = "claude",
-    claude = {
+    providers = {
+      claude = {
         model = "claude-3-7-sonnet-20250219",
-        temperature = 0,
-        max_tokens = 8192,
+        extra_request_body = {
+          temperature = 0.1, -- Slightly higher for more creative responses
+          max_tokens = 8192,
+          top_p = 0.9, -- Add top_p for better response quality
+        },
+      },
+    },
+    -- UI improvements
+    ui = {
+      border = "rounded",
+      width = 0.8,
+      height = 0.8,
+    },
+    -- Better file handling
+    file_selector = {
+      provider = "telescope", -- Use telescope for file selection
+    },
+    -- Auto-save conversations
+    auto_save = true,
+    -- Better prompt handling
+    prompt_template = {
+      system = "You are a helpful AI assistant. Be concise and accurate.",
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
