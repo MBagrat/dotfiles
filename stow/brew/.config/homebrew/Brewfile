@@ -40,6 +40,7 @@ brew 'curl'                    # HTTP client
 brew 'gawk'                    # GNU awk
 brew 'gnu-sed'                 # GNU sed
 brew 'gnupg'                   # GPG encryption
+brew 'pinentry-mac'            # GPG pinentry for macOS
 brew 'stow'                    # Symlink manager for dotfiles
 brew 'trash-cli'               # Safe file deletion
 brew 'tree'                    # Directory tree viewer
@@ -55,6 +56,7 @@ brew 'htop'                    # Interactive process viewer
 brew 'ripgrep'                 # Fast grep alternative
 brew 'tealdeer'                # Fast tldr client
 brew 'zoxide'                  # Smarter cd command
+brew 'superfile'               # Modern terminal file manager
 
 # File & Data Processing
 brew 'fx'                      # JSON viewer
@@ -131,6 +133,7 @@ brew 'prettier'                # Code formatter
 brew 'chezmoi'                 # Dotfiles manager
 brew 'graphviz'                # Graph visualization
 brew 'grpcurl'                 # gRPC curl-like tool
+brew 'tree-sitter-cli'         # Tree-sitter CLI tool
 
 ################################################################################
 # DEVOPS & INFRASTRUCTURE
@@ -146,6 +149,7 @@ brew 'hashicorp/tap/terraform' # Infrastructure as code
 brew 'buildpacks/tap/pack'     # Cloud Native Buildpacks
 brew 'ctop'                    # Container metrics viewer
 brew 'dive'                    # Docker image explorer
+brew 'lazydocker'              # Terminal UI for docker
 brew 'podman'                  # Daemonless container engine
 brew 'qemu'                    # Generic machine emulator
 
@@ -215,6 +219,7 @@ cask 'google-chrome'           # Google Chrome
 ################################################################################
 cask 'iterm2'                  # Terminal emulator
 cask 'itermai'                 # AI-powered terminal
+cask 'kitty'                    # GPU-based terminal emulator
 
 ################################################################################
 # APPLICATIONS - CODE EDITORS & IDEs
