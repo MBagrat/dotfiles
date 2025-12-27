@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # =============================================================================
 # Environment Variables
@@ -115,8 +115,12 @@ export DOTFILES=$HOME/.dotfiles
 # Anyenv initialization
 eval "$(anyenv init - zsh)"
 
+# Jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 # Tmuxifier configuration
-export TMUXIFIER=$HOMEBREW_PREFIX/opt/tpm/share/tpm/plugins/tmuxifier
+export TMUXIFIER=$(brew --prefix)/opt/tpm/share/tpm/plugins/tmuxifier
 export PATH="${TMUXIFIER}/bin:$PATH"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmuxifier/layouts"
 eval "$(tmuxifier init -)"
@@ -129,6 +133,7 @@ eval "$(fzf --zsh)"
 # TheFuck configuration
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
+eval $(thefuck --alias tf)
 
 # Zoxide configuration
 eval "$(zoxide init --cmd cd zsh)"
@@ -139,3 +144,6 @@ export PATH="$PATH:/Users/mbagrat/.lmstudio/bin"
 # Android sdk environment variables
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin
+
+# 1Password CLI plugins
+[[ -f "$HOME/.config/op/plugins.sh" ]] && source "$HOME/.config/op/plugins.sh"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # =============================================================================
 # Completion System Configuration
@@ -7,6 +7,15 @@
 # command and argument completion. It works in conjunction with the completion
 # options set in options.zsh and performance.zsh.
 # =============================================================================
+
+# =============================================================================
+# Directory Creation
+# =============================================================================
+# Ensure cache directories exist for completions and zcompdump
+# =============================================================================
+if [ ! -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh" ]; then
+  mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+fi
 
 # =============================================================================
 # Completion Initialization
@@ -48,7 +57,7 @@ zstyle ':completion:*' accept-exact '*(N)'
 # =============================================================================
 
 # Docker completion
-if [ -d "$HOME/.docker/completions" ]; then
+if [ ! -d "$HOME/.docker/completions" ]; then
   FPATH="$HOME/.docker/completions:$FPATH"
 fi
 

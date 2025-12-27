@@ -56,7 +56,6 @@ plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/supercharge.zsh"
 # External plugins
 plug "romkatv/powerlevel10k"
 plug "hlissner/zsh-autopair"
-plug "zap-zsh/vim"
 plug "zap-zsh/fzf"
 plug "zap-zsh/exa"
 plug "zsh-users/zsh-autosuggestions"

@@ -4,9 +4,40 @@ return {
     lazy = false,
     dependencies = { "nvim-lua/plenary.nvim", "stevearc/dressing.nvim" },
     config = function()
-      -- Define common paths
-      local flutter_sdk_path = vim.fn.expand("$HOMEBREW_PREFIX") .. "/share/flutter/"
-      local dart_sdk_path = flutter_sdk_path .. "bin/cache/dart-sdk/"
+      -- Helper function to find Flutter SDK path
+      local function find_flutter_sdk()
+        -- Try multiple common locations
+        local possible_paths = {
+          vim.fn.expand("$HOMEBREW_PREFIX") .. "/share/flutter",
+          vim.fn.expand("$HOME") .. "/flutter",
+          vim.fn.expand("$HOME") .. "/development/flutter",
+        }
+
+        -- Check if flutter command exists and get its path
+        local flutter_cmd = vim.fn.exepath("flutter")
+        if flutter_cmd ~= "" then
+          local flutter_dir = vim.fn.fnamemodify(flutter_cmd, ":h:h")
+          table.insert(possible_paths, 1, flutter_dir)
+        end
+
+        for _, path in ipairs(possible_paths) do
+          if vim.fn.isdirectory(path) == 1 then
+            return path
+          end
+        end
+
+        -- Fallback to homebrew location
+        return vim.fn.expand("$HOMEBREW_PREFIX") .. "/share/flutter"
+      end
+
+      local flutter_sdk_path = find_flutter_sdk()
+      local dart_sdk_path = flutter_sdk_path .. "/bin/cache/dart-sdk"
+
+      -- Validate paths exist
+      if vim.fn.isdirectory(flutter_sdk_path) ~= 1 then
+        vim.notify("Flutter SDK not found at: " .. flutter_sdk_path, vim.log.levels.WARN)
+      end
+
       require("flutter-tools").setup({
         ui = {
           -- the border type to use for all floating windows, the same options/formats
@@ -35,57 +66,87 @@ return {
           enabled = true,
           run_via_dap = true,
           register_configurations = function(_)
-            require("dap").adapters.dart = {
-              type = "executable",
-              command = "dart",
-              -- args = { "flutter" },
-              args = { "debug_adapter" },
-              options = {
-                detached = false,
-              },
-            }
+            local dap = require("dap")
+            if not dap then
+              return
+            end
 
-            require("dap").adapters.flutter = {
+            -- Flutter debug adapter
+            dap.adapters.flutter = {
               type = "executable",
               command = "flutter",
-              -- args = { "flutter" },
               args = { "debug-adapter" },
               options = {
                 detached = false,
               },
             }
 
-            require("dap").configurations.dart = {
-              {
-                type = "dart",
-                request = "launch",
-                name = "Launch flutter",
-                dartSdkPath = dart_sdk_path,
-                flutterSdkPath = flutter_sdk_path,
-                program = "${workspaceFolder}/lib/main.dart",
-                cwd = "${workspaceFolder}",
+            -- Dart debug adapter (for pure Dart projects)
+            dap.adapters.dart = {
+              type = "executable",
+              command = "dart",
+              args = { "debug_adapter" },
+              options = {
+                detached = false,
               },
             }
 
-            require("dap").configurations.flutter = {
-              {
-                type = "flutter",
-                request = "launch",
-                name = "Launch flutter",
-                dartSdkPath = dart_sdk_path,
-                flutterSdkPath = flutter_sdk_path,
-                program = "${workspaceFolder}/lib/main.dart",
-                cwd = "${workspaceFolder}",
-              },
-            }
+            -- Flutter launch configurations
+            dap.configurations.dart = dap.configurations.dart or {}
+            dap.configurations.flutter = dap.configurations.flutter or {}
 
-            -- require("dap.ext.vscode").load_launchjs()
+            -- Debug mode
+            table.insert(dap.configurations.flutter, {
+              type = "flutter",
+              request = "launch",
+              name = "Flutter: Debug",
+              dartSdkPath = dart_sdk_path,
+              flutterSdkPath = flutter_sdk_path,
+              program = "${workspaceFolder}/lib/main.dart",
+              cwd = "${workspaceFolder}",
+              toolArgs = { "--flavor", "dev" }, -- Optional: for flavor support
+            })
+
+            -- Profile mode
+            table.insert(dap.configurations.flutter, {
+              type = "flutter",
+              request = "launch",
+              name = "Flutter: Profile",
+              dartSdkPath = dart_sdk_path,
+              flutterSdkPath = flutter_sdk_path,
+              program = "${workspaceFolder}/lib/main.dart",
+              cwd = "${workspaceFolder}",
+              flutterMode = "profile",
+            })
+
+            -- Release mode (limited debugging)
+            table.insert(dap.configurations.flutter, {
+              type = "flutter",
+              request = "launch",
+              name = "Flutter: Release",
+              dartSdkPath = dart_sdk_path,
+              flutterSdkPath = flutter_sdk_path,
+              program = "${workspaceFolder}/lib/main.dart",
+              cwd = "${workspaceFolder}",
+              flutterMode = "release",
+            })
+
+            -- Attach to existing Flutter process
+            table.insert(dap.configurations.flutter, {
+              type = "flutter",
+              request = "attach",
+              name = "Flutter: Attach",
+              dartSdkPath = dart_sdk_path,
+              flutterSdkPath = flutter_sdk_path,
+            })
           end,
         },
         -- flutter_path = "<full/path/if/needed>", -- <-- this takes priority over the lookup
         -- flutter_lookup_cmd = nil, -- example "dirname $(which flutter)" or "asdf where flutter"
-        root_patterns = { ".git", "pubspec.yaml" }, -- patterns to find the root of your flutter project
+        root_patterns = { ".git", "pubspec.yaml", ".fvm" }, -- patterns to find the root of your flutter project
         fvm = false, -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled
+        -- Optional: if using FVM, set to true
+        -- fvm = true,
         widget_guides = {
           enabled = true,
         },
@@ -105,6 +166,10 @@ return {
           notify_errors = false, -- if there is an error whilst running then notify the user
           open_cmd = "15split", -- command to use to open the log buffer
           focus_on_open = true, -- focus on the newly opened log window
+          -- Optional: filter out verbose logs
+          -- filter = function(log_line)
+          --   return not string.match(log_line, "DEBUG")
+          -- end,
         },
         dev_tools = {
           autostart = false, -- autostart devtools server if not detected
@@ -123,8 +188,19 @@ return {
             virtual_text = true, -- show the highlight using virtual text
             virtual_text_str = "■", -- the virtual text character to highlight
           },
-          on_attach = require("lazyvim.util").lsp.on_attach,
-          capabilities = require("cmp_nvim_lsp").default_capabilities(),
+          on_attach = require("snacks.util").lsp.on,
+          capabilities = (function()
+            local ok, cmp_lsp = pcall(require, "cmp_nvim_lsp")
+            if ok then
+              return cmp_lsp.default_capabilities()
+            end
+            -- Fallback to LazyVim capabilities if cmp_nvim_lsp not available
+            local ok2, lazyvim = pcall(require, "lazyvim.util")
+            if ok2 and lazyvim.lsp then
+              return lazyvim.lsp.capabilities()
+            end
+            return {}
+          end)(),
           settings = {
             showTodos = true,
             completeFunctionCalls = true,
@@ -133,7 +209,12 @@ return {
             enableSdkFormatter = true,
             analysisExcludedFolders = {
               flutter_sdk_path .. "/packages",
+              flutter_sdk_path .. "/bin/cache",
             },
+            -- Additional useful settings
+            enableServerSnippets = true,
+            onlyAnalyzeProjectsWithOpenFiles = false,
+            suggestFromUnimportedLibraries = true,
           },
           lineLength = 100,
           formatOnSave = true,
@@ -149,6 +230,20 @@ return {
             maxCompletionItems = 1000,
             maxFilesToAnalyze = 5000,
             enableAsyncCompletion = true,
+            -- Additional analysis options
+            closingLabels = true,
+            completeFunctionCalls = true,
+            enableCompletionCommitCharacters = true,
+            enableFolding = true,
+            enableOnlyEnableAnalyzer = false,
+            enableServerSnippets = true,
+            hints = {
+              enable = true,
+              parameterNames = true,
+              parameterTypes = true,
+              variableNames = false,
+              returnTypes = true,
+            },
           },
         },
       })

@@ -1,8 +1,8 @@
 {
   "agent": {
     "default_model": {
-      "provider": "ollama",
-      "model": "qwen2.5-coder:32b"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     },
     "version": "2"
   },
