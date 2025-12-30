@@ -1,8 +1,5 @@
 vim.g.mapleader = " "
 
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_ruby_provider = 0
-
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
@@ -39,3 +36,15 @@ vim.opt.formatoptions:append({ "r" })
 
 -- views can only be fully collapsed with the global statusline
 vim.opt.laststatus = 3
+
+-- Providers
+
+-- Disable providers
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+
+-- Node.js provider (nodenv)
+vim.g.node_host_prog = vim.fn.expand(vim.fn.system("nodenv prefix"):gsub("\n", "") .. "/bin/neovim-node-host")
+
+-- Python provider (pyenv)
+vim.g.python3_host_prog = "/usr/local/bin/python3"

@@ -2,7 +2,10 @@ return {
   {
     "akinsho/flutter-tools.nvim",
     lazy = false,
-    dependencies = { "nvim-lua/plenary.nvim", "stevearc/dressing.nvim" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim",
+    },
     config = function()
       -- Helper function to find Flutter SDK path
       local function find_flutter_sdk()
@@ -188,16 +191,11 @@ return {
             virtual_text = true, -- show the highlight using virtual text
             virtual_text_str = "■", -- the virtual text character to highlight
           },
-          on_attach = require("snacks.util").lsp.on,
+          -- on_attach = require("snacks.util").lsp.on,
           capabilities = (function()
-            local ok, cmp_lsp = pcall(require, "cmp_nvim_lsp")
+            local ok, blink_cmp = pcall(require, "blink.cmp")
             if ok then
-              return cmp_lsp.default_capabilities()
-            end
-            -- Fallback to LazyVim capabilities if cmp_nvim_lsp not available
-            local ok2, lazyvim = pcall(require, "lazyvim.util")
-            if ok2 and lazyvim.lsp then
-              return lazyvim.lsp.capabilities()
+              return blink_cmp.get_lsp_capabilities()
             end
             return {}
           end)(),

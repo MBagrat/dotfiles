@@ -92,14 +92,11 @@ brew 'go'                      # Go programming language
 # Java Ecosystem
 brew 'groovy'                  # Apache Groovy
 brew 'kotlin'                  # Kotlin programming language
-brew 'openjdk@21'              # OpenJDK 21 LTS
 
 # Scripting Languages
-brew 'lua'                     # Lua programming language
 brew 'luarocks'                # Lua package manager
 brew 'luv'                     # Lua bindings for libuv
 brew 'php'                     # PHP scripting language
-brew 'python@3.12', link: false # Python 3.12
 
 # Scientific Computing
 brew 'julia'                   # Julia programming language
