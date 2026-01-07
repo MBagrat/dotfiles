@@ -45,6 +45,8 @@ brew 'stow'                    # Symlink manager for dotfiles
 brew 'trash-cli'               # Safe file deletion
 brew 'tree'                    # Directory tree viewer
 brew 'wget'                    # HTTP downloader
+brew 'ghostscript'             # PDF rendering support
+brew 'tectonic'                # LaTeX rendering support
 
 # Modern CLI Replacements
 brew 'bat'                     # Better cat with syntax highlighting
@@ -62,6 +64,7 @@ brew 'superfile'               # Modern terminal file manager
 brew 'fx'                      # JSON viewer
 brew 'jq'                      # JSON processor
 brew 'pngpaste'                # Paste images from clipboard
+brew 'imagemagick'             # Image manipulationtool
 brew 'yh'                      # YAML/JSON highlighter
 
 # Networking & Web

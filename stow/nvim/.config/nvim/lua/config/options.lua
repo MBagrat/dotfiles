@@ -31,6 +31,9 @@ vim.opt.splitright = true
 vim.opt.splitkeep = "cursor"
 vim.opt.mouse = "nicr"
 
+vim.opt.colorcolumn = "80"
+vim.opt.textwidth = 80
+
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
 
@@ -47,4 +50,4 @@ vim.g.loaded_ruby_provider = 0
 vim.g.node_host_prog = vim.fn.expand(vim.fn.system("nodenv prefix"):gsub("\n", "") .. "/bin/neovim-node-host")
 
 -- Python provider (pyenv)
-vim.g.python3_host_prog = "/usr/local/bin/python3"
+vim.g.python3_host_prog = vim.fn.expand("$HOME") .. "/.anyenv/envs/pyenv/shims/python"
