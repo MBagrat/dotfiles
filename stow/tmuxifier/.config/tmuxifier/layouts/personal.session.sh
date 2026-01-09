@@ -12,6 +12,7 @@ if initialize_session "personal"; then
 	#   - $1: Name of or file path to window layout to load.
 	#   - $2: (optional) Override default window name.
 	#
+	load_window "$TMUXIFIER_LAYOUT_PATH/personal/superfile.window.sh"
 	load_window "$TMUXIFIER_LAYOUT_PATH/personal/dotfiles.window.sh"
 	load_window "$TMUXIFIER_LAYOUT_PATH/personal/learning.window.sh"
 	load_window "$TMUXIFIER_LAYOUT_PATH/personal/nvim.window.sh"

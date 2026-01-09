@@ -1,12 +1,12 @@
 # Set window root path. Default is `$session_root`.
 # Must be called before `new_window`.
-window_root "$HOME/Workspace/personal/projects/learning"
+window_root "$HOME"
 
 # Create new window. If no argument is given, window name will be based on
 # layout file name.
-new_window "Learning"
+new_window "Superfile"
 
-run_cmd "nvim"
+run_cmd "spf"
 
 # Split window into panes.
 # split_v 20

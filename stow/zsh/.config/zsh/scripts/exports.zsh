@@ -125,8 +125,6 @@ export PATH="${TMUXIFIER}/bin:$PATH"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmuxifier/layouts"
 eval "$(tmuxifier init -)"
 
-export EZA_CONFIG_DIR=$HOME/.config/eza
-
 # FZF key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 
@@ -136,7 +134,7 @@ eval $(thefuck --alias fk)
 eval $(thefuck --alias tf)
 
 # Zoxide configuration
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/mbagrat/.lmstudio/bin"
