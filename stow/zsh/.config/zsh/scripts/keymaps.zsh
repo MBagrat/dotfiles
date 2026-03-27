@@ -30,6 +30,8 @@ select-word-style bash
 # History search (currently disabled - uncomment if needed)
 bindkey '^[[A' history-substring-search-up    # Up arrow for history search
 bindkey '^[[B' history-substring-search-down  # Down arrow for history search
+bindkey '^P' history-substring-search-up      # Ctrl+P for history search up
+bindkey '^N' history-substring-search-down    # Ctrl+N for history search down
 bindkey '^R' history-incremental-search-backward  # Ctrl+R for reverse history search
 
 # =============================================================================
@@ -50,6 +52,11 @@ bindkey '^[[1;3D' backward-word     # Option+Left (ANSI)
 # =============================================================================
 bindkey '^[[1;5C' forward-word      # Ctrl+Right
 bindkey '^[[1;5D' backward-word     # Ctrl+Left
+
+# =============================================================================
+# Completion Menu Navigation
+# =============================================================================
+bindkey '^[[Z' reverse-menu-complete   # Shift+Tab for previous menu entry
 
 # =============================================================================
 # Additional Useful Keybindings (optional - uncomment to enable)

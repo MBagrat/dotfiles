@@ -8,9 +8,5 @@ new_window "NeoVim"
 
 run_cmd "nvim"
 
-# Split window into panes.
-# split_v 20
-# split_h 60
-
 # Set active pane.
 select_pane 1

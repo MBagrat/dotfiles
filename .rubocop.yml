@@ -3,3 +3,5 @@ Naming/FileName:
 Style/FrozenStringLiteralComment:
   Enabled: false
   EnforcedStyle: always
+Layout/ExtraSpacing:
+  AllowForAlignment: true

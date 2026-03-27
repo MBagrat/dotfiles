@@ -1,7 +1,7 @@
 ################################################################################
 # HOMEBREW BREWFILE
 # Managed package list for macOS development environment
-# Last updated: 2025-12-27
+# Last updated: 2026-03-24
 ################################################################################
 
 ################################################################################
@@ -20,6 +20,9 @@ tap 'mdogan/zulu'
 tap 'shaunsingh/sfmono-nerd-font-ligaturized'
 tap 'spring-io/tap'
 tap 'teamookla/speedtest'
+tap 'anomalyco/tap'
+tap 'derailed/k9s'
+tap 'vladimirvivien/oss-tools'
 
 ################################################################################
 # CORE SYSTEM UTILITIES
@@ -27,11 +30,11 @@ tap 'teamookla/speedtest'
 ################################################################################
 
 # Shell & Terminal
-brew 'bash'                    # Updated Bash shell
-brew 'starship'                # Cross-shell prompt
-brew 'thefuck'                 # Command correction tool
-brew 'tmux'                    # Terminal multiplexer
 brew 'tpm'                     # Tmux plugin manager
+brew 'tmux'                    # Terminal multiplexer
+brew 'bash'                    # Updated Bash shell
+brew 'thefuck'                 # Command correction tool
+brew 'starship'                # Cross-shell prompt
 
 # Core Utilities (GNU replacements)
 brew 'bc'                      # Arbitrary precision calculator
@@ -47,14 +50,15 @@ brew 'tree'                    # Directory tree viewer
 brew 'wget'                    # HTTP downloader
 brew 'ghostscript'             # PDF rendering support
 brew 'tectonic'                # LaTeX rendering support
+brew 'exiftool'                # Read/write image metadata
 
 # Modern CLI Replacements
 brew 'bat'                     # Better cat with syntax highlighting
-brew 'btop'                    # Modern system monitor
+brew 'btop'                    # Resource monitor
+brew 'ktop'                    # Kubernetes resource viewer
 brew 'eza'                     # Modern ls replacement
 brew 'fd'                      # Modern find replacement
 brew 'fzf'                     # Fuzzy finder
-brew 'htop'                    # Interactive process viewer
 brew 'ripgrep'                 # Fast grep alternative
 brew 'tealdeer'                # Fast tldr client
 brew 'zoxide'                  # Smarter cd command
@@ -64,15 +68,17 @@ brew 'superfile'               # Modern terminal file manager
 brew 'fx'                      # JSON viewer
 brew 'jq'                      # JSON processor
 brew 'pngpaste'                # Paste images from clipboard
-brew 'imagemagick'             # Image manipulationtool
+brew 'imagemagick'             # Image manipulation tool
 brew 'yh'                      # YAML/JSON highlighter
 
 # Networking & Web
 brew 'httpie'                  # User-friendly HTTP client
 brew 'speedtest'               # Internet speed test CLI
 brew 'websocat'                # WebSocket client
+brew 'vfkit'                   # Lightweight macOS virtualization framework
 
 # Productivity
+brew 'backlog-md'              # Markdown backlog task manager
 brew 'just'                    # Command runner
 brew 'mas'                     # Mac App Store CLI
 
@@ -90,7 +96,7 @@ brew 'lazygit'                 # Terminal UI for git
 ################################################################################
 
 # Go
-brew 'go'                      # Go programming language
+brew 'go' # Go programming language
 
 # Java Ecosystem
 brew 'groovy'                  # Apache Groovy
@@ -102,7 +108,7 @@ brew 'luv'                     # Lua bindings for libuv
 brew 'php'                     # PHP scripting language
 
 # Scientific Computing
-brew 'julia'                   # Julia programming language
+brew 'julia' # Julia programming language
 
 ################################################################################
 # BUILD TOOLS & PACKAGE MANAGERS
@@ -123,7 +129,7 @@ brew 'yarn'                    # JavaScript package manager
 ################################################################################
 
 # Editors
-brew 'neovim'                  # Modern Vim-based editor
+brew 'neovim' # Modern Vim-based editor
 
 # Code Quality & Formatting
 brew 'black'                   # Python code formatter
@@ -133,6 +139,7 @@ brew 'prettier'                # Code formatter
 brew 'chezmoi'                 # Dotfiles manager
 brew 'graphviz'                # Graph visualization
 brew 'grpcurl'                 # gRPC curl-like tool
+brew 'solr@8.11'               # Apache Solr search platform
 brew 'tree-sitter-cli'         # Tree-sitter CLI tool
 
 ################################################################################
@@ -141,12 +148,12 @@ brew 'tree-sitter-cli'         # Tree-sitter CLI tool
 ################################################################################
 
 # Configuration Management
-brew 'ansible'                 # IT automation tool
-brew 'anyenv'                  # All-in-one version manager
-brew 'hashicorp/tap/terraform' # Infrastructure as code
+# brew 'ansible'                 # IT automation tool
+# brew 'anyenv' # Manages multiple *env version managers
+# brew 'terraform'               # Infrastructure as code
 
 # Container Tools
-brew 'buildpacks/tap/pack'     # Cloud Native Buildpacks
+brew 'pack'                    # Cloud Native Buildpacks CLI
 brew 'ctop'                    # Container metrics viewer
 brew 'dive'                    # Docker image explorer
 brew 'lazydocker'              # Terminal UI for docker
@@ -157,17 +164,21 @@ brew 'qemu'                    # Generic machine emulator
 brew 'helm'                    # Kubernetes package manager
 brew 'k9s'                     # Kubernetes TUI
 brew 'kind'                    # Kubernetes in Docker
+brew 'kustomize'               # Kubernetes configuration management
 brew 'kubernetes-cli'          # kubectl CLI
-brew 'minikube'                # Local Kubernetes
+brew 'minikube'                # Local Kubernetes cluster
+
+# AI Coding Agent
+brew 'opencode' # AI coding agent
 
 ################################################################################
 # JAVA & SPRING ECOSYSTEM
 # Java-specific development tools
 ################################################################################
-brew 'jhipster'                # Spring Boot + Angular/React generator
-brew 'jmeter'                  # Load testing tool
+brew 'jhipster' # Spring Boot + Angular/React generator
+# brew 'jmeter'                  # Load testing tool
 brew 'kdoctor'                 # Kotlin environment checker
-brew 'spring-io/tap/spring-boot' # Spring Boot CLI
+brew 'spring-boot'             # Spring Boot CLI
 
 ################################################################################
 # SYSTEM LIBRARIES & DEPENDENCIES
@@ -204,7 +215,7 @@ brew 'tesseract'               # OCR engine
 # APPLICATIONS - SECURITY & PASSWORDS
 ################################################################################
 cask '1password'               # Password manager
-cask '1password/tap/1password-cli' # 1Password CLI
+cask '1password-cli'           # 1Password CLI
 
 ################################################################################
 # APPLICATIONS - BROWSERS
@@ -218,53 +229,59 @@ cask 'google-chrome'           # Google Chrome
 # APPLICATIONS - TERMINALS
 ################################################################################
 cask 'iterm2'                  # Terminal emulator
-cask 'itermai'                 # AI-powered terminal
-cask 'kitty'                    # GPU-based terminal emulator
+cask 'kitty'                   # GPU-based terminal emulator
 
 ################################################################################
 # APPLICATIONS - CODE EDITORS & IDEs
 ################################################################################
 
 # Modern Editors
-cask 'antigravity'             # Google's AI coding assistant
-cask 'claude-code'             # Claude AI code editor
-cask 'cursor'                  # AI-powered code editor
+cask 'claude-code' # Claude AI coding assistant CLI
+# cask 'ollama-app'              # Ollama Application
+# cask 'monokle'
+# cask 'aptakube'
+# cask 'cursor'                  # AI-powered code editor
 cask 'visual-studio-code'      # VS Code
 cask 'zed'                     # High-performance editor
 
 # Java IDEs
-cask 'eclipse-jee'             # Eclipse IDE for Java EE
-cask 'jetbrains-toolbox'       # JetBrains IDE manager
-cask 'netbeans'                # Apache NetBeans
-cask 'springtoolsforeclipse'   # Spring Tools for Eclipse
+# cask 'eclipse-jee'             # Eclipse IDE for Java EE
+cask 'jetbrains-toolbox' # JetBrains IDE manager
+# cask 'netbeans'                # Apache NetBeans
+# cask 'springtoolsforeclipse'   # Spring Tools for Eclipse
 
 # Database Tools
-cask 'dbeaver-community'       # Universal database tool
+# cask 'dbeaver-community'       # Universal database tool
 
 ################################################################################
 # APPLICATIONS - DEVELOPMENT PLATFORMS
 ################################################################################
-cask 'docker-desktop'          # Docker Desktop
-cask 'flutter'                 # Flutter SDK
-cask 'kafkio'                  # Kafka GUI
-cask 'lens'                    # Kubernetes IDE
-cask 'mongodb-compass'         # MongoDB GUI
+# cask 'docker-desktop'          # Docker Desktop
+cask 'flutter' # Flutter SDK
+# cask 'kafkio'                  # Kafka GUI
+cask 'lens' # Kubernetes IDE
+# cask 'mongodb-compass'         # MongoDB GUI
 cask 'orbstack'                # Fast Docker/Linux on macOS
 cask 'pgadmin4'                # PostgreSQL admin tool
 cask 'podman-desktop'          # Podman Desktop
 cask 'postman'                 # API development platform
-cask 'proxyman'                # HTTP debugging proxy
-cask 'testcontainers-desktop'  # Testcontainers Desktop
+# cask 'proxyman'                # HTTP debugging proxy
+# cask 'testcontainers-desktop'  # Testcontainers Desktop
 
 ################################################################################
 # APPLICATIONS - VERSION CONTROL
 ################################################################################
-cask 'fork'                    # Git client
+cask 'fork' # Git client
 
 ################################################################################
 # APPLICATIONS - VIRTUALIZATION
 ################################################################################
-cask 'utm'                     # Virtual machines for macOS
+cask 'utm' # Virtual machines for macOS
+
+################################################################################
+# APPLICATIONS - FINANCE
+################################################################################
+# cask 'binance'                 # Binance crypto exchange
 
 ################################################################################
 # APPLICATIONS - MEDIA & ENTERTAINMENT
@@ -276,11 +293,10 @@ cask 'vlc'                     # Media player
 ################################################################################
 # APPLICATIONS - COMMUNICATION
 ################################################################################
-cask 'anydesk'                 # Remote desktop
-cask 'slack'                   # Team communication
+cask 'anydesk' # Remote desktop
+# cask 'slack'                   # Team communication
 cask 'telegram'                # Messaging app
 cask 'tempbox'                 # Temporary email
-cask 'whatsapp'                # WhatsApp desktop
 cask 'zoom'                    # Video conferencing
 
 ################################################################################
@@ -297,15 +313,16 @@ cask 'brewservicesmenubar'     # Homebrew services menubar
 cask 'daisydisk'               # Disk space analyzer
 cask 'hiddenbar'               # Menu bar organizer
 cask 'keyboardcleantool'       # Keyboard cleaning mode
+
 cask 'keycastr'                # Keystroke visualizer
 cask 'neohtop'                 # System monitor
 cask 'pearcleaner'             # App cleaner
 cask 'rectangle'               # Window manager
 cask 'stats'                   # System monitor menubar
-cask 'vanilla'                 # Menu bar organizer
 
 # File Management
 cask 'keka'                    # File archiver
+cask 'transmit'                # FTP/SFTP client
 
 # Development Utilities
 cask 'keystore-explorer'       # Keystore/certificate manager
@@ -317,7 +334,7 @@ cask 'obsidian'                # Knowledge base
 cask 'thingsmacsandboxhelper'  # Things helper
 
 # Ad Blocking
-cask 'adguard'                 # Ad blocker
+cask 'adguard' # Ad blocker
 
 ################################################################################
 # APPLICATIONS - JAVA DISTRIBUTIONS
@@ -335,14 +352,14 @@ cask 'corretto@25'             # Amazon Corretto 25
 ################################################################################
 
 # Fira Font Family
-cask 'font-fira-code'          # Fira Code
-cask 'font-fira-code-nerd-font' # Fira Code Nerd Font
-cask 'font-fira-mono'          # Fira Mono
-cask 'font-fira-mono-for-powerline' # Fira Mono Powerline
+cask 'font-fira-code'                   # Fira Code
+cask 'font-fira-code-nerd-font'         # Fira Code Nerd Font
+cask 'font-fira-mono'                   # Fira Mono
+cask 'font-fira-mono-for-powerline'     # Fira Mono Powerline
 
 # JetBrains Font Family
-cask 'font-jetbrains-mono'     # JetBrains Mono
-cask 'font-jetbrains-mono-nerd-font' # JetBrains Mono Nerd Font
+cask 'font-jetbrains-mono'              # JetBrains Mono
+cask 'font-jetbrains-mono-nerd-font'    # JetBrains Mono Nerd Font
 
 # Meslo Font Family
 cask 'font-meslo-lg'           # Meslo LG
@@ -361,7 +378,7 @@ cask 'qlmarkdown'              # Markdown preview
 cask 'qlplayground'            # Swift Playground preview
 cask 'qlprettypatch'           # Patch file preview
 cask 'qlstephen'               # Plain text files
-cask 'qlvideo'                 # Video thumbnails
+cask 'quicklook-video'         # Video thumbnails
 cask 'quicklook-csv'           # CSV preview
 cask 'quicklook-json'          # JSON preview
 cask 'quicklookase'            # Adobe ASE preview
@@ -373,40 +390,40 @@ cask 'webpquicklook'           # WebP preview
 ################################################################################
 
 # Productivity
-mas '1Password for Safari', id: 1_569_813_296
-mas 'Amphetamine', id: 937_984_704       # Keep Mac awake
-mas 'Dato', id: 1_470_584_107            # Menu bar calendar
-mas 'Dropover', id: 1_355_679_052        # Drag & drop helper
-mas 'Keynote', id: 409_183_694           # Presentations
-mas 'Magnet', id: 441_258_766            # Window manager
-mas 'Numbers', id: 409_203_825           # Spreadsheets
-mas 'Pages', id: 409_201_541             # Word processor
-mas 'pomodorome', id: 1_484_801_884      # Pomodoro timer
-mas 'Things', id: 904_280_696            # Task manager
-mas 'Trello', id: 1_278_508_951          # Project management
+mas '1Password for Safari', id: 1_569_813_296         # 1Password Safari extension
+mas 'Amphetamine', id: 937_984_704                    # Keep Mac awake
+mas 'Dato', id: 1_470_584_107                         # Menu bar calendar
+# mas 'Dropover', id: 1_355_679_052                     # Drag & drop helper
+mas 'Keynote', id: 409_183_694                        # Presentations
+mas 'Magnet', id: 441_258_766                         # Window manager
+mas 'Numbers', id: 409_203_825                        # Spreadsheets
+mas 'Pages', id: 409_201_541                          # Word processor
+# mas 'pomodorome', id: 1_484_801_884                   # Pomodoro timer
+mas 'Things', id: 904_280_696 # Task manager
+# mas 'Trello', id: 1278508951                          # Project management
 
 # Utilities
-mas 'Battery Health 2', id: 1_120_214_373
-mas 'CleanMyDrive 2', id: 523_620_159    # External drive cleaner
-mas 'Color Picker', id: 1_545_870_783    # Color picker tool
-# mas 'DevCleaner', id: 1_388_020_431    # Xcode cache cleaner (commented out)
-mas 'Hand Mirror', id: 1_502_839_586     # Webcam viewer
-mas 'ScreenBrush', id: 1_233_965_871     # Screen annotation
-mas 'Startup Disk Full Fixer', id: 1_346_655_838
+mas 'Battery Health 2', id: 1_120_214_373             # Battery health monitor
+mas 'CleanMyDrive 2', id: 523_620_159                 # External drive cleaner
+mas 'Color Picker', id: 1_545_870_783                 # Color picker tool
+# mas 'DevCleaner', id: 1388020431                      # Xcode cache cleaner
+mas 'Hand Mirror', id: 1_502_839_586                  # Webcam viewer
+mas 'ScreenBrush', id: 1_233_965_871                  # Screen annotation
+mas 'Startup Disk Full Fixer', id: 1_346_655_838      # Free up startup disk space
 
 # Media & Content
-mas 'Pixea', id: 1_507_782_672           # Image viewer
-mas 'Unsplash Wallpapers', id: 1_284_863_847
+mas 'Pixea', id: 1_507_782_672                        # Image viewer
+mas 'Unsplash Wallpapers', id: 1_284_863_847          # Unsplash desktop wallpapers
 
 # Communication
-mas 'Spark', id: 1_176_895_641           # Email client
-mas 'Whatsapp Messenger', id: 310_633_997
+# mas 'Spark', id: 1_176_895_641                        # Email client
+mas 'Whatsapp Messenger', id: 310_633_997 # WhatsApp messaging app
 
 # Health & Wellness
-mas 'WaterMinder', id: 1_415_257_369     # Water intake tracker
+mas 'WaterMinder', id: 1_415_257_369 # Water intake tracker
 
 # Development (commented out - large download)
-# mas 'Xcode', id: 497_799_835
+# mas 'Xcode', id: 497_799_835                          # Xcode IDE and developer tools
 
 ################################################################################
 # VS CODE EXTENSIONS
@@ -444,6 +461,7 @@ vscode 'vscjava.vscode-maven'
 vscode 'ms-python.debugpy'
 vscode 'ms-python.python'
 vscode 'ms-python.vscode-pylance'
+vscode 'ms-python.vscode-python-envs'
 
 # Spring Framework
 vscode 'vmware.vscode-boot-dev-pack'

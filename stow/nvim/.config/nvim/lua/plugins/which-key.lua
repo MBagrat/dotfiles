@@ -11,7 +11,7 @@ return {
       group = "󰹍 ",
     },
     plugins = {
-      slelling = {
+      spelling = {
         enabled = false,
       },
     },

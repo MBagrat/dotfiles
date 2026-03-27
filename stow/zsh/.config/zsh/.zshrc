@@ -1,22 +1,10 @@
 # =============================================================================
-# Powerlevel10k Instant Prompt
-# =============================================================================
-# This section enables Powerlevel10k's instant prompt feature, which provides
-# a faster shell startup by pre-rendering the prompt.
-# Any initialization code that requires console input (password prompts, [y/n]
-# confirmations, etc.) must be placed above this block.
-# =============================================================================
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# =============================================================================
 # Tool Initialization
 # =============================================================================
 # Initialize various tools and their completions.
 # =============================================================================
-# Load zsh profiler module
-zmodload zsh/zprof
+# Load zsh profiler module only when profiling
+[[ -n "$ZSH_PROFILE" ]] && zmodload zsh/zprof
 
 # =============================================================================
 # Core Configuration Loading
@@ -27,9 +15,8 @@ zmodload zsh/zprof
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/directories.zsh"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/functions.zsh"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/performance.zsh"
-
-# Compile zsh files for improved performance
-zsh_compile
+source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/history.zsh"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/completion.zsh"
 
 # =============================================================================
 # Plugin Management (Zap)
@@ -45,16 +32,10 @@ zsh_compile
 
 # Core scripts
 plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/options.zsh"
-plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/history.zsh"
-plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/completion.zsh"
 plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/exports.zsh"
 plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/keymaps.zsh"
 
-# Custom plugins
-plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/supercharge.zsh"
-
 # External plugins
-plug "romkatv/powerlevel10k"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/fzf"
 plug "zap-zsh/exa"
@@ -64,12 +45,10 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-history-substring-search"
 plug "MichaelAquilina/zsh-you-should-use"
 
-# Theme
-plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/themes/p10k.zsh"
-
 # Aliases
 plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliases/aliases.zsh"
 plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliases/omz/git/git.zsh"
+plug "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliases/omz/kubernates/kubectl.zsh"
 
 # =============================================================================
 # Performance Profiling

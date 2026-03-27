@@ -9,21 +9,19 @@
 # =============================================================================
 
 # =============================================================================
-# Directory Creation
-# =============================================================================
-# Ensure cache directories exist for completions and zcompdump
-# =============================================================================
-if [ ! -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh" ]; then
-  mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
-fi
-
-# =============================================================================
 # Completion Initialization
 # =============================================================================
 # Initialize the completion system and load completion functions.
 # =============================================================================
+ZSH_COMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/compdump/zcompdump-${ZSH_VERSION}"
+
 autoload -Uz compinit
-compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump-$ZSH_VERSION"
+# Rebuild compdump once per day; use cached version otherwise (-C skips security check)
+if [[ -n ${ZSH_COMPDUMP}(#qN.mh+24) ]]; then
+  compinit -d $ZSH_COMPDUMP
+else
+  compinit -C -d $ZSH_COMPDUMP
+fi
 
 # =============================================================================
 # Completion Styles
@@ -61,17 +59,28 @@ if [ ! -d "$HOME/.docker/completions" ]; then
   FPATH="$HOME/.docker/completions:$FPATH"
 fi
 
-# Kubernetes completion
+# Kubernetes completion — cached to avoid spawning kubectl on every shell start
+_kubectl_completion="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/completions/_kubectl"
 if command -v kubectl >/dev/null 2>&1; then
-  source <(kubectl completion zsh)
+  if [[ ! -f $_kubectl_completion || $_kubectl_completion -ot $(command -v kubectl) ]]; then
+    mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/completions"
+    kubectl completion zsh >$_kubectl_completion
+  fi
+  source $_kubectl_completion
 fi
 
-# Buildpack completion
+# Buildpack completion — pack manages its own file; source it directly
 if command -v pack >/dev/null 2>&1; then
   source "$(pack completion -s zsh)"
 fi
 
-# 1Password CLI completion
+# 1Password CLI completion — cached to avoid spawning op on every shell start
+_op_completion="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/completions/_op"
 if command -v op >/dev/null 2>&1; then
-  eval "$(op completion zsh)"; compdef _op op
+  if [[ ! -f $_op_completion || $_op_completion -ot $(command -v op) ]]; then
+    mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/completions"
+    op completion zsh >$_op_completion
+  fi
+  source $_op_completion
+  compdef _op op
 fi 

@@ -43,6 +43,10 @@ alias ws="cd $HOME/workspace"
 alias icloud="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias my-sb="cd $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/my-second-brain"
 
+# TheFuck
+alias fk='fuck'
+alias tf='fuck'
+
 # Mac OS
 alias python=python3
 alias pip=pip3

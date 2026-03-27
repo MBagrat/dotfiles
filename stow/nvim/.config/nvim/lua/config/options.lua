@@ -13,7 +13,6 @@ vim.opt.hlsearch = true
 vim.opt.backup = false
 vim.opt.showcmd = true
 vim.opt.cmdheight = 0
-vim.opt.laststatus = 0
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
 vim.opt.inccommand = "split"
@@ -31,8 +30,8 @@ vim.opt.splitright = true
 vim.opt.splitkeep = "cursor"
 vim.opt.mouse = "nicr"
 
-vim.opt.colorcolumn = "80"
-vim.opt.textwidth = 80
+vim.opt.colorcolumn = "120"
+vim.opt.textwidth = 120
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
