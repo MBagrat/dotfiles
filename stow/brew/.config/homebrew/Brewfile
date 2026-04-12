@@ -116,6 +116,7 @@ brew 'julia' # Julia programming language
 ################################################################################
 brew 'cmake'                   # Cross-platform build system
 brew 'cocoapods'               # iOS dependency manager
+brew 'xcodegen'                # Generate Xcode projects from YAML
 brew 'composer'                # PHP dependency manager
 brew 'gradle'                  # Java build tool
 brew 'maven'                   # Java project management
@@ -136,6 +137,7 @@ brew 'black'                   # Python code formatter
 brew 'prettier'                # Code formatter
 
 # Development Utilities
+brew 'plantuml'                # Draw UML diagrams
 brew 'chezmoi'                 # Dotfiles manager
 brew 'graphviz'                # Graph visualization
 brew 'grpcurl'                 # gRPC curl-like tool
@@ -149,7 +151,7 @@ brew 'tree-sitter-cli'         # Tree-sitter CLI tool
 
 # Configuration Management
 # brew 'ansible'                 # IT automation tool
-# brew 'anyenv' # Manages multiple *env version managers
+brew 'anyenv' # Manages multiple *env version managers
 # brew 'terraform'               # Infrastructure as code
 
 # Container Tools
@@ -236,7 +238,8 @@ cask 'kitty'                   # GPU-based terminal emulator
 ################################################################################
 
 # Modern Editors
-cask 'claude-code' # Claude AI coding assistant CLI
+cask 'claude' # Claude AI coding assistant CLI
+# cask 'claude-code'
 # cask 'ollama-app'              # Ollama Application
 # cask 'monokle'
 # cask 'aptakube'
@@ -274,11 +277,6 @@ cask 'postman'                 # API development platform
 cask 'fork' # Git client
 
 ################################################################################
-# APPLICATIONS - VIRTUALIZATION
-################################################################################
-cask 'utm' # Virtual machines for macOS
-
-################################################################################
 # APPLICATIONS - FINANCE
 ################################################################################
 # cask 'binance'                 # Binance crypto exchange
@@ -289,11 +287,12 @@ cask 'utm' # Virtual machines for macOS
 cask 'fliqlo'                  # Flip clock screensaver
 cask 'spotify'                 # Music streaming
 cask 'vlc'                     # Media player
+cask 'gimp'                    # Free and open-source image editor
 
 ################################################################################
 # APPLICATIONS - COMMUNICATION
 ################################################################################
-cask 'anydesk' # Remote desktop
+# cask 'anydesk' # Remote desktop
 # cask 'slack'                   # Team communication
 cask 'telegram'                # Messaging app
 cask 'tempbox'                 # Temporary email
@@ -321,8 +320,8 @@ cask 'rectangle'               # Window manager
 cask 'stats'                   # System monitor menubar
 
 # File Management
-cask 'keka'                    # File archiver
-cask 'transmit'                # FTP/SFTP client
+cask 'keka' # File archiver
+# cask 'transmit'                # FTP/SFTP client
 
 # Development Utilities
 cask 'keystore-explorer'       # Keystore/certificate manager
@@ -407,7 +406,7 @@ mas 'Battery Health 2', id: 1_120_214_373             # Battery health monitor
 mas 'CleanMyDrive 2', id: 523_620_159                 # External drive cleaner
 mas 'Color Picker', id: 1_545_870_783                 # Color picker tool
 # mas 'DevCleaner', id: 1388020431                      # Xcode cache cleaner
-mas 'Hand Mirror', id: 1_502_839_586                  # Webcam viewer
+# mas 'Hand Mirror', id: 1_502_839_586                  # Webcam viewer
 mas 'ScreenBrush', id: 1_233_965_871                  # Screen annotation
 mas 'Startup Disk Full Fixer', id: 1_346_655_838      # Free up startup disk space
 
@@ -423,7 +422,7 @@ mas 'Whatsapp Messenger', id: 310_633_997 # WhatsApp messaging app
 mas 'WaterMinder', id: 1_415_257_369 # Water intake tracker
 
 # Development (commented out - large download)
-# mas 'Xcode', id: 497_799_835                          # Xcode IDE and developer tools
+mas 'Xcode', id: 497_799_835 # Xcode IDE and developer tools
 
 ################################################################################
 # VS CODE EXTENSIONS
@@ -456,6 +455,7 @@ vscode 'vscjava.vscode-java-dependency'
 vscode 'vscjava.vscode-java-pack'
 vscode 'vscjava.vscode-java-test'
 vscode 'vscjava.vscode-maven'
+vscode 'swiftlang.swift-vscode'
 
 # Language Support - Python
 vscode 'ms-python.debugpy'
