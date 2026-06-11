@@ -4,7 +4,7 @@ session_root "$HOME/Workspace/personal/projects"
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
-if initialize_session "Personal"; then
+if initialize_session "Kill Process"; then
 
   # Load specified window layout.
   #
@@ -13,14 +13,14 @@ if initialize_session "Personal"; then
   #   - $2: (optional) Override default window name.
   #
   load_window "$TMUXIFIER_LAYOUT_PATH/common/superfile.window.sh"
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/website.window.sh"
+  load_window "$TMUXIFIER_LAYOUT_PATH/kill-process/kill-process.window.sh"
 
   # Select a specific window.
   #
   # Arguments:
   #   - $1: Window ID or name to select.
   #
-  select_window 1
+  select_window 2
   # select_window "Dotfiles"
   # select_window "Website"
   # select_window "Services"

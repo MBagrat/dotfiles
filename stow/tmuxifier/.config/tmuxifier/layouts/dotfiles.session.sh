@@ -1,10 +1,10 @@
 # Set a custom session root path. Default is `$HOME`.
 # Must be called before `initialize_session`.
-session_root "$HOME/Workspace/personal/projects"
+session_root "$HOME/"
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
-if initialize_session "Personal"; then
+if initialize_session "Dotfiles"; then
 
   # Load specified window layout.
   #
@@ -13,7 +13,7 @@ if initialize_session "Personal"; then
   #   - $2: (optional) Override default window name.
   #
   load_window "$TMUXIFIER_LAYOUT_PATH/common/superfile.window.sh"
-  load_window "$TMUXIFIER_LAYOUT_PATH/personal/website.window.sh"
+  load_window "$TMUXIFIER_LAYOUT_PATH/dotfiles/dotfiles.window.sh"
 
   # Select a specific window.
   #

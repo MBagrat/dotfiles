@@ -1,5 +1,18 @@
 {
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
   "agent": {
+    "dock": "right",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4",
@@ -15,7 +28,7 @@
     "enabled": true,
   },
   "gutter": {
-    "line_numbers": true,
+    "line_numbers": false,
   },
   "ui_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_family": "JetBrainsMono Nerd Font",
@@ -51,7 +64,7 @@
     "wakatime": true,
   },
   "tab_bar": {
-    "show": false,
+    "show": true,
     "show_nav_history_buttons": true,
     "show_tab_bar_buttons": true,
   },
