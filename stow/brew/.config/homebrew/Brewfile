@@ -23,6 +23,7 @@ tap 'teamookla/speedtest'
 tap 'anomalyco/tap'
 tap 'derailed/k9s'
 tap 'vladimirvivien/oss-tools'
+tap 'oven-sh/bun'
 
 ################################################################################
 # CORE SYSTEM UTILITIES
@@ -143,6 +144,7 @@ brew 'graphviz'                # Graph visualization
 brew 'grpcurl'                 # gRPC curl-like tool
 brew 'solr@8.11'               # Apache Solr search platform
 brew 'tree-sitter-cli'         # Tree-sitter CLI tool
+brew 'wakatime-cli'            # WakaTime CLI for editor time tracking
 
 ################################################################################
 # DEVOPS & INFRASTRUCTURE
@@ -172,6 +174,7 @@ brew 'minikube'                # Local Kubernetes cluster
 
 # AI Coding Agent
 brew 'opencode' # AI coding agent
+brew 'bun'
 
 ################################################################################
 # JAVA & SPRING ECOSYSTEM
@@ -238,6 +241,7 @@ cask 'kitty'                   # GPU-based terminal emulator
 ################################################################################
 
 # Modern Editors
+cask 'antigravity'             # Google Antigravity AI IDE
 cask 'claude' # Claude AI coding assistant CLI
 # cask 'claude-code'
 # cask 'ollama-app'              # Ollama Application
@@ -252,6 +256,7 @@ cask 'zed'                     # High-performance editor
 cask 'jetbrains-toolbox' # JetBrains IDE manager
 # cask 'netbeans'                # Apache NetBeans
 # cask 'springtoolsforeclipse'   # Spring Tools for Eclipse
+cask 'dbeaver-community'
 
 # Database Tools
 # cask 'dbeaver-community'       # Universal database tool
@@ -379,7 +384,7 @@ cask 'qlprettypatch'           # Patch file preview
 cask 'qlstephen'               # Plain text files
 cask 'quicklook-video'         # Video thumbnails
 cask 'quicklook-csv'           # CSV preview
-cask 'quicklook-json'          # JSON preview
+cask 'syntax-highlight'        # Syntax Highlight
 cask 'quicklookase'            # Adobe ASE preview
 cask 'webpquicklook'           # WebP preview
 
@@ -432,6 +437,7 @@ mas 'Xcode', id: 497_799_835 # Xcode IDE and developer tools
 # AI & Productivity
 vscode '1password.op-vscode'
 vscode 'anthropic.claude-code'
+vscode 'ms-vscode.vscode-chat-customizations-evaluations'
 vscode 'wakatime.vscode-wakatime'
 vscode 'wayou.vscode-todo-highlight'
 
@@ -456,6 +462,7 @@ vscode 'vscjava.vscode-java-pack'
 vscode 'vscjava.vscode-java-test'
 vscode 'vscjava.vscode-maven'
 vscode 'swiftlang.swift-vscode'
+vscode 'llvm-vs-code-extensions.lldb-dap'
 
 # Language Support - Python
 vscode 'ms-python.debugpy'
@@ -466,12 +473,12 @@ vscode 'ms-python.vscode-python-envs'
 # Spring Framework
 vscode 'vmware.vscode-boot-dev-pack'
 vscode 'vmware.vscode-spring-boot'
-vscode 'vmware.vscode-spring-cli'
 vscode 'vscjava.vscode-spring-boot-dashboard'
 vscode 'vscjava.vscode-spring-initializr'
 
 # DevOps & Infrastructure
 vscode 'docker.docker'
+vscode 'hashicorp.hcl'
 vscode 'hashicorp.terraform'
 vscode 'ms-azuretools.vscode-containers'
 vscode 'ms-kubernetes-tools.vscode-kubernetes-tools'
