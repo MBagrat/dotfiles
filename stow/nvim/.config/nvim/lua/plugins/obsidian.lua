@@ -21,7 +21,7 @@ return {
     workspaces = {
       {
         name = "my-second-brain",
-        path = "/Users/mbagrat/Library/Mobile Documents/iCloud~md~obsidian/Documents/my-second-brain",
+        path = vim.fn.expand("~") .. "/Library/Mobile Documents/iCloud~md~obsidian/Documents/my-second-brain",
       },
     },
   },

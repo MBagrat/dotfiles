@@ -26,6 +26,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+### Python
+__pycache__/
+*.pyc
+
 ### JetBrains template
 .idea/
 .fleet/

@@ -46,7 +46,11 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
 -- Node.js provider (nodenv)
-vim.g.node_host_prog = vim.fn.expand(vim.fn.system("nodenv prefix"):gsub("\n", "") .. "/bin/neovim-node-host")
+if vim.fn.executable("nodenv") == 1 then
+  vim.g.node_host_prog = vim.fn.expand(vim.fn.system("nodenv prefix"):gsub("\n", "") .. "/bin/neovim-node-host")
+else
+  vim.g.loaded_node_provider = 0
+end
 
 -- Python provider (pyenv)
 vim.g.python3_host_prog = vim.fn.expand("$HOME") .. "/.anyenv/envs/pyenv/shims/python"

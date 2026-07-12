@@ -1,8 +1,10 @@
 # pyright: reportMissingImports=false
+import re
+import subprocess
 from datetime import datetime
+
 from kitty.boss import get_boss
 from kitty.fast_data_types import Screen, add_timer, get_options
-from kitty.utils import color_as_int
 from kitty.tab_bar import (
     DrawData,
     ExtraData,
@@ -12,6 +14,7 @@ from kitty.tab_bar import (
     draw_attributed_string,
     draw_title,
 )
+from kitty.utils import color_as_int
 
 opts = get_options()
 icon_fg = as_rgb(color_as_int(opts.color16))
@@ -127,13 +130,20 @@ def _redraw_tab_bar(_):
         tm.mark_tab_bar_dirty()
 
 
+_PMSET_BATTERY_RE = re.compile(r"(\d+)%;\s*([\w\s]+?);")
+
+
 def get_battery_cells() -> list:
     try:
-        with open("/sys/class/power_supply/BAT0/status", "r") as f:
-            status = f.read()
-        with open("/sys/class/power_supply/BAT0/capacity", "r") as f:
-            percent = int(f.read())
-        if status == "Discharging\n":
+        output = subprocess.run(
+            ["pmset", "-g", "batt"], capture_output=True, text=True, timeout=1
+        ).stdout
+        match = _PMSET_BATTERY_RE.search(output)
+        if match is None:
+            return []
+        percent = int(match.group(1))
+        status = match.group(2).strip()
+        if status == "discharging":
             # TODO: declare the lambda once and don't repeat the code
             icon_color = UNPLUGGED_COLORS[
                 min(UNPLUGGED_COLORS.keys(), key=lambda x: abs(x - percent))
@@ -141,7 +151,7 @@ def get_battery_cells() -> list:
             icon = UNPLUGGED_ICONS[
                 min(UNPLUGGED_ICONS.keys(), key=lambda x: abs(x - percent))
             ]
-        elif status == "Not charging\n":
+        elif status == "charged":
             icon_color = UNPLUGGED_COLORS[
                 min(UNPLUGGED_COLORS.keys(), key=lambda x: abs(x - percent))
             ]
@@ -158,7 +168,7 @@ def get_battery_cells() -> list:
         percent_cell = (bat_text_color, str(percent) + "% ")
         icon_cell = (icon_color, icon)
         return [percent_cell, icon_cell]
-    except FileNotFoundError:
+    except (FileNotFoundError, subprocess.SubprocessError):
         return []
 
 
