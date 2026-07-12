@@ -20,7 +20,7 @@ if initialize_session "Personal"; then
   # Arguments:
   #   - $1: Window ID or name to select.
   #
-  select_window 1
+  select_window 2
   # select_window "Dotfiles"
   # select_window "Website"
   # select_window "Services"

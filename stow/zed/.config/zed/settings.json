@@ -1,4 +1,9 @@
 {
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
   "project_panel": {
     "dock": "left",
   },
@@ -22,7 +27,11 @@
     "diagnostics": false,
     "metrics": false,
   },
-  "theme": "JetBrains New Dark",
+  "theme": {
+    "mode": "system",
+    "light": "Tokyo Night Light",
+    "dark": "Tokyo Night Storm"
+  },
   "icon_theme": "JetBrains New UI Icons (Light)",
   "inlay_hints": {
     "enabled": true,

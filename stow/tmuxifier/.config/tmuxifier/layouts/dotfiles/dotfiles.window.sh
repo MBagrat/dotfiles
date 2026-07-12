@@ -8,7 +8,8 @@ new_window "Dotfiles"
 
 run_cmd "nvim"
 
-split_h 0
+split_h 20
+
 run_cmd "claude"
 
 # Set active pane.

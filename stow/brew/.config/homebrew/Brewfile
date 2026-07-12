@@ -24,6 +24,7 @@ tap 'anomalyco/tap'
 tap 'derailed/k9s'
 tap 'vladimirvivien/oss-tools'
 tap 'oven-sh/bun'
+tap 'xcodesorg/made'
 
 ################################################################################
 # CORE SYSTEM UTILITIES
@@ -118,6 +119,7 @@ brew 'julia' # Julia programming language
 brew 'cmake'                   # Cross-platform build system
 brew 'cocoapods'               # iOS dependency manager
 brew 'xcodegen'                # Generate Xcode projects from YAML
+brew 'xcodesorg/made/xcodes'   # Manage multiple Xcode installations
 brew 'composer'                # PHP dependency manager
 brew 'gradle'                  # Java build tool
 brew 'maven'                   # Java project management
@@ -161,7 +163,6 @@ brew 'pack'                    # Cloud Native Buildpacks CLI
 brew 'ctop'                    # Container metrics viewer
 brew 'dive'                    # Docker image explorer
 brew 'lazydocker'              # Terminal UI for docker
-brew 'podman'                  # Daemonless container engine
 brew 'qemu'                    # Generic machine emulator
 
 # Kubernetes
@@ -174,6 +175,7 @@ brew 'minikube'                # Local Kubernetes cluster
 
 # AI Coding Agent
 brew 'opencode' # AI coding agent
+brew 'herdr'                    # Agent multiplexer for the terminal
 brew 'bun'
 
 ################################################################################
@@ -241,40 +243,36 @@ cask 'kitty'                   # GPU-based terminal emulator
 ################################################################################
 
 # Modern Editors
-cask 'antigravity'             # Google Antigravity AI IDE
+cask 'antigravity' # Google Antigravity AI IDE
 cask 'claude' # Claude AI coding assistant CLI
-# cask 'claude-code'
 # cask 'ollama-app'              # Ollama Application
-# cask 'monokle'
-# cask 'aptakube'
-# cask 'cursor'                  # AI-powered code editor
+cask 'cursor'                  # AI-powered code editor
 cask 'visual-studio-code'      # VS Code
 cask 'zed'                     # High-performance editor
 
 # Java IDEs
-# cask 'eclipse-jee'             # Eclipse IDE for Java EE
-cask 'jetbrains-toolbox' # JetBrains IDE manager
-# cask 'netbeans'                # Apache NetBeans
-# cask 'springtoolsforeclipse'   # Spring Tools for Eclipse
-cask 'dbeaver-community'
+cask 'eclipse-jee'             # Eclipse IDE for Java EE
+cask 'jetbrains-toolbox'       # JetBrains IDE manager
+cask 'netbeans'                # Apache NetBeans
+cask 'springtoolsforeclipse'   # Spring Tools for Eclipse
 
 # Database Tools
-# cask 'dbeaver-community'       # Universal database tool
+cask 'dbeaver-community'       # Universal database tool
 
 ################################################################################
 # APPLICATIONS - DEVELOPMENT PLATFORMS
 ################################################################################
-# cask 'docker-desktop'          # Docker Desktop
-cask 'flutter' # Flutter SDK
-# cask 'kafkio'                  # Kafka GUI
-cask 'lens' # Kubernetes IDE
-# cask 'mongodb-compass'         # MongoDB GUI
+cask 'docker-desktop'          # Docker Desktop
+cask 'flutter'                 # Flutter SDK
+cask 'kafkio'                  # Kafka GUI
+cask 'lens'                    # Kubernetes IDE
+cask 'mongodb-compass'         # MongoDB GUI
 cask 'orbstack'                # Fast Docker/Linux on macOS
 cask 'pgadmin4'                # PostgreSQL admin tool
 cask 'podman-desktop'          # Podman Desktop
 cask 'postman'                 # API development platform
-# cask 'proxyman'                # HTTP debugging proxy
-# cask 'testcontainers-desktop'  # Testcontainers Desktop
+cask 'proxyman'                # HTTP debugging proxy
+cask 'testcontainers-desktop'  # Testcontainers Desktop
 
 ################################################################################
 # APPLICATIONS - VERSION CONTROL
@@ -309,7 +307,7 @@ cask 'zoom'                    # Video conferencing
 
 # Launcher & Automation
 cask 'alfred'                  # Productivity launcher
-cask 'raycast'                 # Command launcher
+# cask 'raycast'                 # Command launcher
 
 # System Utilities
 cask 'appcleaner'              # App uninstaller
@@ -427,7 +425,7 @@ mas 'Whatsapp Messenger', id: 310_633_997 # WhatsApp messaging app
 mas 'WaterMinder', id: 1_415_257_369 # Water intake tracker
 
 # Development (commented out - large download)
-mas 'Xcode', id: 497_799_835 # Xcode IDE and developer tools
+# mas 'Xcode', id: 497_799_835 # Xcode IDE and developer tools
 
 ################################################################################
 # VS CODE EXTENSIONS
@@ -484,6 +482,7 @@ vscode 'ms-azuretools.vscode-containers'
 vscode 'ms-kubernetes-tools.vscode-kubernetes-tools'
 vscode 'ms-vscode-remote.remote-containers'
 vscode 'redhat.ansible'
+vscode 'grafana.grafana-alloy'
 
 # Database & Data
 vscode 'cweijan.vscode-database-client2'
@@ -500,6 +499,7 @@ vscode 'davidanson.vscode-markdownlint'
 vscode 'esbenp.prettier-vscode'
 vscode 'redhat.vscode-xml'
 vscode 'redhat.vscode-yaml'
+vscode 'tamasfe.even-better-toml'
 
 # Themes & UI
 vscode 'chadalen.vscode-jetbrains-icon-theme'
@@ -511,6 +511,7 @@ vscode 'k--kato.intellij-idea-keybindings'
 
 # Utilities
 vscode 'codezombiech.gitignore'
+vscode 'pomdtr.excalidraw-editor'
 vscode 'rohinivsenthil.rabbitrace'
 
 ################################################################################

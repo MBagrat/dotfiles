@@ -8,7 +8,8 @@ new_window "Browser Picker"
 
 run_cmd "nvim"
 
-split_h 0
+split_h 30
+
 run_cmd "claude"
 
 # Set active pane.

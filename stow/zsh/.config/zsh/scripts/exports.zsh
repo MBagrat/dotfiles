@@ -72,6 +72,9 @@ export PATH="$PATH:$HOME/.lmstudio/bin"
 # JetBrains Toolbox
 export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
 
+# System paths
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
 # User bins — prepended last so they take priority
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
@@ -117,3 +120,7 @@ eval "$(starship init zsh)"
 
 # 1Password CLI plugins
 [[ -f "$HOME/.config/op/plugins.sh" ]] && source "$HOME/.config/op/plugins.sh"
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :

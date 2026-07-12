@@ -1,0 +1,10 @@
+onboarding = false
+
+[theme]
+name = "tokyo-night"
+
+[keys]
+prefix = "ctrl+a"
+
+[experimental]
+kitty_graphics = true
