@@ -85,6 +85,10 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 # Dotfiles
 export DOTFILES="$HOME/.dotfiles"
 
+# Obsidian vault — single source of truth, consumed by nvim (obsidian.nvim)
+# and the tmuxifier obsidian layout
+export OBSIDIAN_VAULT="$HOME/Workspace/personal/obsidian/my-second-brain"
+
 # fzf
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_DEFAULT_COMMAND="fd --type f"

@@ -41,7 +41,7 @@ alias dt="cd $HOME/Desktop"
 alias dl="cd $HOME/Downloads"
 alias ws="cd $HOME/workspace"
 alias icloud="cd $HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias my-sb="cd $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/my-second-brain"
+alias my-sb='cd "$OBSIDIAN_VAULT"'
 
 # TheFuck
 alias fk='fuck'
@@ -68,7 +68,7 @@ alias rm-ds="find . -name ".DS_Store" -depth -exec rm -f {} \;"
 ## Personal
 alias kc-sd="kc.sh start-dev"
 alias mbb="cd $HOME/Workspace/personal/projects/development/mbagrat-blog"
-alias oo="cd /Users/mbagrat/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/my-second-brain/"
+alias oo="cd $HOME/Workspace/personal/obsidian/my-second-brain"
 
 # Artifactory Environment Variables 
 alias load_artifactory_creds='set_artifactory_env'
