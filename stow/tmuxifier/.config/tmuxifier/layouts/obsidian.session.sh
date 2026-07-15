@@ -1,4 +1,5 @@
 SESSION_NAME="Obsidian"
 SESSION_ROOT="$HOME/Workspace/personal/projects"
-WINDOW_PATH="obsidian/obsidian.window.sh"
+WINDOW_ROOT="${OBSIDIAN_VAULT:-$HOME/Workspace/personal/obsidian/my-second-brain}"
+WINDOW_TITLE="Obsidian"
 source "$TMUXIFIER_LAYOUT_PATH/common/project.session.sh"
