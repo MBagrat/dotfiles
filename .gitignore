@@ -96,3 +96,6 @@ debug
 .repro
 foo.*
 data
+
+### graphify (generated knowledge-graph output)
+graphify-out/
