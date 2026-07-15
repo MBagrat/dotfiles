@@ -22,6 +22,7 @@ return {
     },
     spec = {
       { "<leader>o", group = "obsidian" },
+      { "<leader>j", group = "spring/jvm" },
     },
   },
 }
