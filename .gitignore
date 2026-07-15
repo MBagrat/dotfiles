@@ -99,3 +99,6 @@ data
 
 ### graphify (generated knowledge-graph output)
 graphify-out/
+
+### herdr/brew trust lock (transient tool state)
+stow/brew/.config/homebrew/trust.json.lock
