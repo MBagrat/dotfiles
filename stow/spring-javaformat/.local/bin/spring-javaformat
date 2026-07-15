@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Format Java source from stdin to stdout with spring-javaformat
+# (https://github.com/spring-io/spring-javaformat).
+#
+# Same entry point as the project's VS Code extension: the shaded formatter
+# jar from Maven Central plus a tiny stdin/stdout wrapper, compiled here on
+# first run. Respects a .springjavaformatconfig found upward from the
+# current working directory, so callers should cd to the source file's dir.
+set -euo pipefail
+
+VERSION="${SPRING_JAVAFORMAT_VERSION:-0.0.47}"
+DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/spring-javaformat/$VERSION"
+JAR="$DATA_DIR/spring-javaformat-formatter-shaded.jar"
+CLASSES="$DATA_DIR/classes"
+
+if [[ ! -f "$JAR" || ! -f "$CLASSES/StdinFormatter.class" ]]; then
+  echo "spring-javaformat: bootstrapping $VERSION into $DATA_DIR" >&2
+  mkdir -p "$DATA_DIR" "$CLASSES"
+  curl -fsSL -o "$JAR" \
+    "https://repo1.maven.org/maven2/io/spring/javaformat/spring-javaformat-formatter-shaded/$VERSION/spring-javaformat-formatter-shaded-$VERSION.jar"
+  cat >"$DATA_DIR/StdinFormatter.java" <<'EOF'
+import java.io.File;
+import io.spring.javaformat.config.JavaFormatConfig;
+import io.spring.javaformat.formatter.StreamsFormatter;
+
+/** Reads Java source from stdin, writes spring-javaformat output to stdout. */
+public final class StdinFormatter {
+	public static void main(String[] args) throws Exception {
+		JavaFormatConfig config = JavaFormatConfig.findFrom(new File(".").getAbsoluteFile());
+		new StreamsFormatter(config).format(System.in).writeTo((Appendable) System.out);
+	}
+}
+EOF
+  javac -cp "$JAR" -d "$CLASSES" "$DATA_DIR/StdinFormatter.java" >&2
+fi
+
+exec java -cp "$CLASSES:$JAR" StdinFormatter "$@"

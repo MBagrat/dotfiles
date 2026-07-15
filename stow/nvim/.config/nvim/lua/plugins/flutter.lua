@@ -2,7 +2,9 @@ return {
   {
     "akinsho/flutter-tools.nvim",
     ft = { "dart" },
-    dependencies = { "nvim-lua/plenary.nvim" },
+    -- blink.cmp must be loaded before setup() so get_lsp_capabilities() below
+    -- returns real completion capabilities instead of the empty fallback
+    dependencies = { "nvim-lua/plenary.nvim", "saghen/blink.cmp" },
     config = function()
       local function find_flutter_sdk()
         local candidates = {}
@@ -54,7 +56,9 @@ return {
           enabled = true,
           register_configurations = function(paths)
             local ok, dap = pcall(require, "dap")
-            if not ok then return end
+            if not ok then
+              return
+            end
 
             for _, mode in ipairs({ "profile", "release" }) do
               table.insert(dap.configurations.dart, {
@@ -76,7 +80,9 @@ return {
         lsp = {
           capabilities = (function()
             local ok, blink_cmp = pcall(require, "blink.cmp")
-            if ok then return blink_cmp.get_lsp_capabilities() end
+            if ok then
+              return blink_cmp.get_lsp_capabilities()
+            end
             return {}
           end)(),
           init_options = {

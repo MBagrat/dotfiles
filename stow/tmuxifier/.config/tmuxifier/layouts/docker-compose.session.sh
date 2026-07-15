@@ -1,4 +1,5 @@
 SESSION_NAME="Docker Compose"
 SESSION_ROOT="$HOME/Workspace/personal/projects"
-WINDOW_PATH="docker-compose/services.window.sh"
+WINDOW_ROOT="$SESSION_ROOT/local-services"
+WINDOW_TITLE="Services"
 source "$TMUXIFIER_LAYOUT_PATH/common/project.session.sh"

@@ -1,4 +1,5 @@
 SESSION_NAME="Browser Picker"
 SESSION_ROOT="$HOME/Workspace/personal/projects"
-WINDOW_PATH="browser-picker/browser-picker.window.sh"
+WINDOW_ROOT="$SESSION_ROOT/BrowserPicker"
+WINDOW_TITLE="Browser Picker"
 source "$TMUXIFIER_LAYOUT_PATH/common/project.session.sh"

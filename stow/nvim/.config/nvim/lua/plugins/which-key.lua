@@ -20,5 +20,9 @@ return {
         max = math.huge,
       },
     },
+    spec = {
+      { "<leader>o", group = "obsidian" },
+      { "<leader>j", group = "spring/jvm" },
+    },
   },
 }

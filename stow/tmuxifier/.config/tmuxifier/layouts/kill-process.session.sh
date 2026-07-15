@@ -1,4 +1,5 @@
 SESSION_NAME="Kill Process"
 SESSION_ROOT="$HOME/Workspace/personal/projects"
-WINDOW_PATH="kill-process/kill-process.window.sh"
+WINDOW_ROOT="$SESSION_ROOT/alfred/kill-process"
+WINDOW_TITLE="Kill Process"
 source "$TMUXIFIER_LAYOUT_PATH/common/project.session.sh"

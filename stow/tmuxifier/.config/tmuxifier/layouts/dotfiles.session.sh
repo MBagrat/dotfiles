@@ -1,4 +1,5 @@
 SESSION_NAME="Dotfiles"
-SESSION_ROOT="$HOME/"
-WINDOW_PATH="dotfiles/dotfiles.window.sh"
+SESSION_ROOT="$HOME"
+WINDOW_ROOT="$HOME/.dotfiles"
+WINDOW_TITLE="Dotfiles"
 source "$TMUXIFIER_LAYOUT_PATH/common/project.session.sh"

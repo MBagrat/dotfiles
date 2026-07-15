@@ -1,4 +1,5 @@
 SESSION_NAME="Learning"
 SESSION_ROOT="$HOME/Workspace/personal/projects"
-WINDOW_PATH="learning/learning.window.sh"
+WINDOW_ROOT="$SESSION_ROOT/learning"
+WINDOW_TITLE="Learning"
 source "$TMUXIFIER_LAYOUT_PATH/common/project.session.sh"
