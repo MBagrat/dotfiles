@@ -95,6 +95,11 @@ return {
       linters = {
         checkstyle = {
           cmd = "spring-checkstyle",
+          -- opt-out per project: an empty .nocheckstyle in the project root
+          -- disables the linter there
+          condition = function(ctx)
+            return not vim.fs.find(".nocheckstyle", { path = ctx.dirname, upward = true })[1]
+          end,
           -- plain output instead of sarif: checkstyle 9.3 (pinned by
           -- spring-javaformat) emits sarif URIs without a file:// scheme,
           -- which nvim-lint's sarif parser rejects
