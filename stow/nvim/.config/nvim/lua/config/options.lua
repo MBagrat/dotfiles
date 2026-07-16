@@ -21,12 +21,19 @@ vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
--- Node.js provider (nodenv)
-if vim.fn.executable("nodenv") == 1 then
-  vim.g.node_host_prog = vim.fn.expand(vim.fn.system("nodenv prefix"):gsub("\n", "") .. "/bin/neovim-node-host")
+-- Node.js provider (nodenv) — the shim avoids forking `nodenv prefix` on
+-- every startup
+local node_host = vim.fn.expand("$HOME") .. "/.anyenv/envs/nodenv/shims/neovim-node-host"
+if vim.fn.executable(node_host) == 1 then
+  vim.g.node_host_prog = node_host
 else
   vim.g.loaded_node_provider = 0
 end
 
 -- Python provider (pyenv)
-vim.g.python3_host_prog = vim.fn.expand("$HOME") .. "/.anyenv/envs/pyenv/shims/python"
+local py_host = vim.fn.expand("$HOME") .. "/.anyenv/envs/pyenv/shims/python"
+if vim.fn.executable(py_host) == 1 then
+  vim.g.python3_host_prog = py_host
+else
+  vim.g.loaded_python3_provider = 0
+end
