@@ -24,7 +24,6 @@ tap 'anomalyco/tap'
 tap 'derailed/k9s'
 tap 'vladimirvivien/oss-tools'
 tap 'oven-sh/bun'
-tap 'xcodesorg/made'
 
 ################################################################################
 # CORE SYSTEM UTILITIES
@@ -119,7 +118,6 @@ brew 'julia' # Julia programming language
 brew 'cmake'                   # Cross-platform build system
 brew 'cocoapods'               # iOS dependency manager
 brew 'xcodegen'                # Generate Xcode projects from YAML
-brew 'xcodesorg/made/xcodes'   # Manage multiple Xcode installations
 brew 'composer'                # PHP dependency manager
 brew 'gradle'                  # Java build tool
 brew 'maven'                   # Java project management
@@ -175,7 +173,7 @@ brew 'minikube'                # Local Kubernetes cluster
 
 # AI Coding Agent
 brew 'opencode' # AI coding agent
-brew 'herdr'                    # Agent multiplexer for the terminal
+brew 'herdr' # Agent multiplexer for the terminal
 brew 'bun'
 
 ################################################################################
@@ -257,7 +255,7 @@ cask 'netbeans'                # Apache NetBeans
 cask 'springtoolsforeclipse'   # Spring Tools for Eclipse
 
 # Database Tools
-cask 'dbeaver-community'       # Universal database tool
+cask 'dbeaver-community' # Universal database tool
 
 ################################################################################
 # APPLICATIONS - DEVELOPMENT PLATFORMS
@@ -306,7 +304,7 @@ cask 'zoom'                    # Video conferencing
 ################################################################################
 
 # Launcher & Automation
-cask 'alfred'                  # Productivity launcher
+cask 'alfred' # Productivity launcher
 # cask 'raycast'                 # Command launcher
 
 # System Utilities
