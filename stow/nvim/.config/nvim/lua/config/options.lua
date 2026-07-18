@@ -12,6 +12,10 @@ vim.opt.mouse = "nicr" -- LazyVim: "a" (no mouse in visual mode)
 vim.opt.colorcolumn = "120"
 vim.opt.textwidth = 120
 
+vim.opt.shiftwidth = 4 -- LazyVim: 2
+vim.opt.tabstop = 4 -- LazyVim: 2
+vim.opt.expandtab = true
+
 vim.opt.path:append({ "**" })
 vim.opt.wildignore:append({ "*/node_modules/*" })
 
