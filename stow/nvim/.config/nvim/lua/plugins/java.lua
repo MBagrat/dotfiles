@@ -30,6 +30,19 @@ return {
               { name = "JavaSE-25", path = corretto(25), default = true },
             },
           },
+          -- Google's Eclipse formatter profile, vendored in the java stow
+          -- package (single source of truth — import the same file into
+          -- IntelliJ via Code Style > Import Scheme > Eclipse XML Profile)
+          format = {
+            enabled = true,
+            settings = {
+              url = vim.fn.expand(vim.fn.expand("~") .. "/.config/java/eclipse-java-intellij-style.xml"),
+              profile = "IntelliJStyle",
+            },
+            comments = {
+              enabled = true,
+            },
+          },
           -- go-to-definition into dependencies lands in real sources with
           -- javadoc; fernflower decompiles the rest
           maven = { downloadSources = true },
@@ -48,7 +61,9 @@ return {
               "org.springframework.test.web.servlet.result.MockMvcResultMatchers.*",
               "org.springframework.test.web.servlet.result.MockMvcResultHandlers.*",
             },
-            importOrder = { "java", "javax", "jakarta", "org", "com", "" },
+            -- IntelliJ IDEA default layout: everything else, javax, java,
+            -- statics last ("" = all other imports, "#" = static imports)
+            importOrder = { "javax", "java", "", "#" },
           },
           codeGeneration = {
             toString = { template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}" },
@@ -59,93 +74,6 @@ return {
       })
       return opts
     end,
-  },
-
-  -- Spring's canonical Java style (spring-io/spring-javaformat) instead of
-  -- jdtls's Eclipse-default formatting. The command is a stow-managed
-  -- ~/.local/bin script that self-bootstraps the formatter jar; cwd is the
-  -- file's dir so a project .springjavaformatconfig is honored
-  {
-    "stevearc/conform.nvim",
-    optional = true,
-    opts = {
-      formatters_by_ft = { java = { "spring_javaformat" } },
-      formatters = {
-        spring_javaformat = {
-          command = "spring-javaformat",
-          stdin = true,
-          cwd = function(_, ctx)
-            return vim.fs.dirname(ctx.filename)
-          end,
-        },
-      },
-    },
-  },
-
-  -- Spring checkstyle conventions (the half spring-javaformat's formatter
-  -- can't fix: unused imports, javadoc, naming). spring-checkstyle is the
-  -- stow-managed sibling of the spring-javaformat script; a project
-  -- checkstyle.xml (Gradle or Spring Boot layout) wins over the bundled
-  -- Spring config, which is resolved from the classpath
-  {
-    "mfussenegger/nvim-lint",
-    optional = true,
-    opts = {
-      linters_by_ft = { java = { "checkstyle" } },
-      linters = {
-        checkstyle = {
-          cmd = "spring-checkstyle",
-          -- opt-out per project: an empty .nocheckstyle in the project root
-          -- disables the linter there
-          condition = function(ctx)
-            return not vim.fs.find(".nocheckstyle", { path = ctx.dirname, upward = true })[1]
-          end,
-          -- plain output instead of sarif: checkstyle 9.3 (pinned by
-          -- spring-javaformat) emits sarif URIs without a file:// scheme,
-          -- which nvim-lint's sarif parser rejects
-          args = {
-            "-f",
-            "plain",
-            "-c",
-            function()
-              local root = vim.fs.root(0, { "gradlew", "mvnw", "settings.gradle.kts", "settings.gradle", "pom.xml", ".git" })
-              for _, rel in ipairs({ "/config/checkstyle/checkstyle.xml", "/src/checkstyle/checkstyle.xml" }) do
-                if root and vim.uv.fs_stat(root .. rel) then
-                  return root .. rel
-                end
-              end
-              return "io/spring/javaformat/checkstyle/checkstyle.xml"
-            end,
-          },
-          -- [SEVERITY] /path/File.java:LINE[:COL]: message [RuleName]
-          parser = function(output, _)
-            local diags = {}
-            for line in output:gmatch("[^\r\n]+") do
-              local sev, lnum, rest = line:match("^%[(%a+)%] .-:(%d+):(.*)$")
-              if sev and rest then
-                local col, msg = rest:match("^(%d+):%s*(.+)$")
-                msg = msg or rest:match("^%s*(.+)$")
-                if msg then
-                  local code = msg:match("%[([%w%.]+)%]%s*$")
-                  msg = msg:gsub("%s*%[[%w%.]+%]%s*$", "")
-                  table.insert(diags, {
-                    lnum = tonumber(lnum) - 1,
-                    col = col and tonumber(col) - 1 or 0,
-                    message = msg,
-                    code = code,
-                    severity = sev == "WARN" and vim.diagnostic.severity.WARN
-                      or sev == "INFO" and vim.diagnostic.severity.INFO
-                      or vim.diagnostic.severity.ERROR,
-                    source = "spring-checkstyle",
-                  })
-                end
-              end
-            end
-            return diags
-          end,
-        },
-      },
-    },
   },
 
   -- Gradle build files and Maven pom.xml
