@@ -22,6 +22,12 @@ return {
             vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjavasymbolicexecution.jar"),
             vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarxml.jar"),
           },
+          -- same reason as the spring-boot LS in spring.lua: nvim 0.12's
+          -- shared inlay-hint state crashes when a second client serves
+          -- hints in the same buffer; jdtls stays the only provider
+          on_init = function(client)
+            client.server_capabilities.inlayHintProvider = nil
+          end,
         },
         filetypes = { "java", "xml" },
       })

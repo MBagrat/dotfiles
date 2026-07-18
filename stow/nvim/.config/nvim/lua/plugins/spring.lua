@@ -147,6 +147,17 @@ return {
       end
       local launch = require("spring_boot.launch")
       local client_config = launch.update_ls_config(resolved)
+      -- nvim 0.12 keeps one shared inlay-hint version per buffer across all
+      -- clients, so hints from a secondary server can be drawn against a
+      -- newer buffer revision and crash extmark placement ("Invalid 'col'").
+      -- jdtls/kotlin_lsp stay the only hint providers (fixed on nvim master)
+      local on_init = client_config.on_init
+      client_config.on_init = function(client, ...)
+        if on_init then
+          on_init(client, ...)
+        end
+        client.server_capabilities.inlayHintProvider = nil
+      end
       vim.api.nvim_create_autocmd("FileType", {
         group = vim.api.nvim_create_augroup("spring_boot_ls_kotlin", { clear = true }),
         pattern = { "java", "kotlin", "yaml", "jproperties" },
