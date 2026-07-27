@@ -69,6 +69,9 @@ export PATH="$HOMEBREW_PREFIX/opt/libpq/bin:$PATH"
 # LM Studio
 export PATH="$PATH:$HOME/.lmstudio/bin"
 
+# Kimi
+export PATH="$PATH:$HOME/.kimi-code/bin"
+
 # JetBrains Toolbox
 export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
 
