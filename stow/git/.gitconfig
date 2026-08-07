@@ -159,3 +159,5 @@
 ; [includeIf "gitdir:~/Workspace/work/personal/"]
 ; 	path = ~/.gitconfig-work-personal
 
+[credential "https://git.heroku.com"]
+	helper = !heroku git:credentials

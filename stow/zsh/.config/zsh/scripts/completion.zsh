@@ -55,8 +55,9 @@ zstyle ':completion:*' accept-exact '*(N)'
 # =============================================================================
 
 # Docker completion
-if [ ! -d "$HOME/.docker/completions" ]; then
-  FPATH="$HOME/.docker/completions:$FPATH"
+if [ -f "$HOME/.docker/completions/_docker" ]; then
+  source "$HOME/.docker/completions/_docker"
+  compdef _docker docker
 fi
 
 # Kubernetes completion — cached to avoid spawning kubectl on every shell start
@@ -83,4 +84,15 @@ if command -v op >/dev/null 2>&1; then
   fi
   source $_op_completion
   compdef _op op
-fi 
+fi
+
+# sesh completion — cached to avoid spawning sesh on every shell start
+_sesh_completion="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/completions/_sesh"
+if command -v sesh >/dev/null 2>&1; then
+  if [[ ! -f $_sesh_completion || $_sesh_completion -ot $(command -v sesh) ]]; then
+    mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/completions"
+    sesh completion zsh >$_sesh_completion
+  fi
+  source $_sesh_completion
+  compdef _sesh sesh
+fi

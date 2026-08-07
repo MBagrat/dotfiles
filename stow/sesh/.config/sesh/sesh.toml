@@ -1,0 +1,37 @@
+#:schema https://github.com/joshmedeski/sesh/raw/main/sesh.schema.json
+blacklist = ["scratch"]
+
+cache = false
+
+[default_session]
+startup_command = "eza --all --git --icons --color=always {}"
+
+
+[[session]]
+name = "tmux_conf"
+path = "~/.dotfiles/stow/tmux/.config/tmux"
+startup_command = "nvim tmux.conf"
+preview_command = "bat --color=always ~/.dotfiles/stow/tmux/.config/tmux/tmux.conf"
+
+[[session]]
+name = "sesh_conf"
+path = "~/.dotfiles/stow/sesh/.config/sesh"
+startup_command = "nvim sesh.toml"
+preview_command = "bat --color=always ~/.dotfiles/stow/sesh/.config/sesh/sesh.toml"
+
+[[session]]
+name = "dotfiles"
+path = "~/.dotfiles"
+startup_command = "nvim"
+
+# [tui]
+# prompt = " E> "
+# placeholder = "Filter sessions... "
+# show_icons = false
+# show_windows = false
+# alias_auto_connect_delay = "150ms"
+# alias_filter_prefix = "/"
+# preview = false
+# preview_width = 60
+# preview_min_width = 100
+# preview_border = "line"

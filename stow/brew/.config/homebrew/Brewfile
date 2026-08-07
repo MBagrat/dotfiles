@@ -8,22 +8,22 @@
 # TAPS
 # Third-party Homebrew repositories
 ################################################################################
-tap '1password/tap'
-tap 'atomicjar/tap'
-tap 'buildpacks/tap'
-tap 'certak-com/kafkio'
-tap 'graalvm/tap'
-tap 'hashicorp/tap'
-tap 'homebrew/autoupdate'
-tap 'maciejwalkowiak/brew'
-tap 'mdogan/zulu'
-tap 'shaunsingh/sfmono-nerd-font-ligaturized'
-tap 'spring-io/tap'
-tap 'teamookla/speedtest'
-tap 'anomalyco/tap'
-tap 'derailed/k9s'
-tap 'vladimirvivien/oss-tools'
-tap 'oven-sh/bun'
+tap '1password/tap',									trusted: true
+tap 'atomicjar/tap',									trusted: true
+tap 'buildpacks/tap',									trusted: true
+tap 'certak-com/kafkio',								trusted: true
+tap 'graalvm/tap' ,										trusted: true
+tap 'hashicorp/tap' ,									trusted: true
+tap 'homebrew/autoupdate',								trusted: true
+tap 'maciejwalkowiak/brew',								trusted: true
+tap 'mdogan/zulu',										trusted: true
+tap 'shaunsingh/sfmono-nerd-font-ligaturized',			trusted: true
+tap 'teamookla/speedtest',								trusted: true
+tap 'anomalyco/tap',									trusted: true
+tap 'derailed/k9s',										trusted: true
+tap 'vladimirvivien/oss-tools',							trusted: true
+tap 'oven-sh/bun',										trusted: true
+tap 'joshmedeski/sesh',									trusted: true
 
 ################################################################################
 # CORE SYSTEM UTILITIES
@@ -33,6 +33,7 @@ tap 'oven-sh/bun'
 # Shell & Terminal
 brew 'tpm'                     # Tmux plugin manager
 brew 'tmux'                    # Terminal multiplexer
+brew 'sesh'                    # Smart tmux session manager
 brew 'bash'                    # Updated Bash shell
 brew 'thefuck'                 # Command correction tool
 brew 'starship'                # Cross-shell prompt
@@ -154,7 +155,6 @@ brew 'wakatime-cli'            # WakaTime CLI for editor time tracking
 # Configuration Management
 # brew 'ansible'                 # IT automation tool
 brew 'anyenv' # Manages multiple *env version managers
-# brew 'terraform'               # Infrastructure as code
 
 # Container Tools
 brew 'pack'                    # Cloud Native Buildpacks CLI
@@ -180,10 +180,9 @@ brew 'bun'
 # JAVA & SPRING ECOSYSTEM
 # Java-specific development tools
 ################################################################################
-brew 'jhipster' # Spring Boot + Angular/React generator
-# brew 'jmeter'                  # Load testing tool
-brew 'kdoctor'                 # Kotlin environment checker
-brew 'spring-boot'             # Spring Boot CLI
+brew 'jhipster'					# Spring Boot + Angular/React generator
+# brew 'jmeter'                 # Load testing tool
+brew 'kdoctor'                 	# Kotlin environment checker
 
 ################################################################################
 # SYSTEM LIBRARIES & DEPENDENCIES
@@ -235,6 +234,7 @@ cask 'google-chrome'           # Google Chrome
 ################################################################################
 cask 'iterm2'                  # Terminal emulator
 cask 'kitty'                   # GPU-based terminal emulator
+cask 'wezterm'                 # GPU-accelerated terminal emulator
 
 ################################################################################
 # APPLICATIONS - CODE EDITORS & IDEs
@@ -287,6 +287,7 @@ cask 'fork' # Git client
 ################################################################################
 cask 'fliqlo'                  # Flip clock screensaver
 cask 'spotify'                 # Music streaming
+cask 'tageditor'               # Audio file tag/metadata editor
 cask 'vlc'                     # Media player
 cask 'gimp'                    # Free and open-source image editor
 
@@ -321,10 +322,12 @@ cask 'rectangle'               # Window manager
 cask 'stats'                   # System monitor menubar
 
 # File Management
+cask 'folx'                    # Download manager with torrent client
 cask 'keka' # File archiver
 # cask 'transmit'                # FTP/SFTP client
 
 # Development Utilities
+cask 'dash'                    # Offline API documentation browser
 cask 'keystore-explorer'       # Keystore/certificate manager
 cask 'visualvm'                # Java profiler
 cask 'wakatime'                # Time tracking
@@ -473,8 +476,6 @@ vscode 'vscjava.vscode-spring-initializr'
 
 # DevOps & Infrastructure
 vscode 'docker.docker'
-vscode 'hashicorp.hcl'
-vscode 'hashicorp.terraform'
 vscode 'ms-azuretools.vscode-containers'
 vscode 'ms-kubernetes-tools.vscode-kubernetes-tools'
 vscode 'ms-vscode-remote.remote-containers'
