@@ -61,6 +61,7 @@ alias assh="ssh-add --apple-use-keychain ~/.ssh/id_ed25519"
 alias buc="brew update && brew bundle --global && brew bundle cleanup --global --force && brew upgrade --force"
 # alias reset-doc="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
 alias reset-doc="sudo find 2>/dev/null /private/var/folders/ -type d -name com.apple.dock.launchpad -exec rm -rf {} +; killall Dock"
+alias fix-kitty-icon="rm /var/folders/*/*/*/com.apple.dock.iconcache; killall Dock"
 alias reload-dns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias rm-ds="find . -name ".DS_Store" -depth -exec rm -f {} \;"
 
