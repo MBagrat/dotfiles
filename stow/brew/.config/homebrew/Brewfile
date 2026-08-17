@@ -512,6 +512,7 @@ vscode 'k--kato.intellij-idea-keybindings'
 
 # Utilities
 vscode 'codezombiech.gitignore'
+vscode 'jetbrains.intellij-server'
 vscode 'pomdtr.excalidraw-editor'
 vscode 'rohinivsenthil.rabbitrace'
 

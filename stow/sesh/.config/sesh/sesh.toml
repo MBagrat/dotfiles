@@ -14,7 +14,7 @@ startup_command = "eza --all --git --icons --color=always {}"
 [tui]
 prompt = "> "
 placeholder = "Filter sessions... "
-show_icons = false
+show_icons = true
 show_windows = false
 alias_auto_connect_delay = "150ms"
 alias_filter_prefix = "/"

@@ -3,19 +3,8 @@
 name = "learning-reactive"
 path = "~/Workspace/personal/projects/learning/learning-reactive-programming"
 startup_command = "spf"
-windows = ["editor", "app", "test", "shell"]
+windows = ["nvim-ide"]
 
 [[window]]
-name = "editor"
+name = "nvim-ide"
 startup_script = "nvim"
-
-[[window]]
-name = "app"
-startup_script = "./gradlew bootRun"
-
-[[window]]
-name = "test"
-startup_script = "./gradlew test"
-
-[[window]]
-name = "shell"

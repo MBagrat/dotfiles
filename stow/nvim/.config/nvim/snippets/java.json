@@ -1,0 +1,7 @@
+{
+	"svm": {
+		"prefix": "svm",
+		"body": "static void main() {\n\t${1}\n}",
+		"description": "Java updated main method"
+	}
+}
