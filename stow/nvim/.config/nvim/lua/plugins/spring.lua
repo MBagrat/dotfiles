@@ -151,12 +151,25 @@ return {
       -- clients, so hints from a secondary server can be drawn against a
       -- newer buffer revision and crash extmark placement ("Invalid 'col'").
       -- jdtls/kotlin_lsp stay the only hint providers (fixed on nvim master)
+      --
+      -- This LS also declares referencesProvider without renameProvider.
+      -- inc-rename.nvim (LazyVim's default <leader>cr) fans a
+      -- textDocument/references request out to every references-capable
+      -- client to build its live preview, but only waits for as many
+      -- replies as clients support *rename* -- so this LS's always-empty
+      -- reply alone (arriving well before jdtls's slower, correct one)
+      -- satisfies that count and inc-rename gives up before jdtls ever
+      -- answers, silently never renaming. jdtls already covers references
+      -- for java/kotlin; this only costs "find references" from a
+      -- yaml/properties bean/property key to its Java binding, which
+      -- nothing else here provides.
       local on_init = client_config.on_init
       client_config.on_init = function(client, ...)
         if on_init then
           on_init(client, ...)
         end
         client.server_capabilities.inlayHintProvider = nil
+        client.server_capabilities.referencesProvider = nil
       end
       vim.api.nvim_create_autocmd("FileType", {
         group = vim.api.nvim_create_augroup("spring_boot_ls_kotlin", { clear = true }),
@@ -177,6 +190,25 @@ return {
     optional = true,
     opts = {
       jdtls = function(config)
+        -- LazyVim's java extra globs every jar under java-test's server
+        -- dir into the OSGi bundle list, but not all of them are OSGi
+        -- bundles: org.objectweb.asm* duplicates what jdtls's own
+        -- plugins/ dir already provides (name+version collision), and
+        -- the runner/jacocoagent jars are plain runtime-classpath jars
+        -- with no bundle manifest at all. Either kind failing aborts
+        -- loading the WHOLE extension-bundle batch ("Failed to load
+        -- extension bundles"), silently disabling test discovery/run and
+        -- remote debug. None of these are needed as OSGi bundles, so
+        -- drop them.
+        config.init_options.bundles = vim.tbl_filter(function(jar)
+          local name = vim.fn.fnamemodify(jar, ":t")
+          return not (
+            name:match("^org%.objectweb%.asm")
+            or name:match("%-jar%-with%-dependencies%.jar$")
+            or name == "jacocoagent.jar"
+          )
+        end, config.init_options.bundles)
+
         local ok, spring_boot = pcall(require, "spring_boot")
         if ok then
           vim.list_extend(config.init_options.bundles, spring_boot.java_extensions())

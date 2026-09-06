@@ -68,12 +68,21 @@ return {
           contentProvider = { preferred = "fernflower" },
 
           -- IntelliJ-style gutter lenses: run counts of refs/implementations.
-          referencesCodeLens = { enabled = true },
-          implementationsCodeLens = { enabled = true },
+          -- (implementationCodeLens was renamed twice upstream — from the
+          -- plural `implementationsCodeLens.enabled` boolean, to singular
+          -- `implementationCodeLens.enabled`, to this string enum in jdtls
+          -- 1.38 (Dec 2024) — the old key names are silently ignored now)
+          referencesCodeLens = { enabled = true, includeFields = true },
+          implementationCodeLens = "all",
           signatureHelp = { enabled = true, description = { enabled = true } },
 
           compile = { nullAnalysis = { mode = "automatic" } },
           completion = {
+            -- IntelliJ-style smart/chain completion: suggests getter chains
+            -- that produce the expected type (e.g. completing a String param
+            -- offers foo.getBar().getName()). Off by default; can be noisy on
+            -- very large types, so only fires on an explicit completion request.
+            chain = { enabled = true },
             favoriteStaticMembers = {
               "org.assertj.core.api.Assertions.*",
               "org.assertj.core.api.BDDAssertions.*",
@@ -100,7 +109,7 @@ return {
             },
             -- IntelliJ IDEA default layout: everything else, javax, java,
             -- statics last ("" = all other imports, "#" = static imports)
-            importOrder = { "javax", "java", "", "#" },
+            importOrder = { "", "javax", "java", "#" },
           },
           -- Never collapse imports into wildcards.
           sources = {
@@ -113,7 +122,12 @@ return {
             useBlocks = true,
           },
 
-          inlayHints = { parameterNames = { enabled = "all" } },
+          inlayHints = {
+            parameterNames = { enabled = "all" },
+            -- shows inferred `var` types inline, e.g. var foo /* :Path */ =
+            -- Path.of(...) — off by default, complements parameterNames above
+            variableTypes = { enabled = true },
+          },
         },
       })
       return opts
