@@ -46,6 +46,7 @@ brew 'curl'                    # HTTP client
 brew 'gawk'                    # GNU awk
 brew 'gnu-sed'                 # GNU sed
 brew 'gnupg'                   # GPG encryption
+brew 'mole'                    # Deep clean and optimize your Mac
 brew 'pinentry-mac'            # GPG pinentry for macOS
 brew 'stow'                    # Symlink manager for dotfiles
 brew 'trash-cli'               # Safe file deletion

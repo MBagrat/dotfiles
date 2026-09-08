@@ -1,7 +1,22 @@
 {
 	"svm": {
 		"prefix": "svm",
-		"body": "static void main() {\n\t${1}\n}",
+		"body": ["static void main() {", "\t${0}", "}"],
 		"description": "Java updated main method"
+	},
+	"prf": {
+		"prefix": "private_final_field",
+		"body": ["private final ${1:String} ${2:name};"],
+		"description": "Private final field"
+	},
+	"prsf": {
+		"prefix": "private_static_field",
+		"body": ["private static final ${1:String} ${2:name};"],
+		"description": "Private static final field"
+	},
+	"pctor": {
+		"prefix": "pctor",
+		"body": ["private ${1:${TM_FILENAME_BASE}}($2) {${0}", "}"],
+		"description": "Private Constructor"
 	}
 }

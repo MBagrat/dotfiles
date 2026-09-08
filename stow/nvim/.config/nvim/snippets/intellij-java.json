@@ -1,0 +1,368 @@
+{
+  "IntelliJ: fori": {
+    "prefix": "fori",
+    "body": [
+      "for(int ${1:i} = 0; $1 < ${2:limit}; $1++) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Create iteration loop"
+  },
+  "IntelliJ: else-if": {
+    "prefix": "else-if",
+    "body": [
+      "else if(${1:condition}){",
+      "$0",
+      "} "
+    ],
+    "description": "Add else-if branch"
+  },
+  "IntelliJ: itar": {
+    "prefix": "itar",
+    "body": [
+      "for(int ${1:i} = 0; $1 < ${2:array}.length; $1++) {",
+      "  ${3:Object} ${4:obj} = $2[$1];",
+      "  $0",
+      "}"
+    ],
+    "description": "Iterate elements of array"
+  },
+  "IntelliJ: itco": {
+    "prefix": "itco",
+    "body": [
+      "for(${1:java.util.Iterator} ${2:iter} = ${3:collection}.iterator(); $2.hasNext(); ) {",
+      "  ${4:Object} ${5:obj} =$6 $2.next();",
+      "  $0",
+      "}"
+    ],
+    "description": "Iterate elements of java.util.Collection"
+  },
+  "IntelliJ: iten": {
+    "prefix": "iten",
+    "body": [
+      "while(${1:enumeration}.hasMoreElements()){",
+      "  ${2:Object} ${3:obj} = $4 $1.nextElement();",
+      "  $0",
+      "}"
+    ],
+    "description": "Iterate java.util.Enumeration"
+  },
+  "IntelliJ: itit": {
+    "prefix": "itit",
+    "body": [
+      "while(${1:iterator}.hasNext()){",
+      "  ${2:Object} ${3:obj} = $4 $1.next();",
+      "  $0",
+      "}"
+    ],
+    "description": "Iterate java.util.Iterator"
+  },
+  "IntelliJ: itli": {
+    "prefix": "itli",
+    "body": [
+      "for (int ${1:i} = 0; $1 < ${2:list}.size(); $1++) {",
+      "  ${3:Object} ${4:o} = $5 $2.get($1);",
+      "  $0",
+      "}"
+    ],
+    "description": "Iterate elements of java.util.List"
+  },
+  "IntelliJ: itm": {
+    "prefix": "itm",
+    "body": [
+      "for (java.util.Map.Entry<${1:Object}, ${2:Object}> ${3:entry}: ${4:map}.entrySet()) {",
+      "  $1 ${5:key} = $3.getKey();",
+      "  $2 ${6:value} = $3.getValue();",
+      "  $0",
+      "}"
+    ],
+    "description": "Iterate keys and values of java.util.Map"
+  },
+  "IntelliJ: ittok": {
+    "prefix": "ittok",
+    "body": [
+      "for (java.util.StringTokenizer ${1:tokenizer} = new java.util.StringTokenizer(${2:str}); $1.hasMoreTokens(); ) {",
+      "    String ${3:token} = $1.nextToken();",
+      "    $0",
+      "}",
+      ""
+    ],
+    "description": "Iterate tokens from String"
+  },
+  "IntelliJ: ritar": {
+    "prefix": "ritar",
+    "body": [
+      "for(int ${1:i} = ${2:array}.length - 1; $1 >= 0; $1--) {",
+      "  ${3:Object} ${4:obj} = $2[$1];",
+      "  $0",
+      "}"
+    ],
+    "description": "Iterate elements of array in reverse order"
+  },
+  "IntelliJ: iter": {
+    "prefix": "iter",
+    "body": [
+      "for (${1:java.lang.Object} ${2:obj} : ${3:iterable}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Iterate Iterable or array"
+  },
+  "IntelliJ: inst": {
+    "prefix": "inst",
+    "body": [
+      "if (${1:expr} instanceof ${2:Object}) {",
+      "  $2 ${3:obj} = ($2)$1;",
+      "  $0",
+      "}"
+    ],
+    "description": "Checks object type with instanceof and down-casts it"
+  },
+  "IntelliJ: lst": {
+    "prefix": "lst",
+    "body": [
+      "${1:array}[$1.length - 1]$0"
+    ],
+    "description": "Fetches last element of an array"
+  },
+  "IntelliJ: mn": {
+    "prefix": "mn",
+    "body": [
+      "${1:obj} = Math.min($1, $0);"
+    ],
+    "description": "Sets lesser value to a variable"
+  },
+  "IntelliJ: mx": {
+    "prefix": "mx",
+    "body": [
+      "${1:obj} = Math.max($1, $0);"
+    ],
+    "description": "Sets greater value to a variable"
+  },
+  "IntelliJ: psvm": {
+    "prefix": "psvm",
+    "body": [
+      "public static void main(String[] args){",
+      "  $0",
+      "}"
+    ],
+    "description": "main() method declaration"
+  },
+  "IntelliJ: toar": {
+    "prefix": "toar",
+    "body": [
+      "${1:collection}.toArray(new ${2:Object}[0])$0"
+    ],
+    "description": "Stores elements of java.util.Collection into array"
+  },
+  "IntelliJ: lazy": {
+    "prefix": "lazy",
+    "body": [
+      "if (${1:obj} == null) {",
+      "  $1 = new ${2:Object}($0);",
+      "}"
+    ],
+    "description": "Performs lazy initialization"
+  },
+  "IntelliJ: inn": {
+    "prefix": "inn",
+    "body": [
+      "if (${1:var} != null) {",
+      "$0",
+      "}"
+    ],
+    "description": "Inserts 'if not null' statement"
+  },
+  "IntelliJ: ifn": {
+    "prefix": "ifn",
+    "body": [
+      "if (${1:var} == null) {",
+      "$0",
+      "}"
+    ],
+    "description": "Inserts 'if null' statement"
+  },
+  "IntelliJ: geti": {
+    "prefix": "geti",
+    "body": [
+      "public static ${1:ClassName} getInstance() {",
+      "  return ${2:null};",
+      "}$0"
+    ],
+    "description": "Inserts singleton method getInstance"
+  },
+  "IntelliJ: St": {
+    "prefix": "St",
+    "body": [
+      "String $0"
+    ],
+    "description": "String"
+  },
+  "IntelliJ: psf": {
+    "prefix": "psf",
+    "body": [
+      "public static final $0"
+    ],
+    "description": "public static final"
+  },
+  "IntelliJ: prsf": {
+    "prefix": "prsf",
+    "body": [
+      "private static final $0"
+    ],
+    "description": "private static final"
+  },
+  "IntelliJ: psfi": {
+    "prefix": "psfi",
+    "body": [
+      "public static final int $0"
+    ],
+    "description": "public static final int"
+  },
+  "IntelliJ: psfs": {
+    "prefix": "psfs",
+    "body": [
+      "public static final String $0"
+    ],
+    "description": "public static final String"
+  },
+  "IntelliJ: thr": {
+    "prefix": "thr",
+    "body": [
+      "throw new $0"
+    ],
+    "description": "throw new"
+  },
+  "IntelliJ: serr": {
+    "prefix": "serr",
+    "body": [
+      "System.err.println($0);"
+    ],
+    "description": "Prints a string to System.err"
+  },
+  "IntelliJ: serrc": {
+    "prefix": "serrc",
+    "body": [
+      "System.err::println$0"
+    ],
+    "description": "System.err::println"
+  },
+  "IntelliJ: sout": {
+    "prefix": "sout",
+    "body": [
+      "System.out.println($0);"
+    ],
+    "description": "Prints a string to System.out"
+  },
+  "IntelliJ: iop": {
+    "prefix": "iop",
+    "body": [
+      "IO.println($0);"
+    ],
+    "description": "Prints a string using the IO package"
+  },
+  "IntelliJ: ior": {
+    "prefix": "ior",
+    "body": [
+      "IO.readln($0);"
+    ],
+    "description": "Reads a string using the IO package"
+  },
+  "IntelliJ: soutc": {
+    "prefix": "soutc",
+    "body": [
+      "System.out::println$0"
+    ],
+    "description": "System.out::println"
+  },
+  "IntelliJ: souf": {
+    "prefix": "souf",
+    "body": [
+      "System.out.printf(\"$0\");"
+    ],
+    "description": "Prints a formatted string to System.out"
+  },
+  "IntelliJ: soutm": {
+    "prefix": "soutm",
+    "body": [
+      "System.out.println(\"${1:ClassName}.${2:methodName}\");$0"
+    ],
+    "description": "Prints current class and method names to System.out"
+  },
+  "IntelliJ: soutp": {
+    "prefix": "soutp",
+    "body": [
+      "System.out.println(${1:args});$0"
+    ],
+    "description": "Prints method parameter names and values to System.out"
+  },
+  "IntelliJ: soutv": {
+    "prefix": "soutv",
+    "body": [
+      "System.out.println(\"${1:expr} = \" + $1);$0"
+    ],
+    "description": "Prints a value to System.out"
+  },
+  "IntelliJ: C": {
+    "prefix": "C",
+    "body": [
+      "java.util.concurrent.Callable<${1:java.lang.Object}> callable = new java.util.concurrent.Callable<$1>() {",
+      "  public $1 call() throws Exception {",
+      "    ${2:// code}",
+      "    $0 ",
+      "  }",
+      "};"
+    ],
+    "description": "Surround with Callable"
+  },
+  "IntelliJ: RL": {
+    "prefix": "RL",
+    "body": [
+      "${1:lock}.readLock().lock();",
+      "try { ",
+      "  ${2:// code}",
+      "} finally {",
+      "  $1.readLock().unlock();",
+      "}",
+      "$0"
+    ],
+    "description": "Surround with ReadWriteLock.readLock"
+  },
+  "IntelliJ: WL": {
+    "prefix": "WL",
+    "body": [
+      "${1:lock}.writeLock().lock();",
+      "try { ",
+      "  ${2:// code}",
+      "} finally {",
+      "  $1.writeLock().unlock();",
+      "}",
+      "$0"
+    ],
+    "description": "Surround with ReadWriteLock.writeLock"
+  },
+  "IntelliJ: I": {
+    "prefix": "I",
+    "body": [
+      "for (${1:java.lang.Object} ${2:obj} : ${3:// code}) {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Iterate Iterable or array"
+  },
+  "IntelliJ: sts": {
+    "prefix": "sts",
+    "body": [
+      "try (var scope = java.util.concurrent.StructuredTaskScope.open()) {",
+      "    $0",
+      "    scope.join();",
+      "} catch (InterruptedException e) {",
+      "    // TODO: handle interrupted exception",
+      "}  catch (java.util.concurrent.ExecutionException e) {",
+      "    // TODO: handle execution exception",
+      "}"
+    ],
+    "description": "Create and open a StructuredTaskScope"
+  }
+}

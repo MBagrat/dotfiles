@@ -1,0 +1,14 @@
+{
+	"contributes": {
+		"snippets": [
+			{
+				"language": "java",
+				"path": "./java.json"
+			},
+			{
+				"language": "java",
+				"path": "./intellij-java.json"
+			}
+		]
+	}
+}
