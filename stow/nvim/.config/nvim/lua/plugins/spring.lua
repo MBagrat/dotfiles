@@ -168,6 +168,7 @@ return {
         if on_init then
           on_init(client, ...)
         end
+        client.server_capabilities.hoverProvider = nil
         client.server_capabilities.inlayHintProvider = nil
         client.server_capabilities.referencesProvider = nil
       end

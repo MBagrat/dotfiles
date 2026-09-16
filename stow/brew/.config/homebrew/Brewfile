@@ -176,7 +176,7 @@ brew 'minikube'                # Local Kubernetes cluster
 # AI Coding Agent
 brew 'opencode' # AI coding agent
 brew 'herdr' # Agent multiplexer for the terminal
-brew 'bun'
+brew 'bun' # JavaScript runtime and toolkit
 
 ################################################################################
 # JAVA & SPRING ECOSYSTEM
@@ -227,9 +227,12 @@ cask '1password-cli'           # 1Password CLI
 # APPLICATIONS - BROWSERS
 ################################################################################
 cask 'arc'                     # Arc browser
+cask 'orion'                   # Orion browser
+cask 'librewolf'               # Privacy-focused Firefox fork
+cask 'brave-browser'           # Brave browser
 cask 'browserosaurus'          # Browser picker
 cask 'firefox'                 # Mozilla Firefox
-cask 'google-chrome'           # Google Chrome
+# cask 'google-chrome'           # Google Chrome
 
 ################################################################################
 # APPLICATIONS - TERMINALS
@@ -259,14 +262,14 @@ cask 'dbeaver-community' # Universal database tool
 ################################################################################
 # APPLICATIONS - DEVELOPMENT PLATFORMS
 ################################################################################
-cask 'docker-desktop'          # Docker Desktop
+# cask 'docker-desktop'          # Docker Desktop
 cask 'flutter'                 # Flutter SDK
 cask 'kafkio'                  # Kafka GUI
 cask 'lens'                    # Kubernetes IDE
 cask 'mongodb-compass'         # MongoDB GUI
 cask 'orbstack'                # Fast Docker/Linux on macOS
 cask 'pgadmin4'                # PostgreSQL admin tool
-cask 'podman-desktop'          # Podman Desktop
+# cask 'podman-desktop'          # Podman Desktop
 cask 'postman'                 # API development platform
 cask 'proxyman'                # HTTP debugging proxy
 cask 'testcontainers-desktop'  # Testcontainers Desktop
