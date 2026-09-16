@@ -152,6 +152,12 @@ return {
       -- newer buffer revision and crash extmark placement ("Invalid 'col'").
       -- jdtls/kotlin_lsp stay the only hint providers (fixed on nvim master)
       --
+      -- Hover from every attached client gets merged into one floating
+      -- window; this LS's hover just duplicates jdtls/kotlin_lsp's richer
+      -- one for java/kotlin. This also drops property/bean hover in
+      -- yaml/jproperties, where nothing else provides it -- an accepted
+      -- trade-off for a cleaner java/kotlin hover window.
+      --
       -- This LS also declares referencesProvider without renameProvider.
       -- inc-rename.nvim (LazyVim's default <leader>cr) fans a
       -- textDocument/references request out to every references-capable
