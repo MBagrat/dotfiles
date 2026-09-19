@@ -8,22 +8,24 @@
 # TAPS
 # Third-party Homebrew repositories
 ################################################################################
+# rubocop:disable Layout/ExtraSpacing
 tap '1password/tap',									trusted: true
 tap 'atomicjar/tap',									trusted: true
-tap 'buildpacks/tap',	trusted: true
-tap 'certak-com/kafkio',	trusted: true
-tap 'graalvm/tap',	trusted: true
-tap 'hashicorp/tap',	trusted: true
-tap 'homebrew/autoupdate',	trusted: true
-tap 'maciejwalkowiak/brew',	trusted: true
-tap 'mdogan/zulu',	trusted: true
-tap 'shaunsingh/sfmono-nerd-font-ligaturized',	trusted: true
-tap 'teamookla/speedtest',	trusted: true
+tap 'buildpacks/tap',									trusted: true
+tap 'certak-com/kafkio',								trusted: true
+tap 'graalvm/tap',									    trusted: true
+tap 'hashicorp/tap',									trusted: true
+tap 'homebrew/autoupdate',								trusted: true
+tap 'maciejwalkowiak/brew',								trusted: true
+tap 'mdogan/zulu',										trusted: true
+tap 'shaunsingh/sfmono-nerd-font-ligaturized',			trusted: true
+tap 'teamookla/speedtest',								trusted: true
 tap 'anomalyco/tap',									trusted: true
 tap 'derailed/k9s',										trusted: true
 tap 'vladimirvivien/oss-tools',							trusted: true
-tap 'oven-sh/bun',	trusted: true
-tap 'joshmedeski/sesh',	trusted: true
+tap 'oven-sh/bun',									    trusted: true
+tap 'joshmedeski/sesh',									trusted: true
+# rubocop:enable Layout/ExtraSpacing
 
 ################################################################################
 # CORE SYSTEM UTILITIES
@@ -264,6 +266,7 @@ cask 'dbeaver-community' # Universal database tool
 ################################################################################
 # cask 'docker-desktop'          # Docker Desktop
 cask 'flutter'                 # Flutter SDK
+cask 'homebrew-app'            # BrewUI - Homebrew's official macOS GUI
 cask 'kafkio'                  # Kafka GUI
 cask 'lens'                    # Kubernetes IDE
 cask 'mongodb-compass'         # MongoDB GUI
@@ -317,7 +320,6 @@ cask 'alfred' # Productivity launcher
 
 # System Utilities
 cask 'appcleaner'              # App uninstaller
-cask 'brewservicesmenubar'     # Homebrew services menubar
 cask 'daisydisk'               # Disk space analyzer
 cask 'hiddenbar'               # Menu bar organizer
 cask 'keyboardcleantool'       # Keyboard cleaning mode
