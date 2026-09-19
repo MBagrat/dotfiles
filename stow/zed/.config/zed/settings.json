@@ -1,83 +1,88 @@
 {
-  "agent_servers": {
-    "claude-acp": {
-      "default_config_options": {
-        "mode": "default"
-      },
-      "type": "registry"
-    }
-  },
-  "project_panel": {
-    "dock": "left",
-  },
-  "outline_panel": {
-    "dock": "left",
-  },
-  "collaboration_panel": {
-    "dock": "left",
-  },
-  "git_panel": {
-    "dock": "left",
-  },
-  "agent": {
-    "dock": "right",
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4",
-    },
-  },
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false,
-  },
-  "theme": {
-    "mode": "system",
-    "light": "Tokyo Night Light",
-    "dark": "Tokyo Night Storm"
-  },
-  "icon_theme": "JetBrains New UI Icons (Light)",
-  "inlay_hints": {
-    "enabled": true,
-  },
-  "gutter": {
-    "line_numbers": false,
-  },
-  "ui_font_family": "JetBrainsMono Nerd Font",
-  "buffer_font_family": "JetBrainsMono Nerd Font",
-  "ui_font_size": 15,
-  "buffer_font_size": 15,
-  "autosave": {
-    "after_delay": {
-      "milliseconds": 1000,
-    },
-  },
-  "format_on_save": "on",
-  "relative_line_numbers": "wrapped",
-  "auto_install_extensions": {
-    "make": true,
-    "terraform": true,
-    "ansible": true,
-    "dart": true,
-    "lua": true,
-    "ruby": true,
-    "toml": true,
-    "java": true,
-    "scala": true,
-    "kotlin": true,
-    "liquid": true,
-    "tmux": true,
-    "sql": true,
-    "git-firefly": true,
-    "dockerfile": true,
-    "docker-compose": true,
-    "tokyo-night": true,
-    "jetbrains-new-ui-icons": true,
-    "intellij-newui-theme": true,
-    "wakatime": true,
-  },
-  "tab_bar": {
-    "show": true,
-    "show_nav_history_buttons": true,
-    "show_tab_bar_buttons": true,
-  },
+	"base_keymap": "JetBrains",
+	"agent_servers": {
+		"claude-acp": {
+			"default_config_options": {
+				"mode": "default"
+			},
+			"type": "registry"
+		}
+	},
+	"project_panel": {
+		"dock": "left"
+	},
+	"outline_panel": {
+		"dock": "left"
+	},
+	"collaboration_panel": {
+		"dock": "left"
+	},
+	"git_panel": {
+		"dock": "left"
+	},
+	"agent": {
+		"dock": "right",
+		"default_model": {
+			"provider": "zed.dev",
+			"model": "claude-sonnet-4"
+		}
+	},
+	"telemetry": {
+		"diagnostics": false,
+		"metrics": false
+	},
+	"theme": {
+		"mode": "system",
+		"light": "Tokyo Night Light",
+		"dark": "Tokyo Night Storm"
+	},
+	"icon_theme": {
+		"mode": "system",
+		"light": "JetBrains New UI Icons (Light)",
+		"dark": "JetBrains New UI Icons (Light)"
+	},
+	"inlay_hints": {
+		"enabled": true
+	},
+	"gutter": {
+		"line_numbers": false
+	},
+	"ui_font_family": "JetBrainsMono Nerd Font",
+	"buffer_font_family": "JetBrainsMono Nerd Font",
+	"ui_font_size": 15,
+	"buffer_font_size": 15,
+	"autosave": {
+		"after_delay": {
+			"milliseconds": 1000
+		}
+	},
+	"format_on_save": "on",
+	"relative_line_numbers": "wrapped",
+	"auto_install_extensions": {
+		"make": true,
+		"terraform": true,
+		"ansible": true,
+		"dart": true,
+		"lua": true,
+		"ruby": true,
+		"toml": true,
+		"java": true,
+		"scala": true,
+		"kotlin": true,
+		"liquid": true,
+		"tmux": true,
+		"sql": true,
+		"git-firefly": true,
+		"dockerfile": true,
+		"docker-compose": true,
+		"tokyo-night": true,
+		"jetbrains-new-ui-icons": true,
+		"intellij-newui-theme": true,
+		"wakatime": true
+	},
+	"tab_bar": {
+		"show": true,
+		"show_nav_history_buttons": true,
+		"show_tab_bar_buttons": true
+	}
 }

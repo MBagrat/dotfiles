@@ -232,7 +232,7 @@ cask 'arc'                     # Arc browser
 cask 'orion'                   # Orion browser
 cask 'librewolf'               # Privacy-focused Firefox fork
 cask 'brave-browser'           # Brave browser
-cask 'browserosaurus'          # Browser picker
+# cask 'browserosaurus'          # Browser picker
 cask 'firefox'                 # Mozilla Firefox
 # cask 'google-chrome'           # Google Chrome
 
@@ -302,7 +302,7 @@ cask 'vlc'                     # Media player
 # cask 'anydesk' # Remote desktop
 # cask 'slack'                   # Team communication
 cask 'telegram'                # Messaging app
-cask 'tempbox'                 # Temporary email
+# cask 'tempbox'                 # Temporary email
 cask 'zoom'                    # Video conferencing
 
 ################################################################################
