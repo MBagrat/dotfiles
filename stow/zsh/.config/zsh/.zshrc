@@ -13,6 +13,7 @@
 # initialization of the shell environment.
 # =============================================================================
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/directories.zsh"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/session.zsh"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/functions.zsh"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/performance.zsh"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/scripts/history.zsh"
