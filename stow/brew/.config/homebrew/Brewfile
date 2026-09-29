@@ -233,7 +233,7 @@ cask 'orion'                   # Orion browser
 cask 'librewolf'               # Privacy-focused Firefox fork
 cask 'brave-browser'           # Brave browser
 # cask 'browserosaurus'          # Browser picker
-cask 'firefox'                 # Mozilla Firefox
+cask 'firefox' # Mozilla Firefox
 # cask 'google-chrome'           # Google Chrome
 
 ################################################################################
@@ -249,6 +249,7 @@ cask 'wezterm'                 # GPU-accelerated terminal emulator
 
 # Modern Editors
 cask 'claude' # Claude AI coding assistant CLI
+cask 'codex'                   # OpenAI Codex CLI
 cask 'visual-studio-code'      # VS Code
 cask 'zed'                     # High-performance editor
 
@@ -301,9 +302,9 @@ cask 'vlc'                     # Media player
 ################################################################################
 # cask 'anydesk' # Remote desktop
 # cask 'slack'                   # Team communication
-cask 'telegram'                # Messaging app
+cask 'telegram' # Messaging app
 # cask 'tempbox'                 # Temporary email
-cask 'zoom'                    # Video conferencing
+cask 'zoom' # Video conferencing
 
 ################################################################################
 # APPLICATIONS - DESIGN
@@ -317,6 +318,7 @@ cask 'figma' # Collaborative design tool
 # Launcher & Automation
 cask 'alfred' # Productivity launcher
 # cask 'raycast'                 # Command launcher
+cask 'wispr-flow'              # AI voice dictation
 
 # System Utilities
 cask 'appcleaner'              # App uninstaller
