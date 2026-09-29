@@ -8,3 +8,9 @@ prefix = "ctrl+a"
 
 [experimental]
 kitty_graphics = true
+
+[ui]
+status_indicators = "dots"
+
+[ui.toast]
+delivery = "system"
